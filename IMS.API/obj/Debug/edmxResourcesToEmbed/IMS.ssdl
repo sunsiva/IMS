@@ -71,7 +71,7 @@
     <Property Name="Modified_By" Type="uniqueidentifier" />
     <Property Name="Modified_On" Type="datetime" />
     <Property Name="Created_By" Type="uniqueidentifier" />
-    <Property Name="Created_On" Type="uniqueidentifier" />
+    <Property Name="Created_On" Type="datetime" />
   </EntityType>
   <EntityType Name="COMPANY">
     <Key>

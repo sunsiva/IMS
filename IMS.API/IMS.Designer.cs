@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.API\IMS.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\IMS.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

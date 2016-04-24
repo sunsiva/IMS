@@ -29,7 +29,6 @@ namespace IMS.API
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<COMPANY> COMPANies { get; set; }
         public virtual DbSet<COMPANY_STATUSHISTORY> COMPANY_STATUSHISTORY { get; set; }
         public virtual DbSet<CONTACT_DETAILS> CONTACT_DETAILS { get; set; }
@@ -46,5 +45,6 @@ namespace IMS.API
         public virtual DbSet<RFQ> RFQs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<WORKORDER> WORKORDERs { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     }
 }
