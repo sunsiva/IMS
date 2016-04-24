@@ -137,3 +137,5 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DATAMODEL.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DATAMODEL.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.pdb

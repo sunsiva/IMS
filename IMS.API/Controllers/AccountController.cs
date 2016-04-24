@@ -16,6 +16,8 @@ using Microsoft.Owin.Security.OAuth;
 using IMS.API.Models;
 using IMS.API.Providers;
 using IMS.API.Results;
+using IMS.DATAMODEL.ViewModels;
+using System.Data.Entity;
 
 namespace IMS.API.Controllers
 {
@@ -25,6 +27,7 @@ namespace IMS.API.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
+        private IMSEntities dbContext = new IMSEntities();
 
         public AccountController()
         {
@@ -321,22 +324,52 @@ namespace IMS.API.Controllers
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
-        public async Task<IHttpActionResult> Register(RegisterBindingModel model)
+        public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
+            IdentityResult result;
+            using (var dbContextTransaction = dbContext.Database.BeginTransaction())
             {
-                return GetErrorResult(result);
-            }
+                var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+                result = await UserManager.CreateAsync(user, model.Password);
+                try
+                {
+                    if (result.Succeeded)
+                    {
+                        //Update the miscellanous columns
+                        AspNetUser objUser = await dbContext.AspNetUsers.FindAsync(user.Id);
+                        objUser.First_Name = model.FirstName;
+                        objUser.Last_Name = model.LastName;
+                        objUser.Middle_Name = model.Middle_Name;
+                        objUser.UserName = model.UserName;
+                        objUser.PhoneNumber = model.PhoneNumber;
+                        objUser.Loc_Id = model.Loc_Id;
+                        objUser.User_Type = model.User_Type;
+                        objUser.Created_On = DateTime.Now;
+                        objUser.Created_By = Guid.Parse(user.Id); //TODO:logged in user id
+                        dbContext.Entry(objUser).State = EntityState.Modified;
+                        await dbContext.SaveChangesAsync();
 
+                        //Mapping user to the role..
+                        //UserXRole role = new UserXRole();
+                        //role.UserId = Guid.Parse(user.Id);
+                        //role.RoleId = Guid.Parse(roleid);
+                        //dbContext.UserXRoles.Add(role);
+                        //await dbContext.SaveChangesAsync();
+                        dbContextTransaction.Commit();
+                    }
+                    else { return GetErrorResult(result); }
+                }
+                catch (Exception ex)
+                {
+                    dbContextTransaction.Rollback();
+                    return GetErrorResult(result);
+                }
+            }
             return Ok();
         }
 

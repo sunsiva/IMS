@@ -1,17 +1,14 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using IMS.UI.Models;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using IMS.DATAMODEL.ViewModels;
+using IMS.Common;
+using Serializer;
+using System.Collections.Generic;
 
 namespace IMS.UI.Controllers
 {
@@ -20,7 +17,8 @@ namespace IMS.UI.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        Common.APIServices client = new Common.APIServices();
+        readonly JsonNetSerialization serializer = new JsonNetSerialization();
+        readonly HttpHelpers httpHelpers = new HttpHelpers();
 
         public AccountController()
         {
@@ -113,6 +111,9 @@ namespace IMS.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_CREATE_ENDPOINT),
+                serializer.Serialize<RegisterViewModel>(model));
+                
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -251,23 +252,12 @@ namespace IMS.UI.Controllers
             return View();
         }
 
-        public async Task<ActionResult> GetRoles()
+        public ActionResult GetRoles()
         {
-            //JsonNetSerialization serializer = new JsonNetSerialization();
-            //using (var client = new HttpClient())
-            //{
-            //    Uri _hostBaseAdress = new Uri("http://ims.service");
-            //    client.BaseAddress = _hostBaseAdress;
-            //    client.DefaultRequestHeaders.Accept.Clear();
-            //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //    var response = await client.GetAsync("/api/aspnetroles");
-            //    var res = response.Content.ReadAsStringAsync();
-                
-            //}
 
-            var response = await client.GetMyClient().GetAsync("api/aspnetroles");
-            var res = response.Content.ReadAsStringAsync();
-            return View("response");
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.ROLE_GET_ENDPOINT));
+            var resp = serializer.DeSerialize<List<AspNetRolesViewModel>>(content) as List<AspNetRolesViewModel>;
+            return View(resp);
         }
         
         protected override void Dispose(bool disposing)

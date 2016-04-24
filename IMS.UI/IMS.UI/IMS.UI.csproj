@@ -168,8 +168,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Common\APIServices.cs" />
-    <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Helper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -266,6 +264,10 @@
     <Content Include="Scripts\jquery-2.2.3.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\IMS.Common\IMS.Common.csproj">
+      <Project>{d3f566c5-4155-4310-8ccc-a69f6e563d6d}</Project>
+      <Name>IMS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\IMS.DataModel\IMS.DataModel.csproj">
       <Project>{e01aaf78-db03-4307-b70f-b9c27dbf8b63}</Project>
       <Name>IMS.DataModel</Name>
