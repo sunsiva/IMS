@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="IMSModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="IMSModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="IMSModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="IMSModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="IMSModel.AspNetUser" />
+    <EntitySet Name="COMPANies" EntityType="IMSModel.COMPANY" />
+    <EntitySet Name="COMPANY_STATUSHISTORY" EntityType="IMSModel.COMPANY_STATUSHISTORY" />
+    <EntitySet Name="CONTACT_DETAILS" EntityType="IMSModel.CONTACT_DETAILS" />
+    <EntitySet Name="CUSTOMERs" EntityType="IMSModel.CUSTOMER" />
+    <EntitySet Name="CUSTXPRODs" EntityType="IMSModel.CUSTXPROD" />
+    <EntitySet Name="EXCEPTION_LOGGING" EntityType="IMSModel.EXCEPTION_LOGGING" />
+    <EntitySet Name="LOCATION_MASTER" EntityType="IMSModel.LOCATION_MASTER" />
+    <EntitySet Name="LOOKUP_CATEGORIES" EntityType="IMSModel.LOOKUP_CATEGORIES" />
+    <EntitySet Name="LOOKUP_DATA" EntityType="IMSModel.LOOKUP_DATA" />
+    <EntitySet Name="PRODUCTS" EntityType="IMSModel.PRODUCT" />
+    <EntitySet Name="PURCHASE_ORDER" EntityType="IMSModel.PURCHASE_ORDER" />
+    <EntitySet Name="QUOTATIONs" EntityType="IMSModel.QUOTATION" />
+    <EntitySet Name="RATING_MASTER" EntityType="IMSModel.RATING_MASTER" />
+    <EntitySet Name="RFQs" EntityType="IMSModel.RFQ" />
+    <EntitySet Name="sysdiagrams" EntityType="IMSModel.sysdiagram" />
+    <EntitySet Name="WORKORDERs" EntityType="IMSModel.WORKORDER" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="IMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="IMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_STATUSHISTORY_COMPANY" Association="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="COMPANY_STATUSHISTORY" EntitySet="COMPANY_STATUSHISTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTACT_DETAILS_LOCATION_MASTER" Association="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER">
+      <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
+      <End Role="CONTACT_DETAILS" EntitySet="CONTACT_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_RATING_MASTER" Association="IMSModel.FK_CUSTOMER_RATING_MASTER">
+      <End Role="RATING_MASTER" EntitySet="RATING_MASTER" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUOTATION_CUSTOMER" Association="IMSModel.FK_QUOTATION_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="QUOTATION" EntitySet="QUOTATIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PURCHASE_ORDER_LOCATION_MASTER" Association="IMSModel.FK_PURCHASE_ORDER_LOCATION_MASTER">
+      <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
+      <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOOKUP_DATA_LOOKUP_CATEGORIES" Association="IMSModel.FK_LOOKUP_DATA_LOOKUP_CATEGORIES">
+      <End Role="LOOKUP_CATEGORIES" EntitySet="LOOKUP_CATEGORIES" />
+      <End Role="LOOKUP_DATA" EntitySet="LOOKUP_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUOTATION_PRODUCTS" Association="IMSModel.FK_QUOTATION_PRODUCTS">
+      <End Role="PRODUCT" EntitySet="PRODUCTS" />
+      <End Role="QUOTATION" EntitySet="QUOTATIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WORKORDER_PRODUCTS" Association="IMSModel.FK_WORKORDER_PRODUCTS">
+      <End Role="PRODUCT" EntitySet="PRODUCTS" />
+      <End Role="WORKORDER" EntitySet="WORKORDERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUOTATION_QUOTATION" Association="IMSModel.FK_QUOTATION_QUOTATION">
+      <End Role="QUOTATION" EntitySet="QUOTATIONs" />
+      <End Role="QUOTATION1" EntitySet="QUOTATIONs" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="IMSModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="IMSModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="IMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="IMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="IMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="IMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="AspNetRoles" Relationship="IMSModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Loc_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Modified_By" Type="Guid" />
+    <Property Name="Modified_On" Type="DateTime" Precision="3" />
+    <Property Name="Created_By" Type="Guid" />
+    <Property Name="Created_On" Type="Guid" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="COMP_ID" />
+    </Key>
+    <Property Name="COMP_ID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_NO" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="COMP_CODE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="COMP_NAME" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="LINEOFBIZ_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="CHANNEL_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="SALES_PERSON" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COMP_SIZE_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="CURRENCY_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="PAYMENTTERM_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="CREDITLIMIT_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="PRICEBAND_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="DISCOUNTBAND_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="TAXCODE_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="TAXCODE2_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="TAXCODE3_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="SHIPMENTTERM_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_BILL_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_SHIP_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_TYPE_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="OWNERSHIP_LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COMP_WEBSITE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RATING_ID" Type="Guid" />
+    <Property Name="YEARS_OF_ESTABLISHMENT" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_OFFICE" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_FACTORY" Type="Int32" Nullable="false" />
+    <Property Name="REVENUE" Type="Double" />
+    <Property Name="TURN_OVER" Type="Double" />
+    <Property Name="SALES" Type="Double" />
+    <Property Name="CAPACITY_DAILY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_MONTHLY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_YEARLY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="COMPANY_STATUSHISTORY" Relationship="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY" FromRole="COMPANY" ToRole="COMPANY_STATUSHISTORY" />
+  </EntityType>
+  <EntityType Name="COMPANY_STATUSHISTORY">
+    <Key>
+      <PropertyRef Name="STATUSHIST_ID" />
+    </Key>
+    <Property Name="STATUSHIST_ID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_ID" Type="Guid" Nullable="false" />
+    <Property Name="ACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Guid" Nullable="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="COMPANY" Relationship="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY" FromRole="COMPANY_STATUSHISTORY" ToRole="COMPANY" />
+  </EntityType>
+  <EntityType Name="CONTACT_DETAILS">
+    <Key>
+      <PropertyRef Name="CONT_ID" />
+    </Key>
+    <Property Name="CONT_ID" Type="Guid" Nullable="false" />
+    <Property Name="COMP_ID" Type="Guid" Nullable="false" />
+    <Property Name="CONTACT_TYPE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_MAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PHONE" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ALTERNATECONTACT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ALTERNATECONTACT_PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="LANDMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BRANCH_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BRANCH_CODE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="BRANCH_DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ISCUSTOMERHEADOFFICE" Type="Boolean" Nullable="false" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LOCATION_MASTER" Relationship="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER" FromRole="CONTACT_DETAILS" ToRole="LOCATION_MASTER" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUST_ID" />
+    </Key>
+    <Property Name="CUST_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_CODE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISVENDOR" Type="Boolean" Nullable="false" />
+    <Property Name="LEGAL_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_RELATIONSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="LINEOFBIZ_LKPID" Type="Guid" />
+    <Property Name="LOB_CATEGORY_LKPID" Type="Guid" />
+    <Property Name="COMPANY_GROUP_CODE_LKPID" Type="Guid" />
+    <Property Name="SALESCHNL_REFERENCE_LKPID" Type="Guid" />
+    <Property Name="SALES_PERSON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_SIZE_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="CURRENCY_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="SHIPMENTTERM_LKPID" Type="Guid" />
+    <Property Name="PAYMENTTERM_LKPID" Type="Guid" />
+    <Property Name="CREDITLIMIT_LKPID" Type="Guid" />
+    <Property Name="PRICEBAND_LKPID" Type="Guid" />
+    <Property Name="DISCOUNTBAND_LKPID" Type="Guid" />
+    <Property Name="AUTO_BANDING" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TAXCODE1_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="TAXCODE2_LKPID" Type="Guid" />
+    <Property Name="TAXCODE3_LKPID" Type="Guid" />
+    <Property Name="CUST_BILL_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_SHIP_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_TYPE_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="OWNERSHIP_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="COMPANY_EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RATING_ID" Type="Guid" />
+    <Property Name="YEARS_OF_ESTABLISHMENT" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_OFFICE" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_FACTORY" Type="Int32" Nullable="false" />
+    <Property Name="REVENUE" Type="Double" />
+    <Property Name="TURN_OVER" Type="Double" />
+    <Property Name="SALES" Type="Double" />
+    <Property Name="PAYMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CALL_PREFERENCES" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_CHECK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CONTRACT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MSA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SLA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DECLARATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OWNERSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_DAILY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_MONTHLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_YEARLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="RATING_MASTER" Relationship="IMSModel.FK_CUSTOMER_RATING_MASTER" FromRole="CUSTOMER" ToRole="RATING_MASTER" />
+    <NavigationProperty Name="QUOTATIONs" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="CUSTOMER" ToRole="QUOTATION" />
+  </EntityType>
+  <EntityType Name="CUSTXPROD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CUST_ID" Type="Guid" Nullable="false" />
+    <Property Name="PRD_ID" Type="Guid" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="EXCEPTION_LOGGING">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="Guid" Nullable="false" />
+    <Property Name="EXCEPTION_MSG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EXCEPTION_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXCEPTION_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EXCEPTION_PAGEDETAILS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXCEPTION_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXEPTION_DATETIME" Type="DateTime" Precision="3" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOCATION_MASTER">
+    <Key>
+      <PropertyRef Name="LOC_ID" />
+    </Key>
+    <Property Name="LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="LOC_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION_SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOC_ZIPCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_ZONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GEO_LOC_LATITUDE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GEO_LOC_LONGITUDE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CONTACT_DETAILS" Relationship="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER" FromRole="LOCATION_MASTER" ToRole="CONTACT_DETAILS" />
+    <NavigationProperty Name="PURCHASE_ORDER" Relationship="IMSModel.FK_PURCHASE_ORDER_LOCATION_MASTER" FromRole="LOCATION_MASTER" ToRole="PURCHASE_ORDER" />
+  </EntityType>
+  <EntityType Name="LOOKUP_CATEGORIES">
+    <Key>
+      <PropertyRef Name="LOOKUPCATEGORYID" />
+    </Key>
+    <Property Name="LOOKUPCATEGORYID" Type="Guid" Nullable="false" />
+    <Property Name="LOOKUPCATEGORYCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOOKUPCATEGORYDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISAPPSPECIFIC" Type="Boolean" />
+    <Property Name="ISORGSPECIFIC" Type="Boolean" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LOOKUP_DATA" Relationship="IMSModel.FK_LOOKUP_DATA_LOOKUP_CATEGORIES" FromRole="LOOKUP_CATEGORIES" ToRole="LOOKUP_DATA" />
+  </EntityType>
+  <EntityType Name="LOOKUP_DATA">
+    <Key>
+      <PropertyRef Name="LOOKUPID" />
+    </Key>
+    <Property Name="LOOKUPID" Type="Guid" Nullable="false" />
+    <Property Name="LOOKUPCATEGORYID" Type="Guid" />
+    <Property Name="LOOKUPCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOOKUPDESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LOOKUP_CATEGORIES" Relationship="IMSModel.FK_LOOKUP_DATA_LOOKUP_CATEGORIES" FromRole="LOOKUP_DATA" ToRole="LOOKUP_CATEGORIES" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Guid" Nullable="false" />
+    <Property Name="PRODUCT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_VARIANT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_DESCRIPTION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_TYPE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_DIMENSIONS_LENGTH" Type="Int32" />
+    <Property Name="PRODUCT_DIMENSIONS_BREADTH" Type="Int32" />
+    <Property Name="PRODUCT_DIMENSIONS_WIDTH" Type="Int32" />
+    <Property Name="PRODUCT_DIMENSIONSA" Type="Int32" />
+    <Property Name="PRODUCT_DIMENSIONSB" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="ISREPEAT_ORDER" Type="Boolean" />
+    <Property Name="UNIT_PRICE" Type="Double" />
+    <Property Name="UNIT" Type="Int32" />
+    <Property Name="DISCOUNT" Type="Double" />
+    <Property Name="LINE_TOTAL" Type="Double" />
+    <Property Name="TOTAL" Type="Double" />
+    <Property Name="GRAND_TOTAL" Type="Double" />
+    <Property Name="SPECIAL_REQUESTSA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PREPARED_BY" Type="Guid" />
+    <Property Name="APPROVED_BY" Type="Guid" />
+    <Property Name="TYPEOF_ORIGINAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_RECEIVED" Type="DateTime" Precision="3" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="QUOTATIONs" Relationship="IMSModel.FK_QUOTATION_PRODUCTS" FromRole="PRODUCT" ToRole="QUOTATION" />
+    <NavigationProperty Name="WORKORDERs" Relationship="IMSModel.FK_WORKORDER_PRODUCTS" FromRole="PRODUCT" ToRole="WORKORDER" />
+  </EntityType>
+  <EntityType Name="PURCHASE_ORDER">
+    <Key>
+      <PropertyRef Name="PO_ID" />
+    </Key>
+    <Property Name="PO_ID" Type="Guid" Nullable="false" />
+    <Property Name="PO_NO" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PO_NAME" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PO_DESC" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PO_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="REFERENCE_PO_ID" Type="Guid" />
+    <Property Name="MODEOFRECEIPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATE_COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATE_CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATE_COMP_PURCHAE_MNGR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATE_COMP_MNGR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BID_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PO_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DUE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CLOSING_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REQUIRED_DELIVERY_START_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REQUIRED_DELIVERY_END_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DURATION" Type="Int32" />
+    <Property Name="DURATION_TIMELINE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NO_OF_RELEASES" Type="Int32" Nullable="false" />
+    <Property Name="LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="JOB_ID" Type="Guid" Nullable="false" />
+    <Property Name="JOB_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_CLIENT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATION1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATION2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATION3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISCUSTOMER_SUPPLIEDDRAWING" Type="Boolean" />
+    <Property Name="DRAWING_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LOCATION_MASTER" Relationship="IMSModel.FK_PURCHASE_ORDER_LOCATION_MASTER" FromRole="PURCHASE_ORDER" ToRole="LOCATION_MASTER" />
+  </EntityType>
+  <EntityType Name="QUOTATION">
+    <Key>
+      <PropertyRef Name="QUOTE_ID" />
+    </Key>
+    <Property Name="QUOTE_ID" Type="Guid" Nullable="false" />
+    <Property Name="QUOTE_CODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QUOTE_NUMBER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RFQ_ID" Type="Guid" />
+    <Property Name="PRODUCT_ID" Type="Guid" />
+    <Property Name="CUST_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUSTOMER_CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTOMER_PURCHASING_AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTOMER_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QUOTE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="QUOTE_VALIDITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_AGENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_AGENT_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_AGENT_CONTACT_DETAILSA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SALES_AGENT_CONTACT_DETAILSB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LEAD_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SHIPPING_TERMS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NUMBER_OF_RELEASES" Type="Int32" />
+    <Property Name="PAYMENT_TERMS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPMENT_TERMS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_NOTESA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_NOTESB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CUSTOMER" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="QUOTATION" ToRole="CUSTOMER" />
+    <NavigationProperty Name="PRODUCT" Relationship="IMSModel.FK_QUOTATION_PRODUCTS" FromRole="QUOTATION" ToRole="PRODUCT" />
+    <NavigationProperty Name="QUOTATION1" Relationship="IMSModel.FK_QUOTATION_QUOTATION" FromRole="QUOTATION" ToRole="QUOTATION1" />
+    <NavigationProperty Name="QUOTATION2" Relationship="IMSModel.FK_QUOTATION_QUOTATION" FromRole="QUOTATION1" ToRole="QUOTATION" />
+  </EntityType>
+  <EntityType Name="RATING_MASTER">
+    <Key>
+      <PropertyRef Name="RATING_ID" />
+    </Key>
+    <Property Name="RATING_ID" Type="Guid" Nullable="false" />
+    <Property Name="RATING" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUSINESS_PERFORMANCE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PIPELINE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENT_REGULARITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DISCOUNTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RESPONSIVENESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="IMSModel.FK_CUSTOMER_RATING_MASTER" FromRole="RATING_MASTER" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="RFQ">
+    <Key>
+      <PropertyRef Name="RFQ_ID" />
+    </Key>
+    <Property Name="RFQ_ID" Type="Guid" Nullable="false" />
+    <Property Name="RFQ_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RFQ_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RFQ_DESC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MODEOFRECEIPT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATING_COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATING_CONTACTPERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATING_COMP_PURCHASING_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORIGINATING_COMP_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BID_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RFQ_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DUE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CLOSING_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DURATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DURATION_TIMELINE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NUMBEROFRELEASES" Type="Int32" Nullable="false" />
+    <Property Name="LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="JOB_ID" Type="Guid" />
+    <Property Name="JOB_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_CLIENT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATIONA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATIONB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_LOCATIONC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISCUSTOMER_SUPPLIEDDRAWING" Type="Boolean" />
+    <Property Name="DRAWING_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_ID" Type="Guid" />
+    <Property Name="QUANTITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISREPEAT_ORDER" Type="Boolean" />
+    <Property Name="UNIT_PRICE" Type="Double" />
+    <Property Name="PRICING_INDICATORSA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRICING_INDICATORSB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRICING_INDICATORSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPECIAL_REQUESTSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PREPARED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TYPEOF_ORIGINAL_RFQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BARCODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_RECEIVED" Type="DateTime" Precision="3" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WORKORDER">
+    <Key>
+      <PropertyRef Name="WO_ID" />
+    </Key>
+    <Property Name="WO_ID" Type="Guid" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="Guid" Nullable="false" />
+    <Property Name="WO_CODE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="WO_NUMBER" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_PO_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUSTOMER_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="JOB_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ISREPEATORDER" Type="Boolean" />
+    <Property Name="REPEATREASON" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="WORK_ORDER_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DUE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REQUIRED_DELIVERY_START_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQUIRED_DELIVERY_END_DATE" Type="DateTime" Precision="3" />
+    <Property Name="NO_OF_RELEASES" Type="Int32" Nullable="false" />
+    <Property Name="DRAWING" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PRODUCT" Relationship="IMSModel.FK_WORKORDER_PRODUCTS" FromRole="WORKORDER" ToRole="PRODUCT" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="IMSModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="IMSModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="IMSModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="IMSModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_STATUSHISTORY_COMPANY">
+    <End Type="IMSModel.COMPANY" Role="COMPANY" Multiplicity="1" />
+    <End Type="IMSModel.COMPANY_STATUSHISTORY" Role="COMPANY_STATUSHISTORY" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="COMP_ID" />
+      </Principal>
+      <Dependent Role="COMPANY_STATUSHISTORY">
+        <PropertyRef Name="STATUSHIST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTACT_DETAILS_LOCATION_MASTER">
+    <End Type="IMSModel.LOCATION_MASTER" Role="LOCATION_MASTER" Multiplicity="1" />
+    <End Type="IMSModel.CONTACT_DETAILS" Role="CONTACT_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION_MASTER">
+        <PropertyRef Name="LOC_ID" />
+      </Principal>
+      <Dependent Role="CONTACT_DETAILS">
+        <PropertyRef Name="LOC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_RATING_MASTER">
+    <End Type="IMSModel.RATING_MASTER" Role="RATING_MASTER" Multiplicity="0..1" />
+    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RATING_MASTER">
+        <PropertyRef Name="RATING_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="RATING_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUOTATION_CUSTOMER">
+    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="IMSModel.QUOTATION" Role="QUOTATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUST_ID" />
+      </Principal>
+      <Dependent Role="QUOTATION">
+        <PropertyRef Name="CUST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PURCHASE_ORDER_LOCATION_MASTER">
+    <End Type="IMSModel.LOCATION_MASTER" Role="LOCATION_MASTER" Multiplicity="1" />
+    <End Type="IMSModel.PURCHASE_ORDER" Role="PURCHASE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION_MASTER">
+        <PropertyRef Name="LOC_ID" />
+      </Principal>
+      <Dependent Role="PURCHASE_ORDER">
+        <PropertyRef Name="LOC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOOKUP_DATA_LOOKUP_CATEGORIES">
+    <End Type="IMSModel.LOOKUP_CATEGORIES" Role="LOOKUP_CATEGORIES" Multiplicity="0..1" />
+    <End Type="IMSModel.LOOKUP_DATA" Role="LOOKUP_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOOKUP_CATEGORIES">
+        <PropertyRef Name="LOOKUPCATEGORYID" />
+      </Principal>
+      <Dependent Role="LOOKUP_DATA">
+        <PropertyRef Name="LOOKUPCATEGORYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUOTATION_PRODUCTS">
+    <End Type="IMSModel.PRODUCT" Role="PRODUCT" Multiplicity="0..1" />
+    <End Type="IMSModel.QUOTATION" Role="QUOTATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Principal>
+      <Dependent Role="QUOTATION">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WORKORDER_PRODUCTS">
+    <End Type="IMSModel.PRODUCT" Role="PRODUCT" Multiplicity="1" />
+    <End Type="IMSModel.WORKORDER" Role="WORKORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Principal>
+      <Dependent Role="WORKORDER">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUOTATION_QUOTATION">
+    <End Type="IMSModel.QUOTATION" Role="QUOTATION" Multiplicity="1" />
+    <End Type="IMSModel.QUOTATION" Role="QUOTATION1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="QUOTATION">
+        <PropertyRef Name="QUOTE_ID" />
+      </Principal>
+      <Dependent Role="QUOTATION1">
+        <PropertyRef Name="QUOTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="IMSModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="IMSModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+</Schema>

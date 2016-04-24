@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inventory Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="accordion table-bordered" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu" href="#childleftMenu">
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:35px" >Order Management</span> </span>  
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion collapse" id="childleftMenu">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" href="@Url.Action("Index", "Home")">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    @*@Html.Partial("Today", "Index", "Home")*@
+                                    Today 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                                    <i class="glyphicon glyphicon-list"></i> Work Order
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <br />
+                                    <input type="text" class="form-control" placeholder="Search work orders" />
+                                    <ul>
+                                       
+                                        <li  aligng="right" >@Html.ActionLink("All", "Index", "Home")</li>
+                                        <li>New</li>
+                                        <li>Issued To Production</li>
+                                        <li>In Production</li>
+                                        <li>On Time</li>
+                                        <li>Delayed</li>
+                                        <li>Ready For Shipping</li>
+                                        <li>Shipped</li>
+                                        <li>Complete</li>
+                                        <li>Closed</li>
+                                        <li>Cancelled</li>
+                                        <li>On Hold</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                                    <i class="glyphicon glyphicon-globe"></i> Purchase Order
+                                </a>
+                            </div>
+                            <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <ul>
+                                        <li>This is one</li>
+                                        <li>This is two</li>
+                                        <li>This is Three</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                                    <i class="glyphicon glyphicon-record"></i> Quotation
+                                </a>
+                            </div>
+                            <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <ul>
+                                        <li>This is one</li>
+                                        <li>This is two</li>
+                                        <li>This is Three</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFive">
+                                    <i class="glyphicon glyphicon-record"></i> RFQ
+                                </a>
+                            </div>
+                            <div id="collapseFive" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <ul>
+                                        <li>This is one</li>
+                                        <li>This is two</li>
+                                        <li>This is Three</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseSix">
+                                    <i class="glyphicon glyphicon-pencil"></i> Customer
+                                </a>
+                            </div>
+                            <div id="collapseSix" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <ul>
+                                        <li>This is one</li>
+                                        <li>This is two</li>
+                                        <li>This is Three</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion table-bordered" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu2" href="#childleftMenu2">
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:15px">Production Management</span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion collapse" id="childleftMenu2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" href="@Url.Action("Index", "Home")">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Today
+                                </a>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                                    <i class="glyphicon glyphicon-list"></i> Products
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <br />
+                                    <input type="text" class="form-control" placeholder="Search work orders" />
+                                    <ul>
+
+                                        <li aligng="right">@Html.ActionLink("All", "Index", "Home")</li>
+                                        <li>New</li>
+                                        <li>Issued To Production</li>
+                                        <li>In Production</li>
+                                        <li>On Time</li>
+                                        <li>Delayed</li>
+                                        <li>Ready For Shipping</li>
+                                        <li>Shipped</li>
+                                        <li>Complete</li>
+                                        <li>Closed</li>
+                                        <li>Cancelled</li>
+                                        <li>On Hold</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion table-bordered" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu3" href="#childleftMenu3">
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:20px" >Inventory Management </span> </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion collapse" id="childleftMenu3">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" href="@Url.Action("Index", "Home")">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Today
+                                </a>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                                    <i class="glyphicon glyphicon-list"></i> Products
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                                <div class="accordion-inner">
+                                    <br />
+                                    <input type="text" class="form-control" placeholder="Search work orders" />
+                                    <ul>
+
+                                        <li aligng="right">@Html.ActionLink("All", "Index", "Home")</li>
+                                        <li>New</li>
+                                        <li>Issued To Production</li>
+                                        <li>In Production</li>
+                                        <li>On Time</li>
+                                        <li>Delayed</li>
+                                        <li>Ready For Shipping</li>
+                                        <li>Shipped</li>
+                                        <li>Complete</li>
+                                        <li>Closed</li>
+                                        <li>Cancelled</li>
+                                        <li>On Hold</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-8 col-lg-10">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ZEN - Inventory Management System</p>
+            </footer>
+        </div>
+    </div>
+    @*<div class="navbar navbar-inverse navbar-fixed-top col-lg-offset-2"> For left side header menu*@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Sunsiee Manufacturing Company Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand " })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

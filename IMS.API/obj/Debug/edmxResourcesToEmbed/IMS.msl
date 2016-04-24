@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IMSModelStoreContainer" CdmEntityContainer="IMSEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IMSModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="IMSModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="IMSModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="IMSModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="IMSModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+          <ScalarProperty Name="Loc_Id" ColumnName="Loc_Id" />
+          <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANies">
+      <EntityTypeMapping TypeName="IMSModel.COMPANY">
+        <MappingFragment StoreEntitySet="COMPANY">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="CAPACITY_YEARLY" ColumnName="CAPACITY_YEARLY" />
+          <ScalarProperty Name="CAPACITY_MONTHLY" ColumnName="CAPACITY_MONTHLY" />
+          <ScalarProperty Name="CAPACITY_DAILY" ColumnName="CAPACITY_DAILY" />
+          <ScalarProperty Name="SALES" ColumnName="SALES" />
+          <ScalarProperty Name="TURN_OVER" ColumnName="TURN_OVER" />
+          <ScalarProperty Name="REVENUE" ColumnName="REVENUE" />
+          <ScalarProperty Name="NO_OF_EMPLOYEES_FACTORY" ColumnName="NO_OF_EMPLOYEES_FACTORY" />
+          <ScalarProperty Name="NO_OF_EMPLOYEES_OFFICE" ColumnName="NO_OF_EMPLOYEES_OFFICE" />
+          <ScalarProperty Name="YEARS_OF_ESTABLISHMENT" ColumnName="YEARS_OF_ESTABLISHMENT" />
+          <ScalarProperty Name="RATING_ID" ColumnName="RATING_ID" />
+          <ScalarProperty Name="COMP_WEBSITE" ColumnName="COMP_WEBSITE" />
+          <ScalarProperty Name="COMP_EMAIL" ColumnName="COMP_EMAIL" />
+          <ScalarProperty Name="OWNERSHIP_LOOKUPID" ColumnName="OWNERSHIP_LOOKUPID" />
+          <ScalarProperty Name="COMP_TYPE_LOOKUPID" ColumnName="COMP_TYPE_LOOKUPID" />
+          <ScalarProperty Name="COMP_SHIP_LOC_ID" ColumnName="COMP_SHIP_LOC_ID" />
+          <ScalarProperty Name="COMP_BILL_LOC_ID" ColumnName="COMP_BILL_LOC_ID" />
+          <ScalarProperty Name="SHIPMENTTERM_LOOKUPID" ColumnName="SHIPMENTTERM_LOOKUPID" />
+          <ScalarProperty Name="TAXCODE3_LOOKUPID" ColumnName="TAXCODE3_LOOKUPID" />
+          <ScalarProperty Name="TAXCODE2_LOOKUPID" ColumnName="TAXCODE2_LOOKUPID" />
+          <ScalarProperty Name="TAXCODE_LOOKUPID" ColumnName="TAXCODE_LOOKUPID" />
+          <ScalarProperty Name="DISCOUNTBAND_LOOKUPID" ColumnName="DISCOUNTBAND_LOOKUPID" />
+          <ScalarProperty Name="PRICEBAND_LOOKUPID" ColumnName="PRICEBAND_LOOKUPID" />
+          <ScalarProperty Name="CREDITLIMIT_LOOKUPID" ColumnName="CREDITLIMIT_LOOKUPID" />
+          <ScalarProperty Name="PAYMENTTERM_LOOKUPID" ColumnName="PAYMENTTERM_LOOKUPID" />
+          <ScalarProperty Name="CURRENCY_LOOKUPID" ColumnName="CURRENCY_LOOKUPID" />
+          <ScalarProperty Name="COMP_SIZE_LOOKUPID" ColumnName="COMP_SIZE_LOOKUPID" />
+          <ScalarProperty Name="SALES_PERSON" ColumnName="SALES_PERSON" />
+          <ScalarProperty Name="CHANNEL_LOOKUPID" ColumnName="CHANNEL_LOOKUPID" />
+          <ScalarProperty Name="LINEOFBIZ_LOOKUPID" ColumnName="LINEOFBIZ_LOOKUPID" />
+          <ScalarProperty Name="STATUS_LOOKUPID" ColumnName="STATUS_LOOKUPID" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="COMP_CODE" ColumnName="COMP_CODE" />
+          <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANY_STATUSHISTORY">
+      <EntityTypeMapping TypeName="IMSModel.COMPANY_STATUSHISTORY">
+        <MappingFragment StoreEntitySet="COMPANY_STATUSHISTORY">
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="DEACTIVATED_ON" ColumnName="DEACTIVATED_ON" />
+          <ScalarProperty Name="ACTIVATED_ON" ColumnName="ACTIVATED_ON" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="STATUSHIST_ID" ColumnName="STATUSHIST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTACT_DETAILS">
+      <EntityTypeMapping TypeName="IMSModel.CONTACT_DETAILS">
+        <MappingFragment StoreEntitySet="CONTACT_DETAILS">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="ISCUSTOMERHEADOFFICE" ColumnName="ISCUSTOMERHEADOFFICE" />
+          <ScalarProperty Name="BRANCH_DESC" ColumnName="BRANCH_DESC" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="BRANCH_NAME" ColumnName="BRANCH_NAME" />
+          <ScalarProperty Name="LANDMARK" ColumnName="LANDMARK" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="CONTACT_FAX" ColumnName="CONTACT_FAX" />
+          <ScalarProperty Name="ALTERNATECONTACT_PHONE" ColumnName="ALTERNATECONTACT_PHONE" />
+          <ScalarProperty Name="ALTERNATECONTACT_NAME" ColumnName="ALTERNATECONTACT_NAME" />
+          <ScalarProperty Name="CONTACT_PHONE" ColumnName="CONTACT_PHONE" />
+          <ScalarProperty Name="CONTACT_NAME" ColumnName="CONTACT_NAME" />
+          <ScalarProperty Name="CONTACT_MAIL" ColumnName="CONTACT_MAIL" />
+          <ScalarProperty Name="CONTACT_TYPE" ColumnName="CONTACT_TYPE" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="CONT_ID" ColumnName="CONT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="IMSModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+          <ScalarProperty Name="CAPACITY_YEARLY" ColumnName="CAPACITY_YEARLY" />
+          <ScalarProperty Name="CAPACITY_MONTHLY" ColumnName="CAPACITY_MONTHLY" />
+          <ScalarProperty Name="CAPACITY_DAILY" ColumnName="CAPACITY_DAILY" />
+          <ScalarProperty Name="OWNERSHIP" ColumnName="OWNERSHIP" />
+          <ScalarProperty Name="COMPANY_TYPE" ColumnName="COMPANY_TYPE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DECLARATION" ColumnName="DECLARATION" />
+          <ScalarProperty Name="SLA" ColumnName="SLA" />
+          <ScalarProperty Name="MSA" ColumnName="MSA" />
+          <ScalarProperty Name="CONTRACT" ColumnName="CONTRACT" />
+          <ScalarProperty Name="CREDIT_CHECK" ColumnName="CREDIT_CHECK" />
+          <ScalarProperty Name="CALL_PREFERENCES" ColumnName="CALL_PREFERENCES" />
+          <ScalarProperty Name="SHIPMENT_METHOD" ColumnName="SHIPMENT_METHOD" />
+          <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+          <ScalarProperty Name="SALES" ColumnName="SALES" />
+          <ScalarProperty Name="TURN_OVER" ColumnName="TURN_OVER" />
+          <ScalarProperty Name="REVENUE" ColumnName="REVENUE" />
+          <ScalarProperty Name="NO_OF_EMPLOYEES_FACTORY" ColumnName="NO_OF_EMPLOYEES_FACTORY" />
+          <ScalarProperty Name="NO_OF_EMPLOYEES_OFFICE" ColumnName="NO_OF_EMPLOYEES_OFFICE" />
+          <ScalarProperty Name="YEARS_OF_ESTABLISHMENT" ColumnName="YEARS_OF_ESTABLISHMENT" />
+          <ScalarProperty Name="RATING_ID" ColumnName="RATING_ID" />
+          <ScalarProperty Name="COMPANY_WEBSITE" ColumnName="COMPANY_WEBSITE" />
+          <ScalarProperty Name="COMPANY_EMAIL" ColumnName="COMPANY_EMAIL" />
+          <ScalarProperty Name="OWNERSHIP_LKPID" ColumnName="OWNERSHIP_LKPID" />
+          <ScalarProperty Name="CUST_TYPE_LKPID" ColumnName="CUST_TYPE_LKPID" />
+          <ScalarProperty Name="CUST_SHIP_LOC_ID" ColumnName="CUST_SHIP_LOC_ID" />
+          <ScalarProperty Name="CUST_BILL_LOC_ID" ColumnName="CUST_BILL_LOC_ID" />
+          <ScalarProperty Name="TAXCODE3_LKPID" ColumnName="TAXCODE3_LKPID" />
+          <ScalarProperty Name="TAXCODE2_LKPID" ColumnName="TAXCODE2_LKPID" />
+          <ScalarProperty Name="TAXCODE1_LKPID" ColumnName="TAXCODE1_LKPID" />
+          <ScalarProperty Name="AUTO_BANDING" ColumnName="AUTO_BANDING" />
+          <ScalarProperty Name="DISCOUNTBAND_LKPID" ColumnName="DISCOUNTBAND_LKPID" />
+          <ScalarProperty Name="PRICEBAND_LKPID" ColumnName="PRICEBAND_LKPID" />
+          <ScalarProperty Name="CREDITLIMIT_LKPID" ColumnName="CREDITLIMIT_LKPID" />
+          <ScalarProperty Name="PAYMENTTERM_LKPID" ColumnName="PAYMENTTERM_LKPID" />
+          <ScalarProperty Name="SHIPMENTTERM_LKPID" ColumnName="SHIPMENTTERM_LKPID" />
+          <ScalarProperty Name="CURRENCY_LKPID" ColumnName="CURRENCY_LKPID" />
+          <ScalarProperty Name="COMP_SIZE_LKPID" ColumnName="COMP_SIZE_LKPID" />
+          <ScalarProperty Name="SALES_PERSON" ColumnName="SALES_PERSON" />
+          <ScalarProperty Name="SALESCHNL_REFERENCE_LKPID" ColumnName="SALESCHNL_REFERENCE_LKPID" />
+          <ScalarProperty Name="COMPANY_GROUP_CODE_LKPID" ColumnName="COMPANY_GROUP_CODE_LKPID" />
+          <ScalarProperty Name="LOB_CATEGORY_LKPID" ColumnName="LOB_CATEGORY_LKPID" />
+          <ScalarProperty Name="LINEOFBIZ_LKPID" ColumnName="LINEOFBIZ_LKPID" />
+          <ScalarProperty Name="STATUS_LKPID" ColumnName="STATUS_LKPID" />
+          <ScalarProperty Name="COMPANY_RELATIONSHIP" ColumnName="COMPANY_RELATIONSHIP" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="LEGAL_NAME" ColumnName="LEGAL_NAME" />
+          <ScalarProperty Name="ISVENDOR" ColumnName="ISVENDOR" />
+          <ScalarProperty Name="CUST_NAME" ColumnName="CUST_NAME" />
+          <ScalarProperty Name="CUST_CODE" ColumnName="CUST_CODE" />
+          <ScalarProperty Name="CUST_NO" ColumnName="CUST_NO" />
+          <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTXPRODs">
+      <EntityTypeMapping TypeName="IMSModel.CUSTXPROD">
+        <MappingFragment StoreEntitySet="CUSTXPROD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRD_ID" ColumnName="PRD_ID" />
+          <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXCEPTION_LOGGING">
+      <EntityTypeMapping TypeName="IMSModel.EXCEPTION_LOGGING">
+        <MappingFragment StoreEntitySet="EXCEPTION_LOGGING">
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="EXEPTION_DATETIME" ColumnName="EXEPTION_DATETIME" />
+          <ScalarProperty Name="EXCEPTION_URL" ColumnName="EXCEPTION_URL" />
+          <ScalarProperty Name="EXCEPTION_PAGEDETAILS" ColumnName="EXCEPTION_PAGEDETAILS" />
+          <ScalarProperty Name="EXCEPTION_SOURCE" ColumnName="EXCEPTION_SOURCE" />
+          <ScalarProperty Name="EXCEPTION_TYPE" ColumnName="EXCEPTION_TYPE" />
+          <ScalarProperty Name="EXCEPTION_MSG" ColumnName="EXCEPTION_MSG" />
+          <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCATION_MASTER">
+      <EntityTypeMapping TypeName="IMSModel.LOCATION_MASTER">
+        <MappingFragment StoreEntitySet="LOCATION_MASTER">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="GEO_LOC_LONGITUDE" ColumnName="GEO_LOC_LONGITUDE" />
+          <ScalarProperty Name="GEO_LOC_LATITUDE" ColumnName="GEO_LOC_LATITUDE" />
+          <ScalarProperty Name="TIME_ZONE" ColumnName="TIME_ZONE" />
+          <ScalarProperty Name="LOC_ZIPCODE" ColumnName="LOC_ZIPCODE" />
+          <ScalarProperty Name="LOC_COUNTRY" ColumnName="LOC_COUNTRY" />
+          <ScalarProperty Name="LOC_STATE" ColumnName="LOC_STATE" />
+          <ScalarProperty Name="LOC_CITY" ColumnName="LOC_CITY" />
+          <ScalarProperty Name="LOC_ADDRESS" ColumnName="LOC_ADDRESS" />
+          <ScalarProperty Name="LOCATION_SHORT_NAME" ColumnName="LOCATION_SHORT_NAME" />
+          <ScalarProperty Name="ADDRESS_TYPE" ColumnName="ADDRESS_TYPE" />
+          <ScalarProperty Name="LOC_CODE" ColumnName="LOC_CODE" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOOKUP_CATEGORIES">
+      <EntityTypeMapping TypeName="IMSModel.LOOKUP_CATEGORIES">
+        <MappingFragment StoreEntitySet="LOOKUP_CATEGORIES">
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="ISORGSPECIFIC" ColumnName="ISORGSPECIFIC" />
+          <ScalarProperty Name="ISAPPSPECIFIC" ColumnName="ISAPPSPECIFIC" />
+          <ScalarProperty Name="LOOKUPCATEGORYDESC" ColumnName="LOOKUPCATEGORYDESC" />
+          <ScalarProperty Name="LOOKUPCATEGORYCODE" ColumnName="LOOKUPCATEGORYCODE" />
+          <ScalarProperty Name="LOOKUPCATEGORYID" ColumnName="LOOKUPCATEGORYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOOKUP_DATA">
+      <EntityTypeMapping TypeName="IMSModel.LOOKUP_DATA">
+        <MappingFragment StoreEntitySet="LOOKUP_DATA">
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="LOOKUPDESC" ColumnName="LOOKUPDESC" />
+          <ScalarProperty Name="LOOKUPCODE" ColumnName="LOOKUPCODE" />
+          <ScalarProperty Name="LOOKUPCATEGORYID" ColumnName="LOOKUPCATEGORYID" />
+          <ScalarProperty Name="LOOKUPID" ColumnName="LOOKUPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTS">
+      <EntityTypeMapping TypeName="IMSModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCTS">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="DATE_RECEIVED" ColumnName="DATE_RECEIVED" />
+          <ScalarProperty Name="TYPEOF_ORIGINAL" ColumnName="TYPEOF_ORIGINAL" />
+          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
+          <ScalarProperty Name="PREPARED_BY" ColumnName="PREPARED_BY" />
+          <ScalarProperty Name="SPECIAL_REQUESTSE" ColumnName="SPECIAL_REQUESTSE" />
+          <ScalarProperty Name="SPECIAL_REQUESTSD" ColumnName="SPECIAL_REQUESTSD" />
+          <ScalarProperty Name="SPECIAL_REQUESTSC" ColumnName="SPECIAL_REQUESTSC" />
+          <ScalarProperty Name="SPECIAL_REQUESTSB" ColumnName="SPECIAL_REQUESTSB" />
+          <ScalarProperty Name="SPECIAL_REQUESTSA" ColumnName="SPECIAL_REQUESTSA" />
+          <ScalarProperty Name="GRAND_TOTAL" ColumnName="GRAND_TOTAL" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="LINE_TOTAL" ColumnName="LINE_TOTAL" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+          <ScalarProperty Name="ISREPEAT_ORDER" ColumnName="ISREPEAT_ORDER" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PRODUCT_DIMENSIONSB" ColumnName="PRODUCT_DIMENSIONSB" />
+          <ScalarProperty Name="PRODUCT_DIMENSIONSA" ColumnName="PRODUCT_DIMENSIONSA" />
+          <ScalarProperty Name="PRODUCT_DIMENSIONS_WIDTH" ColumnName="PRODUCT_DIMENSIONS_WIDTH" />
+          <ScalarProperty Name="PRODUCT_DIMENSIONS_BREADTH" ColumnName="PRODUCT_DIMENSIONS_BREADTH" />
+          <ScalarProperty Name="PRODUCT_DIMENSIONS_LENGTH" ColumnName="PRODUCT_DIMENSIONS_LENGTH" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="PRODUCT_DESCRIPTION" ColumnName="PRODUCT_DESCRIPTION" />
+          <ScalarProperty Name="PRODUCT_VARIANT" ColumnName="PRODUCT_VARIANT" />
+          <ScalarProperty Name="PRODUCT_CATEGORY" ColumnName="PRODUCT_CATEGORY" />
+          <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PURCHASE_ORDER">
+      <EntityTypeMapping TypeName="IMSModel.PURCHASE_ORDER">
+        <MappingFragment StoreEntitySet="PURCHASE_ORDER">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="DRAWING_SOURCE" ColumnName="DRAWING_SOURCE" />
+          <ScalarProperty Name="ISCUSTOMER_SUPPLIEDDRAWING" ColumnName="ISCUSTOMER_SUPPLIEDDRAWING" />
+          <ScalarProperty Name="JOB_LOCATION3" ColumnName="JOB_LOCATION3" />
+          <ScalarProperty Name="JOB_LOCATION2" ColumnName="JOB_LOCATION2" />
+          <ScalarProperty Name="JOB_LOCATION1" ColumnName="JOB_LOCATION1" />
+          <ScalarProperty Name="JOB_CLIENT_NAME" ColumnName="JOB_CLIENT_NAME" />
+          <ScalarProperty Name="JOB_NAME" ColumnName="JOB_NAME" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="NO_OF_RELEASES" ColumnName="NO_OF_RELEASES" />
+          <ScalarProperty Name="DURATION_TIMELINE" ColumnName="DURATION_TIMELINE" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="REQUIRED_DELIVERY_END_DATE" ColumnName="REQUIRED_DELIVERY_END_DATE" />
+          <ScalarProperty Name="REQUIRED_DELIVERY_START_DATE" ColumnName="REQUIRED_DELIVERY_START_DATE" />
+          <ScalarProperty Name="CLOSING_DATE" ColumnName="CLOSING_DATE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="PO_DATE" ColumnName="PO_DATE" />
+          <ScalarProperty Name="BID_TYPE" ColumnName="BID_TYPE" />
+          <ScalarProperty Name="ORIGINATE_COMP_MNGR" ColumnName="ORIGINATE_COMP_MNGR" />
+          <ScalarProperty Name="ORIGINATE_COMP_PURCHAE_MNGR" ColumnName="ORIGINATE_COMP_PURCHAE_MNGR" />
+          <ScalarProperty Name="ORIGINATE_CONTACT_PERSON" ColumnName="ORIGINATE_CONTACT_PERSON" />
+          <ScalarProperty Name="ORIGINATE_COMPANY" ColumnName="ORIGINATE_COMPANY" />
+          <ScalarProperty Name="MODEOFRECEIPT" ColumnName="MODEOFRECEIPT" />
+          <ScalarProperty Name="REFERENCE_PO_ID" ColumnName="REFERENCE_PO_ID" />
+          <ScalarProperty Name="PO_TYPE" ColumnName="PO_TYPE" />
+          <ScalarProperty Name="PO_DESC" ColumnName="PO_DESC" />
+          <ScalarProperty Name="PO_NAME" ColumnName="PO_NAME" />
+          <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+          <ScalarProperty Name="PO_ID" ColumnName="PO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUOTATIONs">
+      <EntityTypeMapping TypeName="IMSModel.QUOTATION">
+        <MappingFragment StoreEntitySet="QUOTATION">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="SPECIAL_NOTESB" ColumnName="SPECIAL_NOTESB" />
+          <ScalarProperty Name="SPECIAL_NOTESA" ColumnName="SPECIAL_NOTESA" />
+          <ScalarProperty Name="SHIPMENT_TERMS" ColumnName="SHIPMENT_TERMS" />
+          <ScalarProperty Name="PAYMENT_TERMS" ColumnName="PAYMENT_TERMS" />
+          <ScalarProperty Name="NUMBER_OF_RELEASES" ColumnName="NUMBER_OF_RELEASES" />
+          <ScalarProperty Name="SHIPPING_TERMS" ColumnName="SHIPPING_TERMS" />
+          <ScalarProperty Name="SHIPPING_DATE" ColumnName="SHIPPING_DATE" />
+          <ScalarProperty Name="LEAD_TIME" ColumnName="LEAD_TIME" />
+          <ScalarProperty Name="SALES_AGENT_CONTACT_DETAILSB" ColumnName="SALES_AGENT_CONTACT_DETAILSB" />
+          <ScalarProperty Name="SALES_AGENT_CONTACT_DETAILSA" ColumnName="SALES_AGENT_CONTACT_DETAILSA" />
+          <ScalarProperty Name="SALES_AGENT_LOCATION" ColumnName="SALES_AGENT_LOCATION" />
+          <ScalarProperty Name="SALES_AGENT" ColumnName="SALES_AGENT" />
+          <ScalarProperty Name="CURRENCY_CODE" ColumnName="CURRENCY_CODE" />
+          <ScalarProperty Name="QUOTE_VALIDITY" ColumnName="QUOTE_VALIDITY" />
+          <ScalarProperty Name="QUOTE_DATE" ColumnName="QUOTE_DATE" />
+          <ScalarProperty Name="ADDRESS_TYPE" ColumnName="ADDRESS_TYPE" />
+          <ScalarProperty Name="CUSTOMER_MANAGER" ColumnName="CUSTOMER_MANAGER" />
+          <ScalarProperty Name="CUSTOMER_PURCHASING_AGENT" ColumnName="CUSTOMER_PURCHASING_AGENT" />
+          <ScalarProperty Name="CUSTOMER_CONTACT_PERSON" ColumnName="CUSTOMER_CONTACT_PERSON" />
+          <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="RFQ_ID" ColumnName="RFQ_ID" />
+          <ScalarProperty Name="QUOTE_NUMBER" ColumnName="QUOTE_NUMBER" />
+          <ScalarProperty Name="QUOTE_CODE" ColumnName="QUOTE_CODE" />
+          <ScalarProperty Name="QUOTE_ID" ColumnName="QUOTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RATING_MASTER">
+      <EntityTypeMapping TypeName="IMSModel.RATING_MASTER">
+        <MappingFragment StoreEntitySet="RATING_MASTER">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="RESPONSIVENESS" ColumnName="RESPONSIVENESS" />
+          <ScalarProperty Name="DISCOUNTS" ColumnName="DISCOUNTS" />
+          <ScalarProperty Name="PAYMENT_REGULARITY" ColumnName="PAYMENT_REGULARITY" />
+          <ScalarProperty Name="PIPELINE" ColumnName="PIPELINE" />
+          <ScalarProperty Name="BUSINESS_PERFORMANCE" ColumnName="BUSINESS_PERFORMANCE" />
+          <ScalarProperty Name="RELATIONSHIP" ColumnName="RELATIONSHIP" />
+          <ScalarProperty Name="RATING" ColumnName="RATING" />
+          <ScalarProperty Name="RATING_ID" ColumnName="RATING_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RFQs">
+      <EntityTypeMapping TypeName="IMSModel.RFQ">
+        <MappingFragment StoreEntitySet="RFQ">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="DATE_RECEIVED" ColumnName="DATE_RECEIVED" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="TYPEOF_ORIGINAL_RFQ" ColumnName="TYPEOF_ORIGINAL_RFQ" />
+          <ScalarProperty Name="APPROVED_BY" ColumnName="APPROVED_BY" />
+          <ScalarProperty Name="PREPARED_BY" ColumnName="PREPARED_BY" />
+          <ScalarProperty Name="SPECIAL_REQUESTSC" ColumnName="SPECIAL_REQUESTSC" />
+          <ScalarProperty Name="SPECIAL_REQUESTSB" ColumnName="SPECIAL_REQUESTSB" />
+          <ScalarProperty Name="SPECIAL_REQUESTSA" ColumnName="SPECIAL_REQUESTSA" />
+          <ScalarProperty Name="PRICING_INDICATORSC" ColumnName="PRICING_INDICATORSC" />
+          <ScalarProperty Name="PRICING_INDICATORSB" ColumnName="PRICING_INDICATORSB" />
+          <ScalarProperty Name="PRICING_INDICATORSA" ColumnName="PRICING_INDICATORSA" />
+          <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+          <ScalarProperty Name="ISREPEAT_ORDER" ColumnName="ISREPEAT_ORDER" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="DRAWING_SOURCE" ColumnName="DRAWING_SOURCE" />
+          <ScalarProperty Name="ISCUSTOMER_SUPPLIEDDRAWING" ColumnName="ISCUSTOMER_SUPPLIEDDRAWING" />
+          <ScalarProperty Name="JOB_LOCATIONC" ColumnName="JOB_LOCATIONC" />
+          <ScalarProperty Name="JOB_LOCATIONB" ColumnName="JOB_LOCATIONB" />
+          <ScalarProperty Name="JOB_LOCATIONA" ColumnName="JOB_LOCATIONA" />
+          <ScalarProperty Name="JOB_CLIENT_NAME" ColumnName="JOB_CLIENT_NAME" />
+          <ScalarProperty Name="JOB_NAME" ColumnName="JOB_NAME" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="NUMBEROFRELEASES" ColumnName="NUMBEROFRELEASES" />
+          <ScalarProperty Name="DURATION_TIMELINE" ColumnName="DURATION_TIMELINE" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="CLOSING_DATE" ColumnName="CLOSING_DATE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="RFQ_DATE" ColumnName="RFQ_DATE" />
+          <ScalarProperty Name="BID_TYPE" ColumnName="BID_TYPE" />
+          <ScalarProperty Name="ORIGINATING_COMP_MANAGER" ColumnName="ORIGINATING_COMP_MANAGER" />
+          <ScalarProperty Name="ORIGINATING_COMP_PURCHASING_MANAGER" ColumnName="ORIGINATING_COMP_PURCHASING_MANAGER" />
+          <ScalarProperty Name="ORIGINATING_CONTACTPERSON" ColumnName="ORIGINATING_CONTACTPERSON" />
+          <ScalarProperty Name="ORIGINATING_COMPANY" ColumnName="ORIGINATING_COMPANY" />
+          <ScalarProperty Name="MODEOFRECEIPT" ColumnName="MODEOFRECEIPT" />
+          <ScalarProperty Name="RFQ_DESC" ColumnName="RFQ_DESC" />
+          <ScalarProperty Name="RFQ_NAME" ColumnName="RFQ_NAME" />
+          <ScalarProperty Name="RFQ_NO" ColumnName="RFQ_NO" />
+          <ScalarProperty Name="RFQ_ID" ColumnName="RFQ_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IMSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKORDERs">
+      <EntityTypeMapping TypeName="IMSModel.WORKORDER">
+        <MappingFragment StoreEntitySet="WORKORDER">
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="DRAWING" ColumnName="DRAWING" />
+          <ScalarProperty Name="NO_OF_RELEASES" ColumnName="NO_OF_RELEASES" />
+          <ScalarProperty Name="REQUIRED_DELIVERY_END_DATE" ColumnName="REQUIRED_DELIVERY_END_DATE" />
+          <ScalarProperty Name="REQUIRED_DELIVERY_START_DATE" ColumnName="REQUIRED_DELIVERY_START_DATE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="WORK_ORDER_DATE" ColumnName="WORK_ORDER_DATE" />
+          <ScalarProperty Name="REPEATREASON" ColumnName="REPEATREASON" />
+          <ScalarProperty Name="ISREPEATORDER" ColumnName="ISREPEATORDER" />
+          <ScalarProperty Name="JOB_NAME" ColumnName="JOB_NAME" />
+          <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+          <ScalarProperty Name="CUST_PO_ID" ColumnName="CUST_PO_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="WO_NUMBER" ColumnName="WO_NUMBER" />
+          <ScalarProperty Name="WO_CODE" ColumnName="WO_CODE" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="WO_ID" ColumnName="WO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="IMSModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
