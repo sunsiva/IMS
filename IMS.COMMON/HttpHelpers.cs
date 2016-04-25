@@ -6,14 +6,14 @@ namespace Serializer
 {
  public class HttpHelpers
  {
-  public void HttpInvoke(SupportedHttpMethods httpMethod, string url)
+  public void HttpInvoke(HttpMethods httpMethod, string url)
   {
    using (var httpClass = new HttpClass(httpMethod, url))
    {
     httpClass.Invoke();
    }
   }
-  public void HttpInvoke(SupportedHttpMethods httpMethod, string url, string content)
+  public void HttpInvoke(HttpMethods httpMethod, string url, string content)
   {
 
    using (var httpClass = new HttpClass(httpMethod, url, content))
@@ -21,7 +21,7 @@ namespace Serializer
     httpClass.Invoke();
    }
   }
-  public HttpResponseMessage GetHttpResponseMessage(SupportedHttpMethods httpMethod, string url, string content)
+  public HttpResponseMessage GetHttpResponseMessage(HttpMethods httpMethod, string url, string content)
   {
 
    HttpResponseMessage _response;
@@ -34,7 +34,7 @@ namespace Serializer
 
    return _response;
   }
-  public HttpResponseMessage GetHttpResponseMessage(SupportedHttpMethods httpMethod, string url)
+  public HttpResponseMessage GetHttpResponseMessage(HttpMethods httpMethod, string url)
   {
 
    HttpResponseMessage _response;
@@ -50,7 +50,7 @@ namespace Serializer
   public string GetHttpContent(string url) {
 
    string content;
-   using (var httpClass = new HttpClass(SupportedHttpMethods.GET, url))
+   using (var httpClass = new HttpClass(HttpMethods.GET, url))
    {
     httpClass.Invoke();
     content = httpClass.GetResponseContent();

@@ -107,18 +107,19 @@ namespace IMS.UI.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_CREATE_ENDPOINT),
+                //httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_CREATE_ENDPOINT),
+                //serializer.Serialize<RegisterViewModel>(model));
+
+               var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.USER_CREATE_ENDPOINT),
                 serializer.Serialize<RegisterViewModel>(model));
-                
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+
+                if (result.IsSuccessStatusCode)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -128,7 +129,8 @@ namespace IMS.UI.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                ModelState.AddModelError("UserReg", result.ReasonPhrase);
+                //AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
@@ -255,7 +257,7 @@ namespace IMS.UI.Controllers
         public ActionResult GetRoles()
         {
 
-            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.ROLE_GET_ENDPOINT));
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.ROLE_GET_ENDPOINT));
             var resp = serializer.DeSerialize<List<AspNetRolesViewModel>>(content) as List<AspNetRolesViewModel>;
             return View(resp);
         }

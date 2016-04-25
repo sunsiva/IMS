@@ -152,3 +152,5 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Web.Http.Owin.xm
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.pdb

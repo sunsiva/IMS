@@ -66,6 +66,7 @@ D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\bin\Microsoft.Owin
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\csc.exe
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -84,6 +85,8 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.UI.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Antlr3.Runtime.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\EntityFramework.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\EntityFramework.SqlServer.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DataModel.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.AspNet.Identity.Core.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -108,6 +111,8 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\System.Web.WebPag
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\System.Web.WebPages.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\System.Web.WebPages.Razor.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\WebGrease.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DataModel.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Newtonsoft.Json.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\System.Web.Helpers.xml
@@ -132,10 +137,5 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Se
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.Google.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.Twitter.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DATAMODEL.dll
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.DATAMODEL.pdb
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.dll
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\IMS.Common.pdb

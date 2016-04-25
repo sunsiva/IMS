@@ -8,7 +8,7 @@ using Serializer;
 
 namespace Serializer
 {
- public enum SupportedHttpMethods
+ public enum HttpMethods
  {
   GET,
   POST,
@@ -25,9 +25,9 @@ namespace Serializer
   Action _action;
   HttpResponseMessage _httpResponseMessage;
 
-  public HttpClass(SupportedHttpMethods httpMethod, string uri, string content) : this(httpMethod,uri)
+  public HttpClass(HttpMethods httpMethod, string uri, string content) : this(httpMethod,uri)
   {
-   if (httpMethod == SupportedHttpMethods.POST || httpMethod == SupportedHttpMethods.PUT)
+   if (httpMethod == HttpMethods.POST || httpMethod == HttpMethods.PUT)
    {
     JObject.Parse(content);
     _content = new StringContent(content);
@@ -39,23 +39,23 @@ namespace Serializer
    }
   }
 
-  public HttpClass(SupportedHttpMethods httpMethod, string uri)
+  public HttpClass(HttpMethods httpMethod, string uri)
   {
    _uri = new Uri(uri);
    _httpMethod = new HttpMethod(httpMethod.ToString());
 
    switch (httpMethod)
    {
-    case SupportedHttpMethods.GET:
+    case HttpMethods.GET:
      _action = get;
      break;
-    case SupportedHttpMethods.POST:
+    case HttpMethods.POST:
      _action = post;
      break;
-    case SupportedHttpMethods.PUT:
+    case HttpMethods.PUT:
      _action = put;
      break;
-    case SupportedHttpMethods.DELETE:
+    case HttpMethods.DELETE:
      _action = delete;
      break;
     default:
@@ -74,7 +74,7 @@ namespace Serializer
 
   public string GetResponseContent()
   {
-   if (_httpMethod.Method == SupportedHttpMethods.GET.ToString())
+   if (_httpMethod.Method == HttpMethods.GET.ToString())
     return _httpResponseMessage.Content.ReadAsStringAsync().Result;
 
    return null;

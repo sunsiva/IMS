@@ -44,10 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="HttpClass.cs" />
     <Compile Include="HttpHelpers.cs" />
+    <Compile Include="IMSConst.cs" />
     <Compile Include="ISerialization.cs" />
     <Compile Include="JsonNetSerialization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
