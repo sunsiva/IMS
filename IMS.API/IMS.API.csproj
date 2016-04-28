@@ -221,9 +221,6 @@
     <Compile Include="COMPANY.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="COMPANY_STATUSHISTORY.cs">
-      <DependentUpon>IMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="CONTACT_DETAILS.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
@@ -235,6 +232,9 @@
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="CUSTXPROD.cs">
+      <DependentUpon>IMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUST_STATUS_HISTORY.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="C__MigrationHistory.cs">
@@ -293,6 +293,9 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="sysdiagram.cs">
+      <DependentUpon>IMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserXRole.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="WORKORDER.cs">

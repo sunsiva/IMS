@@ -30,7 +30,6 @@ namespace IMS.API
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<COMPANY> COMPANies { get; set; }
-        public virtual DbSet<COMPANY_STATUSHISTORY> COMPANY_STATUSHISTORY { get; set; }
         public virtual DbSet<CONTACT_DETAILS> CONTACT_DETAILS { get; set; }
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<CUSTXPROD> CUSTXPRODs { get; set; }
@@ -46,5 +45,7 @@ namespace IMS.API
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<WORKORDER> WORKORDERs { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<CUST_STATUS_HISTORY> CUST_STATUS_HISTORY { get; set; }
+        public virtual DbSet<UserXRole> UserXRoles { get; set; }
     }
 }

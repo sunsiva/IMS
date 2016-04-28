@@ -123,17 +123,6 @@
           <Property Name="CREATED_BY" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CREATED_ON" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="COMPANY_STATUSHISTORY">
-          <Key>
-            <PropertyRef Name="STATUSHIST_ID" />
-          </Key>
-          <Property Name="STATUSHIST_ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="COMP_ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ACTIVATED_ON" Type="datetime" Nullable="false" />
-          <Property Name="DEACTIVATED_ON" Type="datetime" Nullable="false" />
-          <Property Name="MODIFIED_BY" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="MODIFIED_ON" Type="datetime" Nullable="false" />
-        </EntityType>
         <EntityType Name="CONTACT_DETAILS">
           <Key>
             <PropertyRef Name="CONT_ID" />
@@ -159,6 +148,19 @@
           <Property Name="MODIFIED_ON" Type="datetime" />
           <Property Name="CREATED_BY" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CREATED_ON" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUST_STATUS_HISTORY">
+          <Key>
+            <PropertyRef Name="STATUSHIST_ID" />
+          </Key>
+          <Property Name="STATUSHIST_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CUST_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="COMMENTS" Type="nvarchar(max)" />
+          <Property Name="ISACTIVE" Type="bit" />
+          <Property Name="ACTIVATED_ON" Type="datetime" Nullable="false" />
+          <Property Name="DEACTIVATED_ON" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MODIFIED_ON" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -484,6 +486,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="UserXRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" />
+        </EntityType>
         <EntityType Name="WORKORDER">
           <Key>
             <PropertyRef Name="WO_ID" />
@@ -510,18 +519,6 @@
           <Property Name="CREATED_BY" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CREATED_ON" Type="datetime" Nullable="false" />
         </EntityType>
-        <Association Name="FK_COMPANY_STATUSHISTORY_COMPANY">
-          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
-          <End Role="COMPANY_STATUSHISTORY" Type="Self.COMPANY_STATUSHISTORY" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="COMPANY">
-              <PropertyRef Name="COMP_ID" />
-            </Principal>
-            <Dependent Role="COMPANY_STATUSHISTORY">
-              <PropertyRef Name="STATUSHIST_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CONTACT_DETAILS_LOCATION_MASTER">
           <End Role="LOCATION_MASTER" Type="Self.LOCATION_MASTER" Multiplicity="1" />
           <End Role="CONTACT_DETAILS" Type="Self.CONTACT_DETAILS" Multiplicity="*" />
@@ -531,6 +528,18 @@
             </Principal>
             <Dependent Role="CONTACT_DETAILS">
               <PropertyRef Name="LOC_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUST_STATUS_HISTORY_CUSTOMER">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+          <End Role="CUST_STATUS_HISTORY" Type="Self.CUST_STATUS_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="CUST_ID" />
+            </Principal>
+            <Dependent Role="CUST_STATUS_HISTORY">
+              <PropertyRef Name="CUST_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -662,6 +671,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserXRole_UserXRole">
+          <End Role="UserXRole" Type="Self.UserXRole" Multiplicity="1" />
+          <End Role="UserXRole1" Type="Self.UserXRole" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserXRole">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserXRole1">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WORKORDER_PRODUCTS">
           <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
           <End Role="WORKORDER" Type="Self.WORKORDER" Multiplicity="*" />
@@ -682,8 +703,8 @@
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="COMPANY_STATUSHISTORY" EntityType="Self.COMPANY_STATUSHISTORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONTACT_DETAILS" EntityType="Self.CONTACT_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUST_STATUS_HISTORY" EntityType="Self.CUST_STATUS_HISTORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTXPROD" EntityType="Self.CUSTXPROD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EXCEPTION_LOGGING" EntityType="Self.EXCEPTION_LOGGING" Schema="dbo" store:Type="Tables" />
@@ -696,14 +717,15 @@
           <EntitySet Name="RATING_MASTER" EntityType="Self.RATING_MASTER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RFQ" EntityType="Self.RFQ" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserXRole" EntityType="Self.UserXRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WORKORDER" EntityType="Self.WORKORDER" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_COMPANY_STATUSHISTORY_COMPANY" Association="Self.FK_COMPANY_STATUSHISTORY_COMPANY">
-            <End Role="COMPANY" EntitySet="COMPANY" />
-            <End Role="COMPANY_STATUSHISTORY" EntitySet="COMPANY_STATUSHISTORY" />
-          </AssociationSet>
           <AssociationSet Name="FK_CONTACT_DETAILS_LOCATION_MASTER" Association="Self.FK_CONTACT_DETAILS_LOCATION_MASTER">
             <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
             <End Role="CONTACT_DETAILS" EntitySet="CONTACT_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUST_STATUS_HISTORY_CUSTOMER" Association="Self.FK_CUST_STATUS_HISTORY_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="CUST_STATUS_HISTORY" EntitySet="CUST_STATUS_HISTORY" />
           </AssociationSet>
           <AssociationSet Name="FK_CUSTOMER_RATING_MASTER" Association="Self.FK_CUSTOMER_RATING_MASTER">
             <End Role="RATING_MASTER" EntitySet="RATING_MASTER" />
@@ -745,6 +767,10 @@
             <End Role="QUOTATION" EntitySet="QUOTATION" />
             <End Role="QUOTATION1" EntitySet="QUOTATION" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserXRole_UserXRole" Association="Self.FK_UserXRole_UserXRole">
+            <End Role="UserXRole" EntitySet="UserXRole" />
+            <End Role="UserXRole1" EntitySet="UserXRole" />
+          </AssociationSet>
           <AssociationSet Name="FK_WORKORDER_PRODUCTS" Association="Self.FK_WORKORDER_PRODUCTS">
             <End Role="PRODUCTS" EntitySet="PRODUCTS" />
             <End Role="WORKORDER" EntitySet="WORKORDER" />
@@ -760,7 +786,6 @@
           <EntitySet Name="AspNetUserClaims" EntityType="IMSModel.AspNetUserClaim" />
           <EntitySet Name="AspNetUserLogins" EntityType="IMSModel.AspNetUserLogin" />
           <EntitySet Name="COMPANies" EntityType="IMSModel.COMPANY" />
-          <EntitySet Name="COMPANY_STATUSHISTORY" EntityType="IMSModel.COMPANY_STATUSHISTORY" />
           <EntitySet Name="CONTACT_DETAILS" EntityType="IMSModel.CONTACT_DETAILS" />
           <EntitySet Name="CUSTOMERs" EntityType="IMSModel.CUSTOMER" />
           <EntitySet Name="CUSTXPRODs" EntityType="IMSModel.CUSTXPROD" />
@@ -775,10 +800,6 @@
           <EntitySet Name="RFQs" EntityType="IMSModel.RFQ" />
           <EntitySet Name="sysdiagrams" EntityType="IMSModel.sysdiagram" />
           <EntitySet Name="WORKORDERs" EntityType="IMSModel.WORKORDER" />
-          <AssociationSet Name="FK_COMPANY_STATUSHISTORY_COMPANY" Association="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY">
-            <End Role="COMPANY" EntitySet="COMPANies" />
-            <End Role="COMPANY_STATUSHISTORY" EntitySet="COMPANY_STATUSHISTORY" />
-          </AssociationSet>
           <AssociationSet Name="FK_CONTACT_DETAILS_LOCATION_MASTER" Association="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER">
             <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
             <End Role="CONTACT_DETAILS" EntitySet="CONTACT_DETAILS" />
@@ -823,6 +844,16 @@
           <AssociationSet Name="AspNetUserRoles" Association="IMSModel.AspNetUserRoles">
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="CUST_STATUS_HISTORY" EntityType="IMSModel.CUST_STATUS_HISTORY" />
+          <EntitySet Name="UserXRoles" EntityType="IMSModel.UserXRole" />
+          <AssociationSet Name="FK_CUST_STATUS_HISTORY_CUSTOMER" Association="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="CUST_STATUS_HISTORY" EntitySet="CUST_STATUS_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserXRole_UserXRole" Association="IMSModel.FK_UserXRole_UserXRole">
+            <End Role="UserXRole" EntitySet="UserXRoles" />
+            <End Role="UserXRole1" EntitySet="UserXRoles" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="C__MigrationHistory">
@@ -908,19 +939,6 @@
           <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
           <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
           <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="COMPANY_STATUSHISTORY" Relationship="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY" FromRole="COMPANY" ToRole="COMPANY_STATUSHISTORY" />
-        </EntityType>
-        <EntityType Name="COMPANY_STATUSHISTORY">
-          <Key>
-            <PropertyRef Name="STATUSHIST_ID" />
-          </Key>
-          <Property Name="STATUSHIST_ID" Type="Guid" Nullable="false" />
-          <Property Name="COMP_ID" Type="Guid" Nullable="false" />
-          <Property Name="ACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DEACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="MODIFIED_BY" Type="Guid" Nullable="false" />
-          <Property Name="MODIFIED_ON" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="COMPANY" Relationship="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY" FromRole="COMPANY_STATUSHISTORY" ToRole="COMPANY" />
         </EntityType>
         <EntityType Name="CONTACT_DETAILS">
           <Key>
@@ -1013,6 +1031,7 @@
           <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="RATING_MASTER" Relationship="IMSModel.FK_CUSTOMER_RATING_MASTER" FromRole="CUSTOMER" ToRole="RATING_MASTER" />
           <NavigationProperty Name="QUOTATIONs" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="CUSTOMER" ToRole="QUOTATION" />
+          <NavigationProperty Name="CUST_STATUS_HISTORY" Relationship="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" FromRole="CUSTOMER" ToRole="CUST_STATUS_HISTORY" />
         </EntityType>
         <EntityType Name="CUSTXPROD">
           <Key>
@@ -1314,18 +1333,6 @@
           <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="PRODUCT" Relationship="IMSModel.FK_WORKORDER_PRODUCTS" FromRole="WORKORDER" ToRole="PRODUCT" />
         </EntityType>
-        <Association Name="FK_COMPANY_STATUSHISTORY_COMPANY">
-          <End Type="IMSModel.COMPANY" Role="COMPANY" Multiplicity="1" />
-          <End Type="IMSModel.COMPANY_STATUSHISTORY" Role="COMPANY_STATUSHISTORY" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="COMPANY">
-              <PropertyRef Name="COMP_ID" />
-            </Principal>
-            <Dependent Role="COMPANY_STATUSHISTORY">
-              <PropertyRef Name="STATUSHIST_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CONTACT_DETAILS_LOCATION_MASTER">
           <End Type="IMSModel.LOCATION_MASTER" Role="LOCATION_MASTER" Multiplicity="1" />
           <End Type="IMSModel.CONTACT_DETAILS" Role="CONTACT_DETAILS" Multiplicity="*" />
@@ -1486,6 +1493,53 @@
           <End Type="IMSModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="IMSModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="CUST_STATUS_HISTORY">
+          <Key>
+            <PropertyRef Name="STATUSHIST_ID" />
+          </Key>
+          <Property Name="STATUSHIST_ID" Type="Guid" Nullable="false" />
+          <Property Name="CUST_ID" Type="Guid" Nullable="false" />
+          <Property Name="COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISACTIVE" Type="Boolean" />
+          <Property Name="ACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DEACTIVATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Guid" Nullable="false" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CUSTOMER" Relationship="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" FromRole="CUST_STATUS_HISTORY" ToRole="CUSTOMER" />
+        </EntityType>
+        <EntityType Name="UserXRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" />
+          <NavigationProperty Name="UserXRole1" Relationship="IMSModel.FK_UserXRole_UserXRole" FromRole="UserXRole" ToRole="UserXRole1" />
+          <NavigationProperty Name="UserXRole2" Relationship="IMSModel.FK_UserXRole_UserXRole" FromRole="UserXRole1" ToRole="UserXRole" />
+        </EntityType>
+        <Association Name="FK_CUST_STATUS_HISTORY_CUSTOMER">
+          <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+          <End Type="IMSModel.CUST_STATUS_HISTORY" Role="CUST_STATUS_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="CUST_ID" />
+            </Principal>
+            <Dependent Role="CUST_STATUS_HISTORY">
+              <PropertyRef Name="CUST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserXRole_UserXRole">
+          <End Type="IMSModel.UserXRole" Role="UserXRole" Multiplicity="1" />
+          <End Type="IMSModel.UserXRole" Role="UserXRole1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserXRole">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserXRole1">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1572,18 +1626,6 @@
                 <ScalarProperty Name="COMP_CODE" ColumnName="COMP_CODE" />
                 <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
                 <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="COMPANY_STATUSHISTORY">
-            <EntityTypeMapping TypeName="IMSModel.COMPANY_STATUSHISTORY">
-              <MappingFragment StoreEntitySet="COMPANY_STATUSHISTORY">
-                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="DEACTIVATED_ON" ColumnName="DEACTIVATED_ON" />
-                <ScalarProperty Name="ACTIVATED_ON" ColumnName="ACTIVATED_ON" />
-                <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
-                <ScalarProperty Name="STATUSHIST_ID" ColumnName="STATUSHIST_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2015,6 +2057,28 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="CUST_STATUS_HISTORY">
+            <EntityTypeMapping TypeName="IMSModel.CUST_STATUS_HISTORY">
+              <MappingFragment StoreEntitySet="CUST_STATUS_HISTORY">
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="DEACTIVATED_ON" ColumnName="DEACTIVATED_ON" />
+                <ScalarProperty Name="ACTIVATED_ON" ColumnName="ACTIVATED_ON" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+                <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+                <ScalarProperty Name="STATUSHIST_ID" ColumnName="STATUSHIST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserXRoles">
+            <EntityTypeMapping TypeName="IMSModel.UserXRole">
+              <MappingFragment StoreEntitySet="UserXRole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

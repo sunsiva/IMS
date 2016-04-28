@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="IMSModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="1" />
         <EntityTypeShape EntityType="IMSModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" />
         <EntityTypeShape EntityType="IMSModel.COMPANY" Width="1.5" PointX="13.75" PointY="11.25" />
-        <EntityTypeShape EntityType="IMSModel.COMPANY_STATUSHISTORY" Width="1.5" PointX="16" PointY="14.5" />
         <EntityTypeShape EntityType="IMSModel.CONTACT_DETAILS" Width="1.5" PointX="11" PointY="7.5" />
         <EntityTypeShape EntityType="IMSModel.CUSTOMER" Width="1.5" PointX="3.75" PointY="13" />
         <EntityTypeShape EntityType="IMSModel.CUSTXPROD" Width="1.5" PointX="2.75" PointY="0.75" />
@@ -25,7 +24,6 @@
         <EntityTypeShape EntityType="IMSModel.RFQ" Width="1.5" PointX="5.75" PointY="13.75" />
         <EntityTypeShape EntityType="IMSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="13.75" />
         <EntityTypeShape EntityType="IMSModel.WORKORDER" Width="1.5" PointX="3" PointY="5.625" />
-        <AssociationConnector Association="IMSModel.FK_COMPANY_STATUSHISTORY_COMPANY" />
         <AssociationConnector Association="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER" />
         <AssociationConnector Association="IMSModel.FK_CUSTOMER_RATING_MASTER" />
         <AssociationConnector Association="IMSModel.FK_QUOTATION_CUSTOMER" />
@@ -38,6 +36,10 @@
         <AssociationConnector Association="IMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="IMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="IMSModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="IMSModel.CUST_STATUS_HISTORY" Width="1.5" PointX="6" PointY="25" />
+        <EntityTypeShape EntityType="IMSModel.UserXRole" Width="1.5" PointX="15.375" PointY="0.75" />
+        <AssociationConnector Association="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" />
+        <AssociationConnector Association="IMSModel.FK_UserXRole_UserXRole" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

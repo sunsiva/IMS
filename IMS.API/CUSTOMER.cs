@@ -18,6 +18,7 @@ namespace IMS.API
         public CUSTOMER()
         {
             this.QUOTATIONs = new HashSet<QUOTATION>();
+            this.CUST_STATUS_HISTORY = new HashSet<CUST_STATUS_HISTORY>();
         }
     
         public System.Guid CUST_ID { get; set; }
@@ -82,5 +83,7 @@ namespace IMS.API
         public virtual RATING_MASTER RATING_MASTER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUOTATION> QUOTATIONs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUST_STATUS_HISTORY> CUST_STATUS_HISTORY { get; set; }
     }
 }

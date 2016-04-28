@@ -49,6 +49,7 @@
     <Compile Include="IMSConst.cs" />
     <Compile Include="ISerialization.cs" />
     <Compile Include="JsonNetSerialization.cs" />
+    <Compile Include="Keys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

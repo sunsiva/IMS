@@ -59,7 +59,7 @@ namespace IMS.UI.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-           var ob = GetRoles();
+           //var ob = GetRoles();
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

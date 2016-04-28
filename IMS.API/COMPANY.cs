@@ -54,7 +54,5 @@ namespace IMS.API
         public Nullable<System.DateTime> MODIFIED_ON { get; set; }
         public System.Guid CREATED_BY { get; set; }
         public System.DateTime CREATED_ON { get; set; }
-    
-        public virtual COMPANY_STATUSHISTORY COMPANY_STATUSHISTORY { get; set; }
     }
 }

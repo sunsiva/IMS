@@ -1,11 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 
 namespace Serializer
 {
- public class HttpHelpers
+    public class HttpHelpers
  {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="httpMethod"></param>
+  /// <param name="url"></param>
   public void HttpInvoke(HttpMethods httpMethod, string url)
   {
    using (var httpClass = new HttpClass(httpMethod, url))
@@ -47,6 +50,7 @@ namespace Serializer
 
    return _response;
   }
+
   public string GetHttpContent(string url) {
 
    string content;
