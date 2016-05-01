@@ -93,6 +93,7 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.API.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Antlr3.Runtime.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\EntityFramework.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\EntityFramework.SqlServer.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Microsoft.AspNet.Identity.Core.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -121,6 +122,7 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Web.WebPages.Dep
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Web.WebPages.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Web.WebPages.Razor.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\WebGrease.dll
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\Newtonsoft.Json.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Net.Http.Formatting.xml
@@ -152,5 +154,3 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\System.Web.Http.Owin.xm
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\obj\Debug\IMS.API.pdb
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.dll
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.API\bin\IMS.DataModel.pdb

@@ -66,7 +66,6 @@ D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\bin\Microsoft.Owin
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS1.1\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\csc.exe
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -137,5 +136,6 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Se
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.Google.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.Twitter.xml
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb

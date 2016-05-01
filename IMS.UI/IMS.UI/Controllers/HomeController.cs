@@ -13,11 +13,17 @@ namespace IMS.UI.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Today()
         {
+            return PartialView("Index");
+        }
+
+        public ActionResult About(string action)
+        {
+
             ViewBag.Message = "Application description page.";
 
-            return View();
+            return PartialView();
         }
 
         public ActionResult Contact()
