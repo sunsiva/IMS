@@ -84,18 +84,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="COMPANY_STATUSHISTORY">
-      <EntityTypeMapping TypeName="IMSModel.COMPANY_STATUSHISTORY">
-        <MappingFragment StoreEntitySet="COMPANY_STATUSHISTORY">
-          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
-          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-          <ScalarProperty Name="DEACTIVATED_ON" ColumnName="DEACTIVATED_ON" />
-          <ScalarProperty Name="ACTIVATED_ON" ColumnName="ACTIVATED_ON" />
-          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
-          <ScalarProperty Name="STATUSHIST_ID" ColumnName="STATUSHIST_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CONTACT_DETAILS">
       <EntityTypeMapping TypeName="IMSModel.CONTACT_DETAILS">
         <MappingFragment StoreEntitySet="CONTACT_DETAILS">
@@ -524,5 +512,27 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="CUST_STATUS_HISTORY">
+      <EntityTypeMapping TypeName="IMSModel.CUST_STATUS_HISTORY">
+        <MappingFragment StoreEntitySet="CUST_STATUS_HISTORY">
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="DEACTIVATED_ON" ColumnName="DEACTIVATED_ON" />
+          <ScalarProperty Name="ACTIVATED_ON" ColumnName="ACTIVATED_ON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="CUST_ID" ColumnName="CUST_ID" />
+          <ScalarProperty Name="STATUSHIST_ID" ColumnName="STATUSHIST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserXRoles">
+      <EntityTypeMapping TypeName="IMSModel.UserXRole">
+        <MappingFragment StoreEntitySet="UserXRole">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
