@@ -9,19 +9,6 @@
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Change your password", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Create", "SetPassword")
-            }
-            ]
-        </dd>
         <dt>Register Internal User:</dt>
         <dd>
             [
@@ -40,9 +27,22 @@
                 @Html.ActionLink("User X Role", "ChangePassword")
             ]
         </dd>
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
     </dl>
 
-    <div class="wrap">
+    @*<div class="wrap">
         <ul class="tabs group">
             <li><a class="active" href="#/one">ChangePassword</a></li>
             <li><a href="#/two">New User</a></li>
@@ -55,6 +55,6 @@
             <p id="three">Tabs , consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq</p>
         </div>
 
-    </div>
+    </div>*@
 
 </div>

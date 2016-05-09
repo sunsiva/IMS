@@ -18,6 +18,18 @@ namespace IMS.UI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            List<CustomerViewModels> custModel = new List<CustomerViewModels>();
+            return PartialView(custModel);
+        }
+
+        public ActionResult Create()
+        {
+            return PartialView();
+        }
+
+
+        public ActionResult tablist()
+        {
             return View();
         }
 

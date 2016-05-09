@@ -1,369 +1,374 @@
 ﻿@model IEnumerable<IMS.DataModel.ViewModels.CustomerViewModels>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_NO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_CODE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ISVENDOR)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LEGAL_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DEPARTMENT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY_RELATIONSHIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.STATUS_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LINEOFBIZ_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LOB_CATEGORY_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY_GROUP_CODE_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SALESCHNL_REFERENCE_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SALES_PERSON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMP_SIZE_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CURRENCY_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SHIPMENTTERM_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PAYMENTTERM_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CREDITLIMIT_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PRICEBAND_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DISCOUNTBAND_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AUTO_BANDING)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TAXCODE1_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TAXCODE2_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TAXCODE3_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_BILL_LOC_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_SHIP_LOC_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUST_TYPE_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OWNERSHIP_LKPID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY_EMAIL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY_WEBSITE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RATING_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.YEARS_OF_ESTABLISHMENT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NO_OF_EMPLOYEES_OFFICE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NO_OF_EMPLOYEES_FACTORY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.REVENUE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TURN_OVER)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SALES)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PAYMENT_METHOD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SHIPMENT_METHOD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CALL_PREFERENCES)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CREDIT_CHECK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CONTRACT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MSA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SLA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DECLARATION)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY_TYPE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OWNERSHIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CAPACITY_DAILY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CAPACITY_MONTHLY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CAPACITY_YEARLY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CONTACT_PERSON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ISACTIVE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MODIFIED_BY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MODIFIED_ON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CREATED_BY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CREATED_ON)
-        </th>
-        <th></th>
-    </tr>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                Customer List
+            </h4>
+            <div><a onclick="fnLeftMenu(this); return false;" id="customernew" class="btn btn-default" href="#">
+    <i class="glyphicon glyphicon-new-window"></i> Create New
+</a></div>
+        </div>
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_NO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_CODE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISVENDOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LEGAL_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DEPARTMENT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_RELATIONSHIP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.STATUS_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LINEOFBIZ_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LOB_CATEGORY_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_GROUP_CODE_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SALESCHNL_REFERENCE_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SALES_PERSON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMP_SIZE_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CURRENCY_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SHIPMENTTERM_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PAYMENTTERM_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CREDITLIMIT_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRICEBAND_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DISCOUNTBAND_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AUTO_BANDING)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TAXCODE1_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TAXCODE2_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TAXCODE3_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_BILL_LOC_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_SHIP_LOC_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CUST_TYPE_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OWNERSHIP_LKPID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_EMAIL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_WEBSITE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RATING_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YEARS_OF_ESTABLISHMENT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NO_OF_EMPLOYEES_OFFICE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NO_OF_EMPLOYEES_FACTORY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.REVENUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TURN_OVER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SALES)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PAYMENT_METHOD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SHIPMENT_METHOD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CALL_PREFERENCES)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CREDIT_CHECK)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CONTRACT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MSA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SLA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DECLARATION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DESCRIPTION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_TYPE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OWNERSHIP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CAPACITY_DAILY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CAPACITY_MONTHLY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CAPACITY_YEARLY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CONTACT_PERSON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISACTIVE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MODIFIED_BY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MODIFIED_ON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CREATED_BY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CREATED_ON)
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_NO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_CODE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ISVENDOR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LEGAL_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEPARTMENT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_RELATIONSHIP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STATUS_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LINEOFBIZ_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LOB_CATEGORY_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_GROUP_CODE_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SALESCHNL_REFERENCE_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SALES_PERSON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMP_SIZE_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CURRENCY_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SHIPMENTTERM_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PAYMENTTERM_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREDITLIMIT_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PRICEBAND_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DISCOUNTBAND_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AUTO_BANDING)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TAXCODE1_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TAXCODE2_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TAXCODE3_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_BILL_LOC_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_SHIP_LOC_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUST_TYPE_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OWNERSHIP_LKPID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_EMAIL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_WEBSITE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RATING_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YEARS_OF_ESTABLISHMENT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NO_OF_EMPLOYEES_OFFICE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NO_OF_EMPLOYEES_FACTORY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.REVENUE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TURN_OVER)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SALES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PAYMENT_METHOD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SHIPMENT_METHOD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CALL_PREFERENCES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREDIT_CHECK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CONTRACT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MSA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SLA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DECLARATION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DESCRIPTION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_TYPE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OWNERSHIP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CAPACITY_DAILY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CAPACITY_MONTHLY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CAPACITY_YEARLY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CONTACT_PERSON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ISACTIVE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MODIFIED_BY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MODIFIED_ON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREATED_BY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREATED_ON)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.HiddenFor(modelItem => item.CUST_ID)
+                        @Html.DisplayFor(modelItem => item.CUST_NO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ISVENDOR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LEGAL_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPARTMENT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_RELATIONSHIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.STATUS_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LINEOFBIZ_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LOB_CATEGORY_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_GROUP_CODE_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SALESCHNL_REFERENCE_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SALES_PERSON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMP_SIZE_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CURRENCY_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SHIPMENTTERM_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PAYMENTTERM_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CREDITLIMIT_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRICEBAND_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DISCOUNTBAND_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AUTO_BANDING)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TAXCODE1_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TAXCODE2_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TAXCODE3_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_BILL_LOC_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_SHIP_LOC_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_TYPE_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OWNERSHIP_LKPID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_EMAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_WEBSITE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RATING_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YEARS_OF_ESTABLISHMENT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NO_OF_EMPLOYEES_OFFICE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NO_OF_EMPLOYEES_FACTORY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.REVENUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TURN_OVER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SALES)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PAYMENT_METHOD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SHIPMENT_METHOD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CALL_PREFERENCES)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CREDIT_CHECK)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CONTRACT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MSA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SLA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DECLARATION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPTION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OWNERSHIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CAPACITY_DAILY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CAPACITY_MONTHLY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CAPACITY_YEARLY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CONTACT_PERSON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ISACTIVE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MODIFIED_BY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MODIFIED_ON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CREATED_BY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CREATED_ON)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+        </div>
+</div>

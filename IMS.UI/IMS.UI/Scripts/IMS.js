@@ -31,11 +31,21 @@
         }
     });
 
+    //$("div.leftmenu a").click(function (e) {
+    //    e.preventDefaul(); // prevent default link button redirect behaviour
+    //    var url = $(this).attr("href");
+    //    $('#page-content').load(url);
+    //});
+
     window.fnLeftMenu = function (e) {
         var id = e.id;
         var oUrl = "/Home/About?" + id;
         if (id == 'today')
-            oUrl = "/Home/today?" + id;
+            oUrl = "/Home/today";
+        else if (id == 'customer')
+            oUrl = "/Customer/Index";
+        else if (id == 'customernew')
+            oUrl = "/Customer/Create";
 
         $(".ulMenu li a.active").removeClass("active"); //Remove any "active" class  
         $(this).addClass("active"); //Add "active" class to selected tab  
@@ -44,9 +54,37 @@
             type: "GET",
             url: oUrl,
             success: function (data, textStatus, jqXHR) {
-                $('#mainBody').html(data);
+                $('#page_content').html(data);
             }
         });
-
     };
+    
+    $('#CollapseMe1').click(function () {
+        $(this).hasClass('glyphicon-triangle-right') ? $(this).removeClass('glyphicon-triangle-right') && $(this).addClass('glyphicon-triangle-bottom') : $(this).removeClass('glyphicon-triangle-bottom') && $(this).addClass('glyphicon-triangle-right');
+    });
+    $('#CollapseMe2').click(function () {
+        $(this).hasClass('glyphicon-triangle-right') ? $(this).removeClass('glyphicon-triangle-right') && $(this).addClass('glyphicon-triangle-bottom') : $(this).removeClass('glyphicon-triangle-bottom') && $(this).addClass('glyphicon-triangle-right');
+    });
+    $('#CollapseMe3').click(function () {
+        $(this).hasClass('glyphicon-triangle-right') ? $(this).removeClass('glyphicon-triangle-right') && $(this).addClass('glyphicon-triangle-bottom') : $(this).removeClass('glyphicon-triangle-bottom') && $(this).addClass('glyphicon-triangle-right');
+    });
+    $('#CollapseMe4').click(function () {
+        $(this).hasClass('glyphicon-triangle-right') ? $(this).removeClass('glyphicon-triangle-right') && $(this).addClass('glyphicon-triangle-bottom') : $(this).removeClass('glyphicon-triangle-bottom') && $(this).addClass('glyphicon-triangle-right');
+    });
+
+    ///Multi Tab selction
+    $(document).ready(function () {
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+            var href = $(e.target).attr('href');
+            var $curr = $(".checkout-bar  a[href='" + href + "']").parent();
+
+            $('.checkout-bar li').removeClass();
+
+            $curr.addClass("active");
+            $curr.prevAll().addClass("visited");
+
+
+        });
+    });
 });

@@ -1,0 +1,28 @@
+﻿@model IMS.DataModel.ViewModels.CustomerViewModels
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @*<h4>Customer Create</h4>*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div>
+            @Html.HiddenFor(model => model.CUST_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+        <div class="form-group">
+            @Html.Partial("_tablist", Model)
+        </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

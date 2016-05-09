@@ -191,10 +191,10 @@
     <Content Include="Content\images\FlowDiagram.PNG" />
     <Content Include="Content\images\newmenu.PNG" />
     <Content Include="Content\ims.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -221,6 +221,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,7 +261,8 @@
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_LayoutVertiA.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\_tablist.cshtml" />
+    <Content Include="Views\Customer\Create - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
