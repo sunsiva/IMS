@@ -5,7 +5,8 @@
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu" href="#childleftMenu">
-                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;"> <span style="padding-left:35px" >Order Management</span> </span>  
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:35px" >Order Management</span> </span>
+                                <i style="font-size:large;" class="glyphicon glyphicon-chevron-down"></i>
                             </a>
                         </div>
                     </div>
@@ -23,100 +24,100 @@
                             <div class="accordion-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseWOChild">
                                     <i class="glyphicon glyphicon-list"></i> Work Order
-                                </a>
+                                </a><i style="padding-left:120px; color:white" class="glyphicon glyphicon-chevron-down"></i>
                             </div>
                             <div id="collapseWOChild" class="accordion-body collapse left-menu-ac" style="height: 0px; ">
                                 <div class="accordion-inner">
-                                    <br />
-                                    <input type="text" class="form-control" placeholder="Search work orders" />
-                                    <ul class="ulMenu">
-                                        <li><a href="#all" onclick="fnLeftMenu(this); return false;" id="all">All</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="new">New</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="ip">Issued To Production</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="prod">In Production</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="time">On Time</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="delayed">Delayed</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="readyforship">Ready For Shipping</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="shipped">Shipped</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="complete">Complete</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="closed">Closed</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="cancel">Cancelled</a></li>
-                                        <li><a href="#" onclick="fnLeftMenu(this); return false;" id="hold">On Hold</a></li>
-                                    </ul>
+                                    <div class="ulMenu">
+                                        <div class="row">
+                                            <a href="#all" class="col-xs-11 lf-Menu-cust lf-Menu-cust-active" onclick="fnLeftMenu(this); return false;" id="all">All</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="new">New</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="ip">Issued To Production</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="prod">In Production</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="time">On Time</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="delayed">Delayed</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="readyforship">Ready For Shipping</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="shipped">Shipped</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="complete">Complete</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="cancel">Cancelled</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="closed">Closed</a>
+                                            <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="hold">On Hold</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
-                                    <i class="glyphicon glyphicon-globe"></i> Purchase Order
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>This is one</li>
-                                        <li>This is two</li>
-                                        <li>This is Three</li>
-                                    </ul>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                                                <i class="glyphicon glyphicon-globe"></i> Purchase Order
+                                            </a>
+                                        </div>
+                                        <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>This is one</li>
+                                                    <li>This is two</li>
+                                                    <li>This is Three</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                                                <i class="glyphicon glyphicon-record"></i> Quotation
+                                            </a><i style="padding-left:130px; color:white" class="glyphicon glyphicon-chevron-left"></i>
+                                        </div>
+                                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>This is one</li>
+                                                    <li>This is two</li>
+                                                    <li>This is Three</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFive">
+                                                <i class="glyphicon glyphicon-record"></i> RFQ
+                                            </a>
+                                        </div>
+                                        <div id="collapseFive" class="accordion-body collapse" style="height: 0px; ">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>This is one</li>
+                                                    <li>This is two</li>
+                                                    <li>This is Three</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a onclick="fnLeftMenu(this); return false;" id="customer" href="#">
+                                                <i class="glyphicon glyphicon-pencil"></i> Customer
+                                            </a>
+                                        </div>
+                                        @*<div id="collapseSix" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li>This is one</li>
+                                <li>This is two</li>
+                                <li>This is Three</li>
+                            </ul>
+                        </div>
+                    </div>*@
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
-                                    <i class="glyphicon glyphicon-record"></i> Quotation
-                                </a>
-                            </div>
-                            <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>This is one</li>
-                                        <li>This is two</li>
-                                        <li>This is Three</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFive">
-                                    <i class="glyphicon glyphicon-record"></i> RFQ
-                                </a>
-                            </div>
-                            <div id="collapseFive" class="accordion-body collapse" style="height: 0px; ">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>This is one</li>
-                                        <li>This is two</li>
-                                        <li>This is Three</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a onclick="fnLeftMenu(this); return false;" id="customer" href="#">
-                                    <i class="glyphicon glyphicon-pencil"></i> Customer
-                                </a>
-                            </div>
-                            @*<div id="collapseSix" class="accordion-body collapse" style="height: 0px; ">
-                                <div class="accordion-inner">
-                                    <ul>
-                                        <li>This is one</li>
-                                        <li>This is two</li>
-                                        <li>This is Three</li>
-                                    </ul>
-                                </div>
-                            </div>*@
-                        </div>
-                    </div>
-                </div>
                 <div class="accordion table-bordered" id="leftMenu">
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu2" href="#childleftMenu2">
-                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;"> <span style="padding-left:15px">Production Management</span></span>
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:15px">Production Management</span></span>
                             </a>
                         </div>
                     </div>
@@ -162,7 +163,7 @@
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu3" href="#childleftMenu3">
-                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;"> <span style="padding-left:20px" >Inventory Management </span> </span>
+                                <span style="font-family:Arial, Helvetica, sans-serif;padding-left:80px;font-size:large;">ZEN IMS <span style="padding-left:20px" >Inventory Management </span> </span>
                             </a>
                         </div>
                     </div>

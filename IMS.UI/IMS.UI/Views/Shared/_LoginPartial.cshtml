@@ -6,17 +6,37 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
+        @*<li>
             @Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>*@
+        <li class="dropdown">
+            <a class="dropdown-toggle" href="@Url.Action("Index","Manage")">
+                Welcome Admin! <i class="glyphicon glyphicon-user"></i><b class="caret"></b>
+            </a>
+            </li>
+        @*<li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/Index/Manage" title="Mails">
+                <i class="glyphicon glyphicon-envelope"></i><b class="caret"></b>
+            </a>
+        </li>*@
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/Index/Manage" title="Alerts">
+                <i class="glyphicon glyphicon-bell"></i><b class="caret"></b>
+            </a>
         </li>
-        <li>@Html.ActionLink("Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-        <li><time class="icon">
-            <em>@DateTime.Now.ToString("dddd")</em>
-            <strong>@DateTime.Now.ToString("MMM").ToUpper()</strong>
-            <span>@DateTime.Now.ToString("dd")</span>
-        </time></li>
-        <li><div></div></li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-log-out"></i> Log off</a></li>
+        <li> <a href="/Index/Manage"><i class="glyphicon  glyphicon-cog"></i> </a> </li>
+        @*<li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="glyphicon glyphicon-log-out"></i></a></li>*@
+        <li style="padding-right:20px"> <div class="circle-singleline">Q+</div>
+        </li>
+        <li>
+            <time class="icon">
+                <em>@DateTime.Now.ToString("dddd")</em>
+                <strong>@DateTime.Now.ToString("MMM").ToUpper()</strong>
+                <span>@DateTime.Now.ToString("dd")</span>
+            </time>
+        </li>
+        
+        <li><div style="padding-right:40px"></div></li>
         @*<li><div class="loggedInTicker">12:45:25</div></li>*@
     </ul>
     }

@@ -22,29 +22,31 @@
     </div>
     @*<div class="navbar navbar-inverse navbar-fixed-top col-lg-offset-2"> For left side header menu*@
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SVS Manufacturing Company Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand " })
-                @*<div class="col-lg-63">
-        <div class="input-group">
-            <input type="text" class="form-control" aria-label="...">
-            <div class="hide input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
-            </div><!-- /btn-group -->
-        </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->*@
+                <a href="@Url.Action("Index","Dashboard")"> <img src="~/Content/images/ims.png" alt="CAI" /></a>
+                <i style="font-size:x-large">  SVS Manufacturing Company Inc.</i> 
+                     
+                        @*<div class="col-lg-63">
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="...">
+                            <div class="hide input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->*@
             </div>
             
             <div class="navbar-collapse collapse">

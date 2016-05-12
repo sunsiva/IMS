@@ -21,15 +21,15 @@
 //    setInterval(ticktock, 1000);
 //}());
 
-    var url = window.location.pathname,
-        urlRegExp = new RegExp(url.replace(/\/$/, '') + "$"); // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
-    // now grab every link from the navigation
-    $('.ulMenu li a').each(function () {
-        // and test its normalized href against the url pathname regexp
-        if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
-            $(this).addClass('active');
-        }
-    });
+    //var url = window.location.pathname,
+    //    urlRegExp = new RegExp(url.replace(/\/$/, '') + "$"); // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
+    //// now grab every link from the navigation
+    //$('.ulMenu div a').each(function () {
+    //    // and test its normalized href against the url pathname regexp
+    //    if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+    //        $(this).addClass('lf-Menu-cust-active');
+    //    }
+    //});
 
     //$("div.leftmenu a").click(function (e) {
     //    e.preventDefaul(); // prevent default link button redirect behaviour
@@ -47,8 +47,8 @@
         else if (id == 'customernew')
             oUrl = "/Customer/Create";
 
-        $(".ulMenu li a.active").removeClass("active"); //Remove any "active" class  
-        $(this).addClass("active"); //Add "active" class to selected tab  
+        $(".ulMenu div a").removeClass("lf-Menu-cust-active"); //Remove any "active" class  
+        $('#'+id).addClass("lf-Menu-cust-active"); //Add "active" class to selected tab  
 
         $.ajax({
             type: "GET",

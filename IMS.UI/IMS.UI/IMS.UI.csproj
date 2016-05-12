@@ -187,8 +187,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ContentTabs.css" />
+    <Content Include="Content\images\Excel-icon.png" />
     <Content Include="Content\images\FlowDiagram.GIF" />
     <Content Include="Content\images\FlowDiagram.PNG" />
+    <Content Include="Content\images\ims.png" />
     <Content Include="Content\images\newmenu.PNG" />
     <Content Include="Content\ims.css" />
     <Content Include="Content\Site.css" />
