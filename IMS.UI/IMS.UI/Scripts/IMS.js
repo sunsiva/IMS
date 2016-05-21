@@ -46,6 +46,8 @@
             oUrl = "/Customer/Index";
         else if (id == 'customernew')
             oUrl = "/Customer/Create";
+        else if (id == 'woall')
+            oUrl = "/WorkOrder/IndexTemp";
 
         $(".ulMenu div a").removeClass("lf-Menu-cust-active"); //Remove any "active" class  
         $('#'+id).addClass("lf-Menu-cust-active"); //Add "active" class to selected tab  
