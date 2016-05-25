@@ -21,9 +21,9 @@
                         </h4>
                     </div>
                     <div class="container">
-                        <div id="tbGeneral" class="form-group panel-collapse collapse ">
+                        <div id="tbGeneral" class="form-group panel-collapse  ">
                             <div class="row">
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.CUST_NO, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.CUST_NO, new { htmlAttributes = new { @class = "form-control", @autofocus = "autofocus" } })
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.CUST_NAME, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.CUST_NAME, new { htmlAttributes = new { @class = "form-control" } })
@@ -55,14 +55,14 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.LEGAL_NAME, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.LEGAL_NAME, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.LEGAL_NAME, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.DEPARTMENT, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.DEPARTMENT, new { htmlAttributes = new { @class = "form-control" } })
@@ -78,9 +78,9 @@
                         </h4>
                     </div>
                     <div class="container">
-                        <div id="tbCompany" class="form-group panel-collapse collapse ">
+                        <div id="tbCompany" class="form-group panel-collapse  ">
                             <div class="raw">
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.COMPANY_RELATIONSHIP, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.COMPANY_RELATIONSHIP, new { htmlAttributes = new { @class = "form-control" } })
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.LINEOFBIZ_LKPID, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.LINEOFBIZ_LKPID, new { htmlAttributes = new { @class = "form-control" } })
@@ -104,7 +104,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.LOB_CATEGORY_LKPID, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.LOB_CATEGORY_LKPID, new { htmlAttributes = new { @class = "form-control" } })
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6 col-lg-4">
+                                <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.YEARS_OF_ESTABLISHMENT, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.YEARS_OF_ESTABLISHMENT, new { htmlAttributes = new { @class = "form-control" } })
@@ -231,7 +231,7 @@
                         </h4>
                     </div>
                     <div class="container">
-                        <div id="tbPayment" class="form-group panel-collapse collapse">
+                        <div id="tbPayment" class="form-group panel-collapse ">
                             <div class="">
                                 <div class="col-sm-6 col-lg-4">
                                     @Html.LabelFor(model => model.CURRENCY_LKPID, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -344,7 +344,7 @@
                         </h4>
                     </div>
                     <div class="container">
-                        <div id="tbMisc" class="form-group panel-collapse collapse">
+                        <div id="tbMisc" class="form-group panel-collapse ">
                             <div>
                                 <div class="col-sm-6 col-lg-4">
                                     @Html.LabelFor(model => model.CONTRACT, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -469,7 +469,7 @@
 
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Save" class="btn btn-outline btn-success" />
+                                <input type="submit" value="Save" id="btnSave" class="btn btn-outline btn-success" />
                                 <input type="button" value="Clear" class="btn btn-outline btn-default" />
                             </div>
                         </div>

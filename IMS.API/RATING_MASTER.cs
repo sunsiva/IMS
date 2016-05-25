@@ -17,7 +17,7 @@ namespace IMS.API
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RATING_MASTER()
         {
-            this.CUSTOMERs = new HashSet<CUSTOMER>();
+            //this.CUSTOMERs = new HashSet<CUSTOMER>();
         }
     
         public System.Guid RATING_ID { get; set; }

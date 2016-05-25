@@ -229,6 +229,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\PurchaseOrderController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

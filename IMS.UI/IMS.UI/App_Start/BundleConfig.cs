@@ -11,6 +11,7 @@ namespace IMS.UI
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/IMS.js",
+                        "~/Scripts/alert_unsaved_changes.js",
                         "~/Scripts/ContentTabs.js"
                         ));
 

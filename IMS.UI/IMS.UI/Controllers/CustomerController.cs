@@ -1,5 +1,7 @@
 ﻿using IMS.Common;
 using IMS.DataModel.ViewModels;
+using IMS.UI.Common;
+using PagedList;
 using Serializer;
 using System;
 using System.Collections.Generic;
@@ -13,13 +15,19 @@ namespace IMS.UI.Controllers
     {
         readonly JsonNetSerialization serializer = new JsonNetSerialization();
         readonly HttpHelpers httpHelpers = new HttpHelpers();
+        const int pageSize = 10;
 
         // GET: Customer
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string sOdr, int? page)
         {
-            List<CustomerViewModels> custModel = new List<CustomerViewModels>();
-            return PartialView(custModel);
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_GET_ENDPOINT));
+            List<CustomerViewModels> custModel = serializer.DeSerialize<List<CustomerViewModels>>(content) as List<CustomerViewModels>;
+            custModel = GetPagination(custModel, sOdr, page);
+            int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
+            int pNo = ViewBag.PageNo == null ? 0 : ViewBag.PageNo;
+            setDropdownList();
+            return View(custModel.ToPagedList(pNo, pSize));
         }
 
         public ActionResult Create()
@@ -34,19 +42,76 @@ namespace IMS.UI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerViewModels model)
         {
-            var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_CREATE_ENDPOINT),
-               serializer.Serialize<CustomerViewModels>(model));
-
-            if (result.IsSuccessStatusCode)
+            if (ModelState.IsValid)
             {
-                return View();
+                var uid = HttpRuntime.Cache.Get(CacheKey.Uid.ToString()).ToString();
+                model.CUST_ID = Guid.NewGuid();
+                model.ISACTIVE = true;
+                model.CREATED_BY = uid == null ? Guid.NewGuid() : Guid.Parse(uid);
+                model.CREATED_ON = DateTime.Now;
+
+                var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_CREATE_ENDPOINT),
+                   serializer.Serialize<CustomerViewModels>(model));
+            
+                if (result.IsSuccessStatusCode)
+                {
+                    return View();
+                }
+                ModelState.AddModelError("CustomerCreate", result.ReasonPhrase);
             }
 
-            ModelState.AddModelError("CustomerCreate", result.ReasonPhrase);
+            ModelState.AddModelError("FILD", "Failed to insert customer data.");
             return View(model);
         }
 
+        #region private methods
+        private List<CustomerViewModels> GetPagination(List<CustomerViewModels> cust, string sOdr, int? page)
+        {
+            ViewBag.CurrentSort = sOdr;
+
+            if (cust != null && cust.Count > 0)
+            {
+                ViewBag.NameSort = string.IsNullOrEmpty(sOdr) ? "Name_desc" : "";
+                ViewBag.CodeSort = sOdr == "Code_desc" ? "Code_asc" : "Code_desc";
+                //ViewBag.PDateSort = sOdr == "SubDate_desc" ? "SubDate_asc" : "SubDate_desc";
+                //ViewBag.SkillSort = sOdr == "Skill_desc" ? "Skill_asc" : "Skill_desc";
+                //ViewBag.StatusSort = sOdr == "Sts_desc" ? "Sts_asc" : "Sts_desc";
+
+                switch (sOdr)
+                {
+                    case "Name_desc":
+                        cust = cust.OrderByDescending(s => s.CUST_NAME).ToList();
+                        break;
+                    case "Code_desc":
+                        cust = cust.OrderByDescending(s => s.CUST_CODE).ToList();
+                        break;
+                    case "Code_asc":
+                        cust = cust.OrderBy(s => s.CUST_CODE).ToList();
+                        break;
+                    default:
+                        cust = cust.OrderBy(s => s.CUST_NAME).ToList();
+                        break;
+                }
+            }
+            
+            ViewBag.PageSize = pageSize;
+            ViewBag.PageNo = (page ?? 1);
+            return cust;
+        }
+
+        private void setDropdownList()
+        {
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.LOOKUP_GET_ENDPOINT));
+            List<LookupCategoryViewModels> custModel = serializer.DeSerialize<List<LookupCategoryViewModels>>(content) as List<LookupCategoryViewModels>;
+
+            foreach(var item in custModel)
+            {
+
+            }
+        }
+        #endregion
     }
 }

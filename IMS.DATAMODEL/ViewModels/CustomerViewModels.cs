@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace IMS.DataModel.ViewModels
 {
@@ -64,6 +64,9 @@ namespace IMS.DataModel.ViewModels
         public DateTime? MODIFIED_ON { get; set; }
         public Guid CREATED_BY { get; set; }
         public DateTime CREATED_ON { get; set; }
+
+        public IEnumerable<SelectListItem> StatusList { get; set; }
+        public string ddlStatusId { get; set; }
 
         //public virtual RatingMasterViewModels RATING_MASTER { get; set; }
         //public virtual ICollection<QuotationViewModels> QUOTATIONs { get; set; }

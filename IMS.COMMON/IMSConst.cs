@@ -13,6 +13,8 @@
         public static string CUST_UPDATE_ENDPOINT = "api/Customer";
         public static string CUST_DELETE_ENDPOINT = "api/Customer";
 
+        public static string LOOKUP_GET_ENDPOINT = "api/Master/GetAllLookup";
+
     }
 
     public static class Common
