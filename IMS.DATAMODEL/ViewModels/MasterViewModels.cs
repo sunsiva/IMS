@@ -18,11 +18,7 @@ namespace IMS.DataModel.ViewModels
         public string LOOKUPCATEGORYDESC { get; set; }
         public bool? ISAPPSPECIFIC { get; set; }
         public bool? ISORGSPECIFIC { get; set; }
-        public List<LookupDataViewModels> lkpData { get; set; }
-    }
-
-    public class LOOKUP_DATA
-    {
+        public List<LookupDataViewModels> LOOKUP_DATA { get; set; }
     }
 
     public class LookupDataViewModels

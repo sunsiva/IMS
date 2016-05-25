@@ -99,7 +99,7 @@
                                 <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.LINEOFBIZ_LKPID, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.LINEOFBIZ_LKPID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.DropDownList("ddlLoBList", (SelectList)ViewBag.LoB    , "Select a Line of Biz..", htmlAttributes:new { @class= "form-control", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.LINEOFBIZ_LKPID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -276,7 +276,7 @@
                                 <div class="col-sm-6 col-lg-4">
                                     @Html.LabelFor(model => model.DISCOUNTBAND_LKPID, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.DISCOUNTBAND_LKPID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.DropDownList("ddlDiscBandList", (SelectList)ViewBag.discountBand, "Select a discount band..", htmlAttributes: new { @class = "form-control", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.DISCOUNTBAND_LKPID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -323,7 +323,7 @@
                                 <div class="col-sm-6 col-lg-4">
                                     @Html.LabelFor(model => model.CALL_PREFERENCES, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.CALL_PREFERENCES, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.DropDownList("ddlCallPrefList", (SelectList)ViewBag.discountBand, "Select a call preferences..", htmlAttributes: new { @class = "form-control", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.CALL_PREFERENCES, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

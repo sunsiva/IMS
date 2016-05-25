@@ -26,16 +26,16 @@ namespace IMS.UI.Controllers
             custModel = GetPagination(custModel, sOdr, page);
             int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
             int pNo = ViewBag.PageNo == null ? 0 : ViewBag.PageNo;
-            setDropdownList();
+            
             return View(custModel.ToPagedList(pNo, pSize));
         }
 
         public ActionResult Create()
         {
-            return PartialView();
+            setDropdownList();
+            return View();
         }
-
-
+        
         public ActionResult tablist()
         {
             return View();
@@ -104,13 +104,21 @@ namespace IMS.UI.Controllers
 
         private void setDropdownList()
         {
+            List<LookupDataViewModels> lstOfLookups = new List<LookupDataViewModels>();
             var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.LOOKUP_GET_ENDPOINT));
             List<LookupCategoryViewModels> custModel = serializer.DeSerialize<List<LookupCategoryViewModels>>(content) as List<LookupCategoryViewModels>;
 
-            foreach(var item in custModel)
-            {
+            var LoB = custModel.Where(x => x.LOOKUPCATEGORYCODE == Lookup.LineOfBusiness.ToString()).FirstOrDefault();
+            var LoBlst = LoB==null? lstOfLookups : LoB.LOOKUP_DATA.ToList();
+            ViewBag.LoB = new SelectList(LoBlst.AsQueryable(), "LOOKUPID", "LOOKUPCODE", 1);
 
-            }
+            var discountBand = custModel.Where(x => x.LOOKUPCATEGORYCODE == Lookup.DiscountBand.ToString()).FirstOrDefault();
+            var discountBandlst = LoB == null ? lstOfLookups : discountBand.LOOKUP_DATA.ToList();
+            ViewBag.discountBand = new SelectList(discountBandlst.AsQueryable(), "LOOKUPID", "LOOKUPCODE", 1);
+
+            var callPreference = custModel.Where(x => x.LOOKUPCATEGORYCODE == Lookup.CallPreference.ToString()).FirstOrDefault();
+            var callPreferencelst = LoB == null ? lstOfLookups : callPreference.LOOKUP_DATA.ToList();
+            ViewBag.callPreference = new SelectList(callPreferencelst.AsQueryable(), "LOOKUPID", "LOOKUPCODE", 1);
         }
         #endregion
     }
