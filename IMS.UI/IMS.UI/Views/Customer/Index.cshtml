@@ -119,7 +119,7 @@
                 <td>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount  </td>
                 <td width="10px"></td>
                 <td>
-                    @Html.PagedListPager(Model, page => Url.Action("Index", "Home", new { page, sOdr = ViewBag.CurrentSort }))
+                    @Html.PagedListPager(Model, page => Url.Action("Index", "Customer", new { page, sOdr = ViewBag.CurrentSort }))
                 </td>
             </tr>
         </table>

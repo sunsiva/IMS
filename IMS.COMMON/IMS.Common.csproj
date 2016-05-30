@@ -44,9 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="Enums\PageName.cs" />
+    <Compile Include="Enums\TrackingChannel.cs" />
+    <Compile Include="Enums\TrackingServices.cs" />
+    <Compile Include="Helper\CookieHelper.cs" />
     <Compile Include="HttpClass.cs" />
     <Compile Include="HttpHelpers.cs" />
     <Compile Include="IMSConst.cs" />
+    <Compile Include="Interfaces\IContext.cs" />
+    <Compile Include="Interfaces\IHasContext.cs" />
+    <Compile Include="Interfaces\IHasContextSetter.cs" />
     <Compile Include="ISerialization.cs" />
     <Compile Include="JsonNetSerialization.cs" />
     <Compile Include="Keys.cs" />

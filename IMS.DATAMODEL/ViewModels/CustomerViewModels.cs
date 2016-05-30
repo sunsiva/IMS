@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace IMS.DataModel.ViewModels
@@ -9,12 +10,17 @@ namespace IMS.DataModel.ViewModels
         public Guid CUST_ID { get; set; }
         public string CUST_NO { get; set; }
         public string CUST_CODE { get; set; }
+        [Required(ErrorMessage = "Please enter a Customer Name")]
         public string CUST_NAME { get; set; }
+        [Required(ErrorMessage = "Please choice a type")]
         public bool ISVENDOR { get; set; }
         public string LEGAL_NAME { get; set; }
+        [Required(ErrorMessage = "Please enter a Customer Department")]
         public string DEPARTMENT { get; set; }
+        [Required(ErrorMessage = "Please enter a Company's Relationship")]
         public string COMPANY_RELATIONSHIP { get; set; }
         public Guid STATUS_LKPID { get; set; }
+        [Required(ErrorMessage = "Please select a Line Of Business")]
         public Guid? LINEOFBIZ_LKPID { get; set; }
         public Guid? LOB_CATEGORY_LKPID { get; set; }
         public Guid? COMPANY_GROUP_CODE_LKPID { get; set; }

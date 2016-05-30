@@ -11,8 +11,7 @@ namespace IMS.UI
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/IMS.js",
-                        "~/Scripts/alert_unsaved_changes.js",
-                        "~/Scripts/ContentTabs.js"
+                        "~/Scripts/alert_unsaved_changes.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -24,13 +23,18 @@ namespace IMS.UI
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                       "~/Scripts/moment.js",
                       "~/Scripts/bootstrap.js",
+                       "~/Scripts/bootstrap-datepicker.js",
+                       "~/Scripts/bootstrap-datetimepicker.js",
+                       "~/Scripts/DatePickerReady.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/ims.css",
-                      "~/Content/ContentTabs.css",
+                      "~/Content/bootstrap-datepicker3.css",
+                      "~/Content/bootstrap-datetimepicker.css",
                       "~/Content/site.css"));
         }
     }

@@ -2,6 +2,6 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\IMS.Common.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\IMS.Common.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\Newtonsoft.Json.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\Newtonsoft.Json.xml
-D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csprojResolveAssemblyReference.cache

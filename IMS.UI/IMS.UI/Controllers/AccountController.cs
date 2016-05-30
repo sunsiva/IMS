@@ -111,10 +111,10 @@ namespace IMS.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                //httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_CREATE_ENDPOINT),
+                //httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_NEW_ENDPNT),
                 //serializer.Serialize<RegisterViewModel>(model));
 
-               var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.USER_CREATE_ENDPOINT),
+               var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.USER_NEW_ENDPNT),
                 serializer.Serialize<RegisterViewModel>(model));
 
                 if (result.IsSuccessStatusCode)
@@ -257,7 +257,7 @@ namespace IMS.UI.Controllers
         public ActionResult GetRoles()
         {
 
-            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.ROLE_GET_ENDPOINT));
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.ROLE_GET_ENDPNT));
             var resp = serializer.DeSerialize<List<AspNetRolesViewModel>>(content) as List<AspNetRolesViewModel>;
             return View(resp);
         }

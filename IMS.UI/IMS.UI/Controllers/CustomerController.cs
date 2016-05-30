@@ -21,7 +21,7 @@ namespace IMS.UI.Controllers
         [HttpGet]
         public ActionResult Index(string sOdr, int? page)
         {
-            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_GET_ENDPOINT));
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_GET_ENDPNT));
             List<CustomerViewModels> custModel = serializer.DeSerialize<List<CustomerViewModels>>(content) as List<CustomerViewModels>;
             custModel = GetPagination(custModel, sOdr, page);
             int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
@@ -53,7 +53,7 @@ namespace IMS.UI.Controllers
                 model.CREATED_BY = uid == null ? Guid.NewGuid() : Guid.Parse(uid);
                 model.CREATED_ON = DateTime.Now;
 
-                var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_CREATE_ENDPOINT),
+                var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_NEW_ENDPNT),
                    serializer.Serialize<CustomerViewModels>(model));
             
                 if (result.IsSuccessStatusCode)
@@ -105,7 +105,7 @@ namespace IMS.UI.Controllers
         private void setDropdownList()
         {
             List<LookupDataViewModels> lstOfLookups = new List<LookupDataViewModels>();
-            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.LOOKUP_GET_ENDPOINT));
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.LOOKUP_GET_ENDPNT));
             List<LookupCategoryViewModels> custModel = serializer.DeSerialize<List<LookupCategoryViewModels>>(content) as List<LookupCategoryViewModels>;
 
             var LoB = custModel.Where(x => x.LOOKUPCATEGORYCODE == Lookup.LineOfBusiness.ToString()).FirstOrDefault();

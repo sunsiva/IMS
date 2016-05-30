@@ -182,6 +182,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.textarea-input-custom {
+    width: 100%; margin: 0px; height: 46px;
+}
+
 /*Custom-VertiB: BEGIN*/
 
 /*Custom - VertiA: BEGIN*/

@@ -30,7 +30,7 @@
                                 <div class="accordion-inner">
                                     <div class="ulMenu">
                                         <div class="row">
-                                            <a href="/Customer" class="col-xs-11 lf-Menu-cust" id="woall">All</a>
+                                            <a href="/WorkOrder" class="col-xs-11 lf-Menu-cust" id="woall">All</a>
                                             @*<a href="#all" class="col-xs-11 lf-Menu-cust" onclick="fnLeftMenu(this); return false;" id="woall">All</a>*@
                                             <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="new">New</a>
                                             <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="ip">Issued To Production</a>
@@ -66,11 +66,12 @@
                                     </div>
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
-                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                                            <a id="quotation" href="/Quotation">
                                                 <i class="glyphicon glyphicon-record"></i> Quotation
-                                            </a><i style="padding-left:130px; color:white" class="glyphicon glyphicon-chevron-left"></i>
+                                            </a>
+                                            @*<i style="padding-left:130px; color:white" class="glyphicon glyphicon-chevron-left"></i>*@
                                         </div>
-                                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                                        @*<div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
                                             <div class="accordion-inner">
                                                 <ul>
                                                     <li>This is one</li>
@@ -78,7 +79,7 @@
                                                     <li>This is Three</li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>*@
                                     </div>
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
