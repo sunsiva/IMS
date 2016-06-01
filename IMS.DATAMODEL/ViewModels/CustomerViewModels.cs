@@ -8,6 +8,7 @@ namespace IMS.DataModel.ViewModels
     public class CustomerViewModels
     {
         public Guid CUST_ID { get; set; }
+        [Required]
         public string CUST_NO { get; set; }
         public string CUST_CODE { get; set; }
         [Required(ErrorMessage = "Please enter a Customer Name")]

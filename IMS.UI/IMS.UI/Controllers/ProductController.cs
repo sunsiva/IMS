@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IMS.UI.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         // GET: Product
         public ActionResult Index()

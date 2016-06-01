@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace IMS.UI.Controllers
 {
-    public class QuotationController : Controller
+    public class QuotationController : BaseController
     {
         readonly JsonNetSerialization serializer = new JsonNetSerialization();
         readonly HttpHelpers httpHelpers = new HttpHelpers();

@@ -130,5 +130,112 @@ namespace IMS.API.Controllers
         {
             return db.QUOTATIONs.Count(e => e.QUOTE_ID == id) > 0;
         }
+
+        #region "RFQ"
+        // GET: api/RFQ
+        public IQueryable<RFQ> GetRFQs()
+        {
+            return db.RFQs;
+        }
+
+        // GET: api/RFQ/5
+        [ResponseType(typeof(RFQ))]
+        public async Task<IHttpActionResult> GetRFQ(Guid id)
+        {
+            RFQ rfq = await db.RFQs.FindAsync(id);
+            if (rfq == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(rfq);
+        }
+
+        // PUT: api/RFQ/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutRFQ(Guid id, RFQ rfq)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != rfq.RFQ_ID)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(rfq).State = EntityState.Modified;
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RFQExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST: api/RFQ
+        [ResponseType(typeof(RFQ))]
+        public async Task<IHttpActionResult> PostRFQ(RFQ rfq)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.RFQs.Add(rfq);
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (RFQExists(rfq.RFQ_ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = rfq.RFQ_ID }, rfq);
+        }
+
+        // DELETE: api/RFQ/5
+        [ResponseType(typeof(RFQ))]
+        public async Task<IHttpActionResult> DeleteRFQ(Guid id)
+        {
+            RFQ rfq = await db.RFQs.FindAsync(id);
+            if (rfq == null)
+            {
+                return NotFound();
+            }
+
+            db.RFQs.Remove(rfq);
+            await db.SaveChangesAsync();
+
+            return Ok(rfq);
+        }
+
+        private bool RFQExists(Guid id)
+        {
+            return db.RFQs.Count(e => e.RFQ_ID == id) > 0;
+        }
+        #endregion
     }
 }

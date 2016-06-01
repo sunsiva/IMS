@@ -1,4 +1,5 @@
 ﻿using IMS.Common;
+using IMS.Common.Enums;
 using IMS.DataModel.ViewModels;
 using IMS.UI.Common;
 using PagedList;
@@ -11,7 +12,7 @@ using System.Web.Mvc;
 
 namespace IMS.UI.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : BaseController
     {
         readonly JsonNetSerialization serializer = new JsonNetSerialization();
         readonly HttpHelpers httpHelpers = new HttpHelpers();
@@ -21,13 +22,21 @@ namespace IMS.UI.Controllers
         [HttpGet]
         public ActionResult Index(string sOdr, int? page)
         {
-            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_GET_ENDPNT));
-            List<CustomerViewModels> custModel = serializer.DeSerialize<List<CustomerViewModels>>(content) as List<CustomerViewModels>;
-            custModel = GetPagination(custModel, sOdr, page);
-            int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
-            int pNo = ViewBag.PageNo == null ? 0 : ViewBag.PageNo;
+            try
+            {
+                var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_GET_ENDPNT));
+                List<CustomerViewModels> custModel = serializer.DeSerialize<List<CustomerViewModels>>(content) as List<CustomerViewModels>;
+                custModel = GetPagination(custModel, sOdr, page);
+                int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
+                int pNo = ViewBag.PageNo == null ? 0 : ViewBag.PageNo;
             
-            return View(custModel.ToPagedList(pNo, pSize));
+                return View(custModel.ToPagedList(pNo, pSize));
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+           
         }
 
         public ActionResult Create()
@@ -45,26 +54,34 @@ namespace IMS.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerViewModels model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var uid = HttpRuntime.Cache.Get(CacheKey.Uid.ToString()).ToString();
-                model.CUST_ID = Guid.NewGuid();
-                model.ISACTIVE = true;
-                model.CREATED_BY = uid == null ? Guid.NewGuid() : Guid.Parse(uid);
-                model.CREATED_ON = DateTime.Now;
-
-                var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_NEW_ENDPNT),
-                   serializer.Serialize<CustomerViewModels>(model));
-            
-                if (result.IsSuccessStatusCode)
+                if (ModelState.IsValid)
                 {
-                    return View();
-                }
-                ModelState.AddModelError("CustomerCreate", result.ReasonPhrase);
-            }
+                    var uid = HttpRuntime.Cache.Get(CacheKey.Uid.ToString()).ToString();
+                    model.CUST_ID = Guid.NewGuid();
+                    model.ISACTIVE = true;
+                    model.CREATED_BY = uid == null ? Guid.NewGuid() : Guid.Parse(uid);
+                    model.CREATED_ON = DateTime.Now;
 
-            ModelState.AddModelError("FILD", "Failed to insert customer data.");
-            return View(model);
+                    var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.CUST_NEW_ENDPNT),
+                       serializer.Serialize<CustomerViewModels>(model));
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return View();
+                    }
+                    ModelState.AddModelError("CustomerCreate", result.ReasonPhrase);
+                }
+
+                ModelState.AddModelError("FILD", "Failed to insert customer data.");
+                return View(model);
+            }
+            catch(Exception ex)
+            {
+                LoggingUtil.LogException(ex, errorLevel: ErrorLevel.Critical);
+                throw ex;
+            }
         }
 
         #region private methods

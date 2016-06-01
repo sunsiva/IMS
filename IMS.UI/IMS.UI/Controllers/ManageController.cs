@@ -11,7 +11,7 @@ using IMS.UI.Models;
 namespace IMS.UI.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

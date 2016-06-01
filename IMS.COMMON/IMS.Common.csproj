@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Enums\ErrorLevels.cs" />
     <Compile Include="Enums\PageName.cs" />
     <Compile Include="Enums\TrackingChannel.cs" />
     <Compile Include="Enums\TrackingServices.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ISerialization.cs" />
     <Compile Include="JsonNetSerialization.cs" />
     <Compile Include="Keys.cs" />
+    <Compile Include="LoggingUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

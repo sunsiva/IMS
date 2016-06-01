@@ -51,6 +51,7 @@
     <Compile Include="ViewModels\ProductViewModels.cs" />
     <Compile Include="ViewModels\QuotationViewModels.cs" />
     <Compile Include="ViewModels\RatingMasterViewModels.cs" />
+    <Compile Include="ViewModels\RFQViewModels.cs" />
     <Compile Include="ViewModels\WorkOrderViewModels.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

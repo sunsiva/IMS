@@ -1,0 +1,116 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<IMS.DataModel.ViewModels.RFQViewModels>
+@{
+    int sl = 0; ViewBag.Title = "Request for Quotation";
+}
+<table class="table">
+    <tr>
+        <td>
+            <h4 class="panel-title">
+                Request For Quotation List
+            </h4>
+        </td>
+        <td align="right">
+            <a id="customernew" class="btn btn-default" href="/Quotation/RFQCreate">
+                <i class="glyphicon glyphicon-new-window"></i> New
+            </a>
+
+            <a onclick="fnLeftMenu(this); return false;" id="quotationnew" class="btn btn-default" href="#">
+                <i class="glyphicon glyphicon-export"></i> Export
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-striped table-hover table-condensed table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayName("RFQ_NO")
+        </th>
+        <th>
+            @Html.ActionLink("RFQ NAME", "RFQIndex", new { sOdr = ViewBag.NameSort })
+        </th>
+        <th>
+            @Html.DisplayName("RFQ_DESC")
+        </th>
+        <th>
+            @Html.ActionLink("RFQ_DATE", "RFQIndex", new { sOdr = ViewBag.DateSort })
+        </th>
+        <th>
+            @Html.DisplayName("DUE_DATE")
+        </th>
+        <th>
+            @Html.DisplayName("PRODUCT")
+        </th>
+        <th>
+            @Html.DisplayName("QUANTITY")
+        </th>
+        <th>
+            @Html.DisplayName("UNIT_PRICE")
+        </th>
+        <th>
+            STATUS
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.HiddenFor(modelItem => item.RFQ_ID)
+                @Html.DisplayFor(modelItem => item.RFQ_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFQ_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFQ_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFQ_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DUE_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRODUCT_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUANTITY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UNIT_PRICE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISACTIVE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.RFQ_ID }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.RFQ_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.RFQ_ID })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (Model.Count() > 0)
+            {
+    <table align="right">
+        <tr>
+            <td>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount  </td>
+            <td width="10px"></td>
+            <td>
+                @Html.PagedListPager(Model, page => Url.Action("RFQIndex", "Quotation", new { page, sOdr = ViewBag.CurrentSort }))
+            </td>
+        </tr>
+    </table>
+}
+else {
+    <table align="center">
+        <tr>
+            <td align="right" class="text-danger" style="font-size:large">No record(s) found.</td>
+        </tr>
+    </table>
+}

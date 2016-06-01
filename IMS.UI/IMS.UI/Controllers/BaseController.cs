@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Text;
 using IMS.Common.Enums;
 using IMS.DataModel.Common;
+using IMS.Common;
 
 namespace IMS.UI.Controllers
 {
@@ -92,6 +93,18 @@ namespace IMS.UI.Controllers
             base.InitializeContext(httpContext);
             //InitializeJSHelper();
             //ModelRepository = new ModelRepository(Context);
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            Exception e = filterContext.Exception;
+            //Log Exception e to DB.
+            filterContext.ExceptionHandled = true;
+            LoggingUtil.LogException(e, errorLevel: ErrorLevel.Critical);
+            //filterContext.Result = new ViewResult()
+            //{
+            //    ViewName = "Error"
+            //};
         }
 
         /// <summary>
