@@ -13,17 +13,18 @@ using IMS.API;
 
 namespace IMS.API.Controllers
 {
+    [RoutePrefix("api/Quotation")]
     public class QuotationController : ApiController
     {
         private IMSEntities db = new IMSEntities();
 
-        // GET: api/QUOTATION
+        // GET: api/QUOTATION/{action}
         public IQueryable<QUOTATION> GetQUOTATIONs()
         {
             return db.QUOTATIONs;
         }
 
-        // GET: api/QUOTATION/5
+        // GET: api/QUOTATION/{action}/5
         [ResponseType(typeof(QUOTATION))]
         public async Task<IHttpActionResult> GetQUOTATION(Guid id)
         {
@@ -36,7 +37,7 @@ namespace IMS.API.Controllers
             return Ok(qUOTATION);
         }
 
-        // PUT: api/QUOTATION/5
+        // PUT: api/QUOTATION/{action}/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutQUOTATION(Guid id, QUOTATION qUOTATION)
         {
@@ -71,7 +72,7 @@ namespace IMS.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/QUOTATION
+        // POST: api/QUOTATION/{action}
         [ResponseType(typeof(QUOTATION))]
         public async Task<IHttpActionResult> PostQUOTATION(QUOTATION qUOTATION)
         {
@@ -101,7 +102,7 @@ namespace IMS.API.Controllers
             return CreatedAtRoute("DefaultApi", new { id = qUOTATION.QUOTE_ID }, qUOTATION);
         }
 
-        // DELETE: api/QUOTATION/5
+        // DELETE: api/QUOTATION/{action}/5
         [ResponseType(typeof(QUOTATION))]
         public async Task<IHttpActionResult> DeleteQUOTATION(Guid id)
         {
@@ -132,15 +133,14 @@ namespace IMS.API.Controllers
         }
 
         #region "RFQ"
-        // GET: api/RFQ
+        // GET: api/Quotation/{action}
         public IQueryable<RFQ> GetRFQs()
         {
             return db.RFQs;
         }
 
-        // GET: api/RFQ/5
-        [ResponseType(typeof(RFQ))]
-        public async Task<IHttpActionResult> GetRFQ(Guid id)
+        // GET: api/Quotation/{action}/5
+        public async Task<IHttpActionResult> GetRFQById(Guid id)
         {
             RFQ rfq = await db.RFQs.FindAsync(id);
             if (rfq == null)
@@ -151,7 +151,7 @@ namespace IMS.API.Controllers
             return Ok(rfq);
         }
 
-        // PUT: api/RFQ/5
+        // PUT: api/Quotation/{action}/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutRFQ(Guid id, RFQ rfq)
         {
@@ -186,7 +186,7 @@ namespace IMS.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/RFQ
+        // POST: api/Quotation/{action}
         [ResponseType(typeof(RFQ))]
         public async Task<IHttpActionResult> PostRFQ(RFQ rfq)
         {
@@ -216,7 +216,7 @@ namespace IMS.API.Controllers
             return CreatedAtRoute("DefaultApi", new { id = rfq.RFQ_ID }, rfq);
         }
 
-        // DELETE: api/RFQ/5
+        // DELETE: api/Quotation/{action}/5
         [ResponseType(typeof(RFQ))]
         public async Task<IHttpActionResult> DeleteRFQ(Guid id)
         {

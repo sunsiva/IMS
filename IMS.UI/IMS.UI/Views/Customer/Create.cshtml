@@ -98,7 +98,7 @@
                                 <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.Label("LINE_OF_BUSINESS", htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.DropDownList("ddlLoBList", (SelectList)ViewBag.LoB    , "Select a Line of Business", htmlAttributes:new { @class= "form-control", @id= "LINEOFBIZ_LKPID", @required = "mandatory" })
+                                        @Html.DropDownList("ddlLoBList", (SelectList)ViewBag.LoB, "Select a Line of Business", htmlAttributes:new { @class= "form-control", @id= "LINEOFBIZ_LKPID", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.LINEOFBIZ_LKPID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -138,7 +138,10 @@
                                 <div class="col-sm-6 col-lg-4">
                                     @Html.Label("COMPANY_SIZE", htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.COMP_SIZE_LKPID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @*@Html.AutocompleteFor(model => model., model => model.COMP_SIZE_LKPID, "GetLoB", "HelloWorld", false)*@
+                                        @Html.AutocompleteFor(model => model.COMP_SIZE_LKPID, "GetLoB", "Customer")
+                                        @Html.DropDownListFor(model => model.COMP_SIZE_LKPID, new SelectList(new List<object> { new {value=0, text="Small"}, new { value = 1, text = "Medium" }, new { value = 0, text = "Large" }}),
+                                       "Select a Company Size..", new { @class = "form-control", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.COMP_SIZE_LKPID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -146,7 +149,7 @@
                                 <div class="col-sm-6 col-lg-4 form-group-required">
                                     @Html.LabelFor(model => model.YEARS_OF_ESTABLISHMENT, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.YEARS_OF_ESTABLISHMENT, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.YEARS_OF_ESTABLISHMENT, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Select a date..." } })
                                         @Html.ValidationMessageFor(model => model.YEARS_OF_ESTABLISHMENT, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -474,6 +477,17 @@
 
                             @section Scripts {
                                 @Scripts.Render("~/bundles/jqueryval")
+                                <script src="~/Scripts/moment.js"></script>
+                                <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+                                <script lang="ja" type="text/javascript">
+                                    $(document).ready(function () {
+
+                                        $('.date-picker').datetimepicker({
+                                            format: 'MM/DD/YYYY'
+                                        });
+
+                                    });
+                                </script>
                             }
                         </div>
                     </div>

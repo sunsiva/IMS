@@ -1,12 +1,15 @@
 ﻿using IMS.DataModel.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 
 namespace IMS.API.Controllers
 {
+    [RoutePrefix("api/Master")]
     public class MasterController : ApiController
     {
         private IMSEntities db = new IMSEntities();
@@ -18,9 +21,7 @@ namespace IMS.API.Controllers
         }
 
         // GET: api/LookupData
-        [Route("api/Master/GetAllLookup")]
-        [HttpGet]
-        public List<LOOKUP_CATEGORIES> GetLookupData()
+        public List<LOOKUP_CATEGORIES> GetAllLookup()
         {
             var lkpDataLst = db.LOOKUP_DATA.ToList().ToList();
             List<LOOKUP_CATEGORIES> lookupData = (from item in db.LOOKUP_CATEGORIES.ToList().Where(x=>x.ISACTIVE==true)
@@ -36,5 +37,37 @@ namespace IMS.API.Controllers
                               }).Distinct().ToList().Where(x => x.LOOKUP_DATA.Count() > 0).ToList();
             return lookupData;
         }
+
+        [HttpPost]
+        public async Task<IHttpActionResult> PostLocation(LOCATION_MASTER location)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.LOCATION_MASTER.Add(location);
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                throw;
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = location.LOC_ID }, location);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+        
     }
 }

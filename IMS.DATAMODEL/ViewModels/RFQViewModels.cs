@@ -19,13 +19,14 @@ namespace IMS.DataModel.ViewModels
         public string ORIGINATING_COMP_MANAGER { get; set; }
         public string BID_TYPE { get; set; }
         [Required]
-        public DateTime RFQ_DATE { get; set; }
+        public DateTime? RFQ_DATE { get; set; }
         public DateTime? DUE_DATE { get; set; }
         public DateTime? CLOSING_DATE { get; set; }
         public string DURATION { get; set; }
         public string DURATION_TIMELINE { get; set; }
         public int NUMBEROFRELEASES { get; set; }
         [Required(ErrorMessage = "Plese enter a location")]
+        public string LOC_ADDRESS { get; set; }
         public Guid LOC_ID { get; set; }
         public Guid? JOB_ID { get; set; }
         public string JOB_NAME { get; set; }
@@ -35,7 +36,7 @@ namespace IMS.DataModel.ViewModels
         public string JOB_LOCATIONC { get; set; }
         public bool? ISCUSTOMER_SUPPLIEDDRAWING { get; set; }
         public string DRAWING_SOURCE { get; set; }
-        [Required(ErrorMessage ="Please select a Product")]
+        //[Required(ErrorMessage ="Please select a Product")]
         public Guid?PRODUCT_ID { get; set; }
         [Required]
         public string QUANTITY { get; set; }

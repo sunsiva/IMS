@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="IMSModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" />
         <EntityTypeShape EntityType="IMSModel.COMPANY" Width="1.5" PointX="13.75" PointY="11.25" />
         <EntityTypeShape EntityType="IMSModel.CONTACT_DETAILS" Width="1.5" PointX="11" PointY="7.5" />
-        <EntityTypeShape EntityType="IMSModel.CUSTOMER" Width="1.5" PointX="3.75" PointY="13" />
         <EntityTypeShape EntityType="IMSModel.CUSTXPROD" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="IMSModel.EXCEPTION_LOGGING" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="IMSModel.LOCATION_MASTER" Width="1.5" PointX="8.75" PointY="12" />
@@ -25,8 +24,6 @@
         <EntityTypeShape EntityType="IMSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="13.75" />
         <EntityTypeShape EntityType="IMSModel.WORKORDER" Width="1.5" PointX="3" PointY="5.625" />
         <AssociationConnector Association="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER" />
-        <AssociationConnector Association="IMSModel.FK_CUSTOMER_RATING_MASTER" />
-        <AssociationConnector Association="IMSModel.FK_QUOTATION_CUSTOMER" />
         <AssociationConnector Association="IMSModel.FK_PURCHASE_ORDER_LOCATION_MASTER" />
         <AssociationConnector Association="IMSModel.FK_LOOKUP_DATA_LOOKUP_CATEGORIES" />
         <AssociationConnector Association="IMSModel.FK_QUOTATION_PRODUCTS" />
@@ -38,8 +35,12 @@
         <AssociationConnector Association="IMSModel.AspNetUserRoles" />
         <EntityTypeShape EntityType="IMSModel.CUST_STATUS_HISTORY" Width="1.5" PointX="6" PointY="25" />
         <EntityTypeShape EntityType="IMSModel.UserXRole" Width="1.5" PointX="15.375" PointY="0.75" />
-        <AssociationConnector Association="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" />
         <AssociationConnector Association="IMSModel.FK_UserXRole_UserXRole" />
+        <EntityTypeShape EntityType="IMSModel.EVENTSCHEDULE" Width="1.5" PointX="16.375" PointY="10.75" />
+        <EntityTypeShape EntityType="IMSModel.CUSTOMER" Width="1.5" PointX="3.75" PointY="25" />
+        <AssociationConnector Association="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" />
+        <AssociationConnector Association="IMSModel.FK_CUSTOMER_RATING_MASTER" />
+        <AssociationConnector Association="IMSModel.FK_QUOTATION_CUSTOMER" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

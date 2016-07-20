@@ -17,8 +17,8 @@ namespace IMS.API
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CUSTOMER()
         {
-            this.QUOTATIONs = new HashSet<QUOTATION>();
             this.CUST_STATUS_HISTORY = new HashSet<CUST_STATUS_HISTORY>();
+            this.QUOTATIONs = new HashSet<QUOTATION>();
         }
     
         public System.Guid CUST_ID { get; set; }
@@ -35,7 +35,7 @@ namespace IMS.API
         public Nullable<System.Guid> COMPANY_GROUP_CODE_LKPID { get; set; }
         public Nullable<System.Guid> SALESCHNL_REFERENCE_LKPID { get; set; }
         public string SALES_PERSON { get; set; }
-        public System.Guid COMP_SIZE_LKPID { get; set; }
+        public string COMP_SIZE { get; set; }
         public System.Guid CURRENCY_LKPID { get; set; }
         public Nullable<System.Guid> SHIPMENTTERM_LKPID { get; set; }
         public Nullable<System.Guid> PAYMENTTERM_LKPID { get; set; }
@@ -80,10 +80,10 @@ namespace IMS.API
         public System.Guid CREATED_BY { get; set; }
         public System.DateTime CREATED_ON { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUST_STATUS_HISTORY> CUST_STATUS_HISTORY { get; set; }
         public virtual RATING_MASTER RATING_MASTER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUOTATION> QUOTATIONs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CUST_STATUS_HISTORY> CUST_STATUS_HISTORY { get; set; }
     }
 }

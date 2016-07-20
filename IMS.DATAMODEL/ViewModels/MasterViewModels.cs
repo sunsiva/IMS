@@ -30,8 +30,6 @@ namespace IMS.DataModel.ViewModels
         public bool ISACTIVE { get; set; }
         public DateTime? CREATEDON { get; set; }
         public string CREATEDBY { get; set; }
-
-        
     }
 
 }

@@ -45,9 +45,9 @@ namespace IMS.API
         public System.Guid CREATED_BY { get; set; }
         public System.DateTime CREATED_ON { get; set; }
     
-        public virtual CUSTOMER CUSTOMER { get; set; }
         public virtual PRODUCT PRODUCT { get; set; }
         public virtual QUOTATION QUOTATION1 { get; set; }
         public virtual QUOTATION QUOTATION2 { get; set; }
+        public virtual CUSTOMER CUSTOMER { get; set; }
     }
 }

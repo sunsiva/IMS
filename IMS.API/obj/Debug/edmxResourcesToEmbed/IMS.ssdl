@@ -16,6 +16,8 @@
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <EntityType Name="AspNetUserClaims">
     <Key>
@@ -175,7 +177,7 @@
     <Property Name="COMPANY_GROUP_CODE_LKPID" Type="uniqueidentifier" />
     <Property Name="SALESCHNL_REFERENCE_LKPID" Type="uniqueidentifier" />
     <Property Name="SALES_PERSON" Type="varchar" MaxLength="30" />
-    <Property Name="COMP_SIZE_LKPID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="COMP_SIZE" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CURRENCY_LKPID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="SHIPMENTTERM_LKPID" Type="uniqueidentifier" />
     <Property Name="PAYMENTTERM_LKPID" Type="uniqueidentifier" />
@@ -227,6 +229,23 @@
     <Property Name="CUST_ID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PRD_ID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EVENTSCHEDULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SOMEIMPORTANTKEY" Type="int" Nullable="false" />
+    <Property Name="DATETIMESCHEDULED" Type="datetime" Nullable="false" />
+    <Property Name="APPOINTMENTLENGTH" Type="int" Nullable="false" />
+    <Property Name="STATUSENUM" Type="int" Nullable="false" />
+    <Property Name="COMMENTS" Type="nvarchar(max)" />
+    <Property Name="ISACTIVE" Type="bit" />
+    <Property Name="MODIFIED_BY" Type="datetime" />
+    <Property Name="MODIFIED_ON" Type="datetime" />
+    <Property Name="CREATED_BY" Type="datetime" />
+    <Property Name="CREATED_ON" Type="datetime" />
   </EntityType>
   <EntityType Name="EXCEPTION_LOGGING">
     <Key>
@@ -702,6 +721,7 @@
     <EntitySet Name="CUST_STATUS_HISTORY" EntityType="Self.CUST_STATUS_HISTORY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CUSTXPROD" EntityType="Self.CUSTXPROD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVENTSCHEDULE" EntityType="Self.EVENTSCHEDULE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EXCEPTION_LOGGING" EntityType="Self.EXCEPTION_LOGGING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOCATION_MASTER" EntityType="Self.LOCATION_MASTER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOOKUP_CATEGORIES" EntityType="Self.LOOKUP_CATEGORIES" Schema="dbo" store:Type="Tables" />

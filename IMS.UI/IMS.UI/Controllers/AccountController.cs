@@ -78,7 +78,7 @@ namespace IMS.UI.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email.ToLower(), model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -113,8 +113,9 @@ namespace IMS.UI.Controllers
             {
                 //httpHelpers.HttpInvoke(SupportedHttpMethods.POST, string.Format("{0}{1}", IMSConsts.API_SERVICE_BASE_ADRS, IMSConsts.USER_NEW_ENDPNT),
                 //serializer.Serialize<RegisterViewModel>(model));
-
-               var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.USER_NEW_ENDPNT),
+                model.UserName = model.UserName.ToLower();
+                model.Email = model.Email.ToLower();
+                var result = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.USER_NEW_ENDPNT),
                 serializer.Serialize<RegisterViewModel>(model));
 
                 if (result.IsSuccessStatusCode)

@@ -157,3 +157,4 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\Microsoft.Owin.Se
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.csprojResolveAssemblyReference.cache
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\obj\Debug\IMS.UI.pdb
+D:\source\exercise\xtra\Inventory\source\IMS\IMS.UI\IMS.UI\bin\WebActivatorEx.dll

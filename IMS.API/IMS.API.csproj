@@ -246,6 +246,9 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="EVENTSCHEDULE.cs">
+      <DependentUpon>IMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="EXCEPTION_LOGGING.cs">
       <DependentUpon>IMS.tt</DependentUpon>
     </Compile>

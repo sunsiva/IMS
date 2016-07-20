@@ -7,7 +7,6 @@
     <EntitySet Name="AspNetUserLogins" EntityType="IMSModel.AspNetUserLogin" />
     <EntitySet Name="COMPANies" EntityType="IMSModel.COMPANY" />
     <EntitySet Name="CONTACT_DETAILS" EntityType="IMSModel.CONTACT_DETAILS" />
-    <EntitySet Name="CUSTOMERs" EntityType="IMSModel.CUSTOMER" />
     <EntitySet Name="CUSTXPRODs" EntityType="IMSModel.CUSTXPROD" />
     <EntitySet Name="EXCEPTION_LOGGING" EntityType="IMSModel.EXCEPTION_LOGGING" />
     <EntitySet Name="LOCATION_MASTER" EntityType="IMSModel.LOCATION_MASTER" />
@@ -23,14 +22,6 @@
     <AssociationSet Name="FK_CONTACT_DETAILS_LOCATION_MASTER" Association="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER">
       <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
       <End Role="CONTACT_DETAILS" EntitySet="CONTACT_DETAILS" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CUSTOMER_RATING_MASTER" Association="IMSModel.FK_CUSTOMER_RATING_MASTER">
-      <End Role="RATING_MASTER" EntitySet="RATING_MASTER" />
-      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_QUOTATION_CUSTOMER" Association="IMSModel.FK_QUOTATION_CUSTOMER">
-      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
-      <End Role="QUOTATION" EntitySet="QUOTATIONs" />
     </AssociationSet>
     <AssociationSet Name="FK_PURCHASE_ORDER_LOCATION_MASTER" Association="IMSModel.FK_PURCHASE_ORDER_LOCATION_MASTER">
       <End Role="LOCATION_MASTER" EntitySet="LOCATION_MASTER" />
@@ -67,13 +58,23 @@
     </AssociationSet>
     <EntitySet Name="CUST_STATUS_HISTORY" EntityType="IMSModel.CUST_STATUS_HISTORY" />
     <EntitySet Name="UserXRoles" EntityType="IMSModel.UserXRole" />
+    <AssociationSet Name="FK_UserXRole_UserXRole" Association="IMSModel.FK_UserXRole_UserXRole">
+      <End Role="UserXRole" EntitySet="UserXRoles" />
+      <End Role="UserXRole1" EntitySet="UserXRoles" />
+    </AssociationSet>
+    <EntitySet Name="EVENTSCHEDULEs" EntityType="IMSModel.EVENTSCHEDULE" />
+    <EntitySet Name="CUSTOMERs" EntityType="IMSModel.CUSTOMER" />
     <AssociationSet Name="FK_CUST_STATUS_HISTORY_CUSTOMER" Association="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER">
       <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
       <End Role="CUST_STATUS_HISTORY" EntitySet="CUST_STATUS_HISTORY" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserXRole_UserXRole" Association="IMSModel.FK_UserXRole_UserXRole">
-      <End Role="UserXRole" EntitySet="UserXRoles" />
-      <End Role="UserXRole1" EntitySet="UserXRoles" />
+    <AssociationSet Name="FK_CUSTOMER_RATING_MASTER" Association="IMSModel.FK_CUSTOMER_RATING_MASTER">
+      <End Role="RATING_MASTER" EntitySet="RATING_MASTER" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUOTATION_CUSTOMER" Association="IMSModel.FK_QUOTATION_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="QUOTATION" EntitySet="QUOTATIONs" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="C__MigrationHistory">
@@ -93,6 +94,8 @@
     <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AspNetUsers" Relationship="IMSModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
   </EntityType>
   <EntityType Name="AspNetUserClaim">
     <Key>
@@ -186,72 +189,6 @@
     <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
     <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="LOCATION_MASTER" Relationship="IMSModel.FK_CONTACT_DETAILS_LOCATION_MASTER" FromRole="CONTACT_DETAILS" ToRole="LOCATION_MASTER" />
-  </EntityType>
-  <EntityType Name="CUSTOMER">
-    <Key>
-      <PropertyRef Name="CUST_ID" />
-    </Key>
-    <Property Name="CUST_ID" Type="Guid" Nullable="false" />
-    <Property Name="CUST_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="CUST_CODE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="CUST_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ISVENDOR" Type="Boolean" Nullable="false" />
-    <Property Name="LEGAL_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="DEPARTMENT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="COMPANY_RELATIONSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="STATUS_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="LINEOFBIZ_LKPID" Type="Guid" />
-    <Property Name="LOB_CATEGORY_LKPID" Type="Guid" />
-    <Property Name="COMPANY_GROUP_CODE_LKPID" Type="Guid" />
-    <Property Name="SALESCHNL_REFERENCE_LKPID" Type="Guid" />
-    <Property Name="SALES_PERSON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="COMP_SIZE_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="CURRENCY_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="SHIPMENTTERM_LKPID" Type="Guid" />
-    <Property Name="PAYMENTTERM_LKPID" Type="Guid" />
-    <Property Name="CREDITLIMIT_LKPID" Type="Guid" />
-    <Property Name="PRICEBAND_LKPID" Type="Guid" />
-    <Property Name="DISCOUNTBAND_LKPID" Type="Guid" />
-    <Property Name="AUTO_BANDING" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="TAXCODE1_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="TAXCODE2_LKPID" Type="Guid" />
-    <Property Name="TAXCODE3_LKPID" Type="Guid" />
-    <Property Name="CUST_BILL_LOC_ID" Type="Guid" Nullable="false" />
-    <Property Name="CUST_SHIP_LOC_ID" Type="Guid" Nullable="false" />
-    <Property Name="CUST_TYPE_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="OWNERSHIP_LKPID" Type="Guid" Nullable="false" />
-    <Property Name="COMPANY_EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="COMPANY_WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="RATING_ID" Type="Guid" />
-    <Property Name="YEARS_OF_ESTABLISHMENT" Type="Int32" Nullable="false" />
-    <Property Name="NO_OF_EMPLOYEES_OFFICE" Type="Int32" Nullable="false" />
-    <Property Name="NO_OF_EMPLOYEES_FACTORY" Type="Int32" Nullable="false" />
-    <Property Name="REVENUE" Type="Double" />
-    <Property Name="TURN_OVER" Type="Double" />
-    <Property Name="SALES" Type="Double" />
-    <Property Name="PAYMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="SHIPMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CALL_PREFERENCES" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CREDIT_CHECK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CONTRACT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="MSA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="SLA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="DECLARATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="COMPANY_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="OWNERSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CAPACITY_DAILY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CAPACITY_MONTHLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CAPACITY_YEARLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
-    <Property Name="MODIFIED_BY" Type="Guid" />
-    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
-    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
-    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="RATING_MASTER" Relationship="IMSModel.FK_CUSTOMER_RATING_MASTER" FromRole="CUSTOMER" ToRole="RATING_MASTER" />
-    <NavigationProperty Name="QUOTATIONs" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="CUSTOMER" ToRole="QUOTATION" />
-    <NavigationProperty Name="CUST_STATUS_HISTORY" Relationship="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" FromRole="CUSTOMER" ToRole="CUST_STATUS_HISTORY" />
   </EntityType>
   <EntityType Name="CUSTXPROD">
     <Key>
@@ -441,10 +378,10 @@
     <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
     <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
     <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="CUSTOMER" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="QUOTATION" ToRole="CUSTOMER" />
     <NavigationProperty Name="PRODUCT" Relationship="IMSModel.FK_QUOTATION_PRODUCTS" FromRole="QUOTATION" ToRole="PRODUCT" />
     <NavigationProperty Name="QUOTATION1" Relationship="IMSModel.FK_QUOTATION_QUOTATION" FromRole="QUOTATION" ToRole="QUOTATION1" />
     <NavigationProperty Name="QUOTATION2" Relationship="IMSModel.FK_QUOTATION_QUOTATION" FromRole="QUOTATION1" ToRole="QUOTATION" />
+    <NavigationProperty Name="CUSTOMER" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="QUOTATION" ToRole="CUSTOMER" />
   </EntityType>
   <EntityType Name="RATING_MASTER">
     <Key>
@@ -562,30 +499,6 @@
       </Principal>
       <Dependent Role="CONTACT_DETAILS">
         <PropertyRef Name="LOC_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CUSTOMER_RATING_MASTER">
-    <End Type="IMSModel.RATING_MASTER" Role="RATING_MASTER" Multiplicity="0..1" />
-    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RATING_MASTER">
-        <PropertyRef Name="RATING_ID" />
-      </Principal>
-      <Dependent Role="CUSTOMER">
-        <PropertyRef Name="RATING_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_QUOTATION_CUSTOMER">
-    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
-    <End Type="IMSModel.QUOTATION" Role="QUOTATION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CUSTOMER">
-        <PropertyRef Name="CUST_ID" />
-      </Principal>
-      <Dependent Role="QUOTATION">
-        <PropertyRef Name="CUST_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -736,6 +649,101 @@
     <NavigationProperty Name="UserXRole1" Relationship="IMSModel.FK_UserXRole_UserXRole" FromRole="UserXRole" ToRole="UserXRole1" />
     <NavigationProperty Name="UserXRole2" Relationship="IMSModel.FK_UserXRole_UserXRole" FromRole="UserXRole1" ToRole="UserXRole" />
   </EntityType>
+  <Association Name="FK_UserXRole_UserXRole">
+    <End Type="IMSModel.UserXRole" Role="UserXRole" Multiplicity="1" />
+    <End Type="IMSModel.UserXRole" Role="UserXRole1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserXRole">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserXRole1">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EVENTSCHEDULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SOMEIMPORTANTKEY" Type="Int32" Nullable="false" />
+    <Property Name="DATETIMESCHEDULED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="APPOINTMENTLENGTH" Type="Int32" Nullable="false" />
+    <Property Name="STATUSENUM" Type="Int32" Nullable="false" />
+    <Property Name="COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+    <Property Name="MODIFIED_BY" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUST_ID" />
+    </Key>
+    <Property Name="CUST_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_CODE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CUST_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISVENDOR" Type="Boolean" Nullable="false" />
+    <Property Name="LEGAL_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_RELATIONSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="LINEOFBIZ_LKPID" Type="Guid" />
+    <Property Name="LOB_CATEGORY_LKPID" Type="Guid" />
+    <Property Name="COMPANY_GROUP_CODE_LKPID" Type="Guid" />
+    <Property Name="SALESCHNL_REFERENCE_LKPID" Type="Guid" />
+    <Property Name="SALES_PERSON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_SIZE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="SHIPMENTTERM_LKPID" Type="Guid" />
+    <Property Name="PAYMENTTERM_LKPID" Type="Guid" />
+    <Property Name="CREDITLIMIT_LKPID" Type="Guid" />
+    <Property Name="PRICEBAND_LKPID" Type="Guid" />
+    <Property Name="DISCOUNTBAND_LKPID" Type="Guid" />
+    <Property Name="AUTO_BANDING" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TAXCODE1_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="TAXCODE2_LKPID" Type="Guid" />
+    <Property Name="TAXCODE3_LKPID" Type="Guid" />
+    <Property Name="CUST_BILL_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_SHIP_LOC_ID" Type="Guid" Nullable="false" />
+    <Property Name="CUST_TYPE_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="OWNERSHIP_LKPID" Type="Guid" Nullable="false" />
+    <Property Name="COMPANY_EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RATING_ID" Type="Guid" />
+    <Property Name="YEARS_OF_ESTABLISHMENT" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_OFFICE" Type="Int32" Nullable="false" />
+    <Property Name="NO_OF_EMPLOYEES_FACTORY" Type="Int32" Nullable="false" />
+    <Property Name="REVENUE" Type="Double" />
+    <Property Name="TURN_OVER" Type="Double" />
+    <Property Name="SALES" Type="Double" />
+    <Property Name="PAYMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPMENT_METHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CALL_PREFERENCES" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CREDIT_CHECK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CONTRACT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MSA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SLA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DECLARATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OWNERSHIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_DAILY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_MONTHLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CAPACITY_YEARLY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="MODIFIED_BY" Type="Guid" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Guid" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CUST_STATUS_HISTORY" Relationship="IMSModel.FK_CUST_STATUS_HISTORY_CUSTOMER" FromRole="CUSTOMER" ToRole="CUST_STATUS_HISTORY" />
+    <NavigationProperty Name="RATING_MASTER" Relationship="IMSModel.FK_CUSTOMER_RATING_MASTER" FromRole="CUSTOMER" ToRole="RATING_MASTER" />
+    <NavigationProperty Name="QUOTATIONs" Relationship="IMSModel.FK_QUOTATION_CUSTOMER" FromRole="CUSTOMER" ToRole="QUOTATION" />
+  </EntityType>
   <Association Name="FK_CUST_STATUS_HISTORY_CUSTOMER">
     <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
     <End Type="IMSModel.CUST_STATUS_HISTORY" Role="CUST_STATUS_HISTORY" Multiplicity="*" />
@@ -748,15 +756,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserXRole_UserXRole">
-    <End Type="IMSModel.UserXRole" Role="UserXRole" Multiplicity="1" />
-    <End Type="IMSModel.UserXRole" Role="UserXRole1" Multiplicity="0..1" />
+  <Association Name="FK_CUSTOMER_RATING_MASTER">
+    <End Type="IMSModel.RATING_MASTER" Role="RATING_MASTER" Multiplicity="0..1" />
+    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UserXRole">
-        <PropertyRef Name="UserId" />
+      <Principal Role="RATING_MASTER">
+        <PropertyRef Name="RATING_ID" />
       </Principal>
-      <Dependent Role="UserXRole1">
-        <PropertyRef Name="UserId" />
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="RATING_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUOTATION_CUSTOMER">
+    <End Type="IMSModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="IMSModel.QUOTATION" Role="QUOTATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="CUST_ID" />
+      </Principal>
+      <Dependent Role="QUOTATION">
+        <PropertyRef Name="CUST_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -2,13 +2,13 @@
 @using PagedList.Mvc;
 @model IPagedList<IMS.DataModel.ViewModels.RFQViewModels>
 @{
-    int sl = 0; ViewBag.Title = "Request for Quotation";
+    int sl = 0; ViewBag.Title = "Quotation";
 }
 <table class="table">
     <tr>
         <td>
             <h4 class="panel-title">
-                Request For Quotation List
+                Quotation List
             </h4>
         </td>
         <td align="right">
@@ -52,7 +52,7 @@
         <th>
             STATUS
         </th>
-        <th></th>
+        <th>ACTION</th>
     </tr>
 
     @foreach (var item in Model)
