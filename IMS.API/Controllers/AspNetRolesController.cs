@@ -18,7 +18,7 @@ namespace IMS.API.Controllers
         // GET: api/AspNetRoles
         public IQueryable<AspNetRole> GetAspNetRoles()
         {
-            return db.AspNetRoles;
+            return db.AspNetRoles; 
         }
 
         // GET: api/AspNetRoles/5

@@ -18,7 +18,7 @@ namespace IMS.API.Controllers
         private IMSEntities db = new IMSEntities();
 
         // GET: api/Product
-        public IQueryable<PRODUCT> GetPRODUCTS()
+        public IQueryable<PRODUCT> GetPRODUCTS() 
         {
             return db.PRODUCTS;
         }

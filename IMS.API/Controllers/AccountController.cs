@@ -20,7 +20,7 @@ using IMS.DATAMODEL.ViewModels;
 using System.Data.Entity;
 
 namespace IMS.API.Controllers
-{
+{ 
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController

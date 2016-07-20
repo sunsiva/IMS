@@ -20,7 +20,7 @@ namespace IMS.API.Controllers
         // GET: api/PurchaseOrder
         public IQueryable<PURCHASE_ORDER> GetPURCHASE_ORDER()
         {
-            return db.PURCHASE_ORDER;
+            return db.PURCHASE_ORDER;  
         }
 
         // GET: api/PurchaseOrder/5

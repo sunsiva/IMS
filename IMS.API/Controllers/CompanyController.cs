@@ -18,7 +18,7 @@ namespace IMS.API.Controllers
         private IMSEntities db = new IMSEntities();
 
         // GET: api/Company
-        public IQueryable<COMPANY> GetCOMPANies()
+        public IQueryable<COMPANY> GetCOMPANies() 
         {
             return db.COMPANies;
         }

@@ -20,7 +20,7 @@ namespace IMS.API.Controllers
         // GET: api/Customer
         public IQueryable<CUSTOMER> GetCUSTOMERs()
         {
-            return db.CUSTOMERs;
+            return db.CUSTOMERs; 
         }
 
         // GET: api/Customer/5
