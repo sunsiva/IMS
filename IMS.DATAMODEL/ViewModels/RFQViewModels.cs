@@ -34,6 +34,7 @@ namespace IMS.DataModel.ViewModels
         public string JOB_LOCATIONA { get; set; }
         public string JOB_LOCATIONB { get; set; }
         public string JOB_LOCATIONC { get; set; }
+        public string FILE_PATHA { get; set; }
         public bool? ISCUSTOMER_SUPPLIEDDRAWING { get; set; }
         public string DRAWING_SOURCE { get; set; }
         //[Required(ErrorMessage ="Please select a Product")]

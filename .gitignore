@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/IMS.UI/packages
+/IMS.UI/IMS.UI/Properties/PublishProfiles
+/IMS.UI/IMS.UI/obj/Debug/TransformWebConfig/assist
+/IMS.UI/IMS.UI/.vs/config/applicationhost.config
+/IMS.UI/IMS.UI/.vs/IMS.UI/v14/.suo
+/IMS.UI/.vs/IMS.UI/v15/Server/sqlite3/db.lock
+/IMS.UI/.vs/IMS.UI/v15/Server/sqlite3/storage.ide
+/IMS.UI/.vs/IMS.UI/v15/Server/sqlite3/storage.ide-shm
+/IMS.UI/.vs/IMS.UI/v15/Server/sqlite3/storage.ide-wal
+/IMS.UI/.vs/IMS.UI/v15/.suo

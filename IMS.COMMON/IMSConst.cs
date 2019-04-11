@@ -1,9 +1,11 @@
-﻿namespace IMS.Common
+﻿using System.Configuration;
+
+namespace IMS.Common
 {
     public static class IMSConst
     {
-        public static string API_SERVICE_BASE_ADRS = "http://ims.service";
-        public static string WEB_APP_BASE_ADRS = "http://ims";
+        public static string API_SERVICE_BASE_ADRS = ConfigurationManager.AppSettings.Get("ims.api"); // "http://localhost/ims.service";
+        public static string WEB_APP_BASE_ADRS = ConfigurationManager.AppSettings.Get("ims.web"); 
 
         public static string USER_NEW_ENDPNT = "api/Account/Register";
         public static string ROLE_GET_ENDPNT = "api/AspNetRoles";
@@ -34,8 +36,8 @@
 
     public static class Common
     {
-        public static string API_SERVICE_BASE_ADRS = "http://ims.service";
-        public static string WEB_APP_BASE_ADRS = "http://ims";
+        public static string API_SERVICE_BASE_ADRS = ConfigurationManager.AppSettings.Get("ims.api");// "http://localhost/ims.service";
+        public static string WEB_APP_BASE_ADRS = ConfigurationManager.AppSettings.Get("ims.web"); // "http://localhost/ims.web";
 
         public static string USER_NEW_ENDPNT = "api/Account/Register";
         public static string ROLE_GET_ENDPNT = "api/AspNetRoles";

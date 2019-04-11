@@ -1,5 +1,6 @@
 ﻿@model IMS.DataModel.ViewModels.RFQViewModels
 @{
+    int sl = 0;
     ViewBag.Title = "RFQ Create";
 }
 
@@ -11,16 +12,16 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group form-group-required">
-            @Html.LabelFor(model => model.RFQ_NO, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="form-group form-group-required">
+            @Html.LabelFor(model => model.RFQ_NO, "RFQ NO", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RFQ_NO, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.RFQ_NO, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group form-group-required">
-            @Html.LabelFor(model => model.RFQ_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RFQ_NAME, "RFQ NAME", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RFQ_NAME, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.RFQ_NAME, "", new { @class = "text-danger" })
@@ -28,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RFQ_DESC, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RFQ_DESC, "RFQ DESC", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextAreaFor(model => model.RFQ_DESC, new { @class = "textarea-input-custom" })
                 @Html.ValidationMessageFor(model => model.RFQ_DESC, "", new { @class = "text-danger" })
@@ -44,7 +45,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ORIGINATING_COMPANY, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ORIGINATING_COMPANY, "ORIGINATING COMPANY", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ORIGINATING_COMPANY, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ORIGINATING_COMPANY, "", new { @class = "text-danger" })
@@ -76,7 +77,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BID_TYPE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BID_TYPE, "BID TYPE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BID_TYPE, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BID_TYPE, "", new { @class = "text-danger" })
@@ -84,7 +85,7 @@
         </div>
 
         <div class="form-group form-group-required">
-            @Html.LabelFor(model => model.RFQ_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RFQ_DATE, "RFQ DATE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RFQ_DATE, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Select a date..."  } })
                 @Html.ValidationMessageFor(model => model.RFQ_DATE, "", new { @class = "text-danger" })
@@ -92,7 +93,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DUE_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DUE_DATE, "DUE DATE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DUE_DATE, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Select a date..." } })
                 @Html.ValidationMessageFor(model => model.DUE_DATE, "", new { @class = "text-danger" })
@@ -100,7 +101,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CLOSING_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CLOSING_DATE, "CLOSING DATE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CLOSING_DATE, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Select a date..." } })
                 @Html.ValidationMessageFor(model => model.CLOSING_DATE, "", new { @class = "text-danger" })
@@ -116,7 +117,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DURATION_TIMELINE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DURATION_TIMELINE, "DURATION TIMELINE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DURATION_TIMELINE, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DURATION_TIMELINE, "", new { @class = "text-danger" })
@@ -148,7 +149,7 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.JOB_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.JOB_NAME, "JOB NAME", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.JOB_NAME, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.JOB_NAME, "", new { @class = "text-danger" })
@@ -156,7 +157,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.JOB_CLIENT_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.JOB_CLIENT_NAME, "JOB CLIENT NAME", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.JOB_CLIENT_NAME, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.JOB_CLIENT_NAME, "", new { @class = "text-danger" })
@@ -164,7 +165,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.JOB_LOCATIONA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.JOB_LOCATIONA, "JOB LOCATIONA", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.JOB_LOCATIONA, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.JOB_LOCATIONA, "", new { @class = "text-danger" })
@@ -172,7 +173,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.JOB_LOCATIONB, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.JOB_LOCATIONB, "JOB LOCATIONB", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.JOB_LOCATIONB, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.JOB_LOCATIONB, "", new { @class = "text-danger" })
@@ -197,7 +198,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="fls_upload">
             <label for="file" class="control-label col-md-2">FILES UPLOAD </label>
             <div class="col-md-10">
                 <input class="form-control" type="file" name="file" id="file" />
@@ -248,7 +249,7 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UNIT_PRICE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UNIT_PRICE, "UNIT PRICE", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UNIT_PRICE, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UNIT_PRICE, "", new { @class = "text-danger" })
@@ -280,7 +281,7 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SPECIAL_REQUESTSA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SPECIAL_REQUESTSA, "SPECIAL REQUESTA", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SPECIAL_REQUESTSA, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SPECIAL_REQUESTSA, "", new { @class = "text-danger" })
@@ -320,7 +321,7 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TYPEOF_ORIGINAL_RFQ, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TYPEOF_ORIGINAL_RFQ, "TYPE OF ORIGINAL RFQ", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TYPEOF_ORIGINAL_RFQ, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TYPEOF_ORIGINAL_RFQ, "", new { @class = "text-danger" })
@@ -336,36 +337,50 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DATE_RECEIVED, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DATE_RECEIVED, "DATE RECEIVED", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DATE_RECEIVED, new { htmlAttributes = new { @class = "form-control date-picker", placeholder = "Select a date..." } })
                 @Html.ValidationMessageFor(model => model.DATE_RECEIVED, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" id="btnSave" class="btn btn-outline btn-success" />
-                <input type="button" value="Clear" class="btn btn-outline btn-default" />
+            @Html.Label("PRODUCT LINE ITEMS", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div  class="col-md-10" id="ItemList">
+                <span style="font:normal 12px agency, arial; color:blue; text-decoration:underline; cursor:pointer;" onclick="addMoreRows(this.form);"> Add More </span>
+                <table rules="all" style="background:#fff;">
+                    <tr>
+                        <td style="font-size:14px;">NAME</td>
+                        <td style="font-size:14px;">Email</td>
+                        <td style="font-size:14px;">Mobile</td>
+                    </tr>
+                    <tr>
+                        <td><input name="" type="text" value="" size="17%" style="margin: 4px 5px 0 5px;"/></td>
+                        <td><input name="" type="text" value=""  style="margin: 4px 5px 0 5px;" /></td>
+                        <td><input name="" type="text" value=""  style="margin: 4px 5px 0 5px;" /></td>
+                    </tr>
+                </table>
+                <div id="addedRows"></div>
+            </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" id="btnRFQSave" class="btn btn-outline btn-success" />
+                    <input type="button" value="Clear" onclick="this.form.reset()" class="btn btn-outline btn-default" />
+                </div>
+            </div>
+            <div>
+                <a id="btnRFQIndex" href="/Quotation/RFQIndex">
+                    <i class="glyphicon glyphicon-backward"></i> Back to List
+                </a>
             </div>
         </div>
-        <div>
-            <a id="btnRFQIndex" href="RFQIndex">
-                <i class="glyphicon glyphicon-backward"></i> Back to List
-            </a>
-        </div>
-    </div>
 }
 
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/moment.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-    <script lang="ja" type="text/javascript">
-    $(document).ready(function () {
-        $('.date-picker').datetimepicker({
-            format: 'MM/DD/YYYY'
-        });
-    });
-    </script>
-}
+        @section scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script src="~/Scripts/moment.js"></script>
+            <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+            @*<script src="~/Scripts/jquery-1.8.3.min.js"></script>*@
+            <script src="~/Scripts/quotation.js"></script>
+        }

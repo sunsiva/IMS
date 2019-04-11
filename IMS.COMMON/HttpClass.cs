@@ -31,7 +31,8 @@ namespace Serializer
    {
     JObject.Parse(content);
     _content = new StringContent(content);
-    _content.Headers.ContentType = new MediaTypeHeaderValue("text/json");
+    //_content.Headers.ContentType = new MediaTypeHeaderValue("text/json");
+    _content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
    }
    else
    {

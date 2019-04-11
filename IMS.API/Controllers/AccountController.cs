@@ -21,8 +21,8 @@ using System.Data.Entity;
 
 namespace IMS.API.Controllers
 { 
-    [Authorize]
-    [RoutePrefix("api/Account")]
+    //[Authorize]
+    [RoutePrefix("Account")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
@@ -323,6 +323,7 @@ namespace IMS.API.Controllers
 
         // POST api/Account/Register
         [AllowAnonymous]
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {

@@ -139,7 +139,7 @@
                                     @Html.Label("COMPANY_SIZE", htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-10">
                                         @*@Html.AutocompleteFor(model => model., model => model.COMP_SIZE_LKPID, "GetLoB", "HelloWorld", false)*@
-                                        @Html.AutocompleteFor(model => model.COMP_SIZE_LKPID, "GetLoB", "Customer")
+                                        @*@Html.AutocompleteFor(model => model.COMP_SIZE_LKPID, "GetLoB", "Customer")*@
                                         @Html.DropDownListFor(model => model.COMP_SIZE_LKPID, new SelectList(new List<object> { new {value=0, text="Small"}, new { value = 1, text = "Medium" }, new { value = 0, text = "Large" }}),
                                        "Select a Company Size..", new { @class = "form-control", @required = "mandatory" })
                                         @Html.ValidationMessageFor(model => model.COMP_SIZE_LKPID, "", new { @class = "text-danger" })

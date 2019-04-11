@@ -10,11 +10,12 @@
         unsaved = true;
     });
 
-    $(window).bind('beforeunload', function (e) {
-        if (unsaved) {
-            return "You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
-        }
-    });
+    //TODO: Need to avoid for login page;hence hiding it for now
+    //$(window).bind('beforeunload', function (e) {
+    //    if (unsaved) {
+    //        return "You have unsaved changes on this page. Do you want to leave this page and discard your changes or stay on this page?";
+    //    }
+    //});
 
     //TYPE:1 Another way to bind the event
     //var initial_form_state = $('#custcreateform').serialize();

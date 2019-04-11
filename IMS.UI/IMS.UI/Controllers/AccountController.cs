@@ -59,10 +59,28 @@ namespace IMS.UI.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-           //var ob = GetRoles();
             ViewBag.ReturnUrl = returnUrl;
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
             return View();
         }
+
+        //
+        // GET: /Account/NewLogin
+        //[AllowAnonymous]
+        //public ActionResult NewLogin(string returnUrl)
+        //{
+        //    ViewBag.ReturnUrl = returnUrl;
+        //    if (User.Identity.IsAuthenticated)
+        //    {
+        //        return RedirectToAction("Index", "Home");
+        //    }
+
+        //    return View();
+        //}
 
         //
         // POST: /Account/Login
@@ -78,7 +96,7 @@ namespace IMS.UI.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email.ToLower(), model.Password, model.RememberMe, shouldLockout: false);
+            var result =  await SignInManager.PasswordSignInAsync(model.Email.ToLower(), model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -86,7 +104,7 @@ namespace IMS.UI.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, model.RememberMe });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -244,7 +262,7 @@ namespace IMS.UI.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

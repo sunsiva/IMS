@@ -6,6 +6,41 @@
     <title>@ViewBag.Title - Inventory Management System</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <!-- CSS INCLUDE -->
+    <link href="~/Content/css/theme-blue.css" rel="stylesheet" />
+    <!-- EOF CSS INCLUDE -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script src="~/Scripts/js/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="~/Scripts/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
+    <!-- START THIS PAGE PLUGINS-->
+    <script src="~/Scripts/js/plugins/icheck/icheck.min.js"></script>
+    <script defer src="~/Scripts/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Scripts/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+
+    <script src="~/Scripts/js/plugins/morris/raphael-min.js"></script>
+    <script src="~/Scripts/js/plugins/morris/morris.min.js"></script>
+    <script src="~/Scripts/js/plugins/rickshaw/d3.v3.js"></script>
+    <script src="~/Scripts/js/plugins/rickshaw/rickshaw.min.js"></script>
+    <script src="~/Scripts/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Scripts/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Scripts/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script defer src="~/Scripts/js/plugins/owl/owl.carousel.min.js"></script>
+
+    
+    <script defer src="~/Scripts/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+    <!-- START TEMPLATE -->
+    <!--<script type="text/javascript" src="js/settings.js"></script>-->
+
+    <script src="~/Scripts/js/plugins.js"></script>
+    @*<script defer src="~/Scripts/js/actions.js"></script>*@
+    <script src="~/Scripts/js/demo_dashboard.js"></script>
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->
+
 </head>
 <body>
     <div class="row">
@@ -14,14 +49,10 @@
             <div id="page_content">
                 @RenderBody()
             </div>
-            @*<hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - ZEN - Inventory Management System</p>
-            </footer>*@
         </div>
     </div>
-    @*<div class="navbar navbar-inverse navbar-fixed-top col-lg-offset-2"> For left side header menu*@
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" hidden>
         <div class="">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,8 +60,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index","Dashboard")"> <img src="~/Content/images/ims.png" alt="CAI" /></a>
-                <i style="font-size:medium">  SVS Manufacturing Company Inc.</i> 
+                @*<a href="@Url.Action("Index","Dashboard")"> <img src="~/Content/images/ims.png" alt="IMS" /></a>*@
+                @*<i style="font-size:medium">  SVS Manufacturing Company Inc.</i>*@ 
                      
                         @*<div class="col-lg-63">
                         <div class="input-group">
@@ -50,7 +81,7 @@
             </div>
             <div class="navbar-collapse collapse">
 
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav"  style="visibility:hidden">
                     @if (!User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("About", "About", "Home")</li>

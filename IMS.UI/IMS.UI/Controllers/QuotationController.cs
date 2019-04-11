@@ -5,6 +5,7 @@ using PagedList;
 using Serializer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -136,7 +137,7 @@ namespace IMS.UI.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult RFQCreate(RFQViewModels model)
+        public ActionResult RFQCreate([Bind(Exclude = "RFQ_NO")] RFQViewModels model, HttpPostedFileBase file, FormCollection frm)
         {
             try
             {
@@ -146,15 +147,17 @@ namespace IMS.UI.Controllers
                     //Insert Location
                     LocationViewModels locmodel = new LocationViewModels();
                     locmodel.LOC_ID = Guid.NewGuid();
-                    locmodel.LOC_ADDRESS = model.LOC_ID.ToString();
-                    locmodel.CREATED_BY = _uid;
-                    locmodel.CREATED_ON = DateTime.Now;
-                    var locresult = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS
-                        , IMSConst.LOC_NEW_ENDPNT), serializer.Serialize<LocationViewModels>(model));
+                    //locmodel.LOC_ADDRESS = model.LOC_ID.ToString();
+                    //locmodel.CREATED_BY = _uid;
+                    //locmodel.CREATED_ON = DateTime.Now;
+                    //var locresult = httpHelpers.GetHttpResponseMessage(HttpMethods.POST, string.Format("{0}{1}", IMSConst.API_SERVICE_BASE_ADRS
+                    //    , IMSConst.LOC_NEW_ENDPNT), serializer.Serialize<LocationViewModels>(locmodel));
 
                     //Insert RFQ
                     model.RFQ_ID = Guid.NewGuid();
+                    model.RFQ_NO = GetRFQCode();
                     model.LOC_ID = locmodel.LOC_ID;
+                    model.FILE_PATHA = FileUpload(file);
                     model.ISACTIVE = true;
                     model.CREATED_BY = _uid;
                     model.CREATED_ON = DateTime.Now;
@@ -176,7 +179,15 @@ namespace IMS.UI.Controllers
         }
 
         // GET: RFQ/Edit/5
-        public ActionResult Edit(Guid? id)
+        public ActionResult RFQEdit(Guid? id)
+        {
+            var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}/{2}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.RFQ_GET_BYID_ENDPNT, id));
+            RFQViewModels resp = serializer.DeSerialize<RFQViewModels>(content) as RFQViewModels;
+            return View(resp);
+        }
+
+        // GET: RFQ/Details/5
+        public ActionResult RFQDetails(Guid? id)
         {
             var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}/{2}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.RFQ_GET_BYID_ENDPNT, id));
             RFQViewModels resp = serializer.DeSerialize<RFQViewModels>(content) as RFQViewModels;
@@ -207,7 +218,7 @@ namespace IMS.UI.Controllers
                     {
                         return View(model);
                     }
-                    ModelState.AddModelError("RFQCreate", result.ReasonPhrase);
+                    ModelState.AddModelError("RFQEdit", result.ReasonPhrase);
                 }
             }
             catch (Exception ex)
@@ -286,6 +297,42 @@ namespace IMS.UI.Controllers
             ViewBag.PageNo = (page ?? 1);
             return cust;
         }
+
+        private string FileUpload(HttpPostedFileBase file)
+        {
+            string filename = string.Empty;
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+                    filename = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/UploadDocument"), filename);
+                    file.SaveAs(path);
+                    ViewBag.FileMessage = "File uploaded successfully";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.FileMessage = "ERROR:" + ex.Message.ToString();
+                    throw ex;
+                }
+            else
+            {
+                ViewBag.FileMessage = "You have not specified a file.";
+            }
+            return filename;
+        }
+
+        /// <summary>
+        /// Generating Random RFQ Code.
+        /// </summary>
+        /// <returns></returns>
+        private string GetRFQCode()
+        {
+            string obj = "WO-";
+            Random rnd = new Random();
+            obj = obj + rnd.Next().ToString();
+            return obj.Remove(7);
+        }
+
         #endregion
     }
 }

@@ -13,11 +13,12 @@ using IMS.API;
 
 namespace IMS.API.Controllers
 {
+    [RoutePrefix("api/Customer")]
     public class CustomerController : ApiController
     {
         private IMSEntities db = new IMSEntities();
 
-        // GET: api/Customer
+        // GET: api/Customer/
         public IQueryable<CUSTOMER> GetCUSTOMERs()
         {
             return db.CUSTOMERs; 

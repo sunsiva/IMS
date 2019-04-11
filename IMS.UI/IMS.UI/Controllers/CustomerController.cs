@@ -26,7 +26,6 @@ namespace IMS.UI.Controllers
         public CustomerController()
         {
             //_uid = CookieStore.GetCookie(CacheKey.Uid.ToString())==null? Guid.Parse(User.Identity.GetUserId()) : Guid.Parse(CookieStore.GetCookie(CacheKey.Uid.ToString()));
-            _uid = Guid.Parse(User.Identity.GetUserId());
         }
 
         // GET: Customer
@@ -48,6 +47,12 @@ namespace IMS.UI.Controllers
             {
                 throw ex;
             }
+        }
+
+        public ActionResult Details()
+        {
+
+            return View();
         }
 
         public ActionResult Create()

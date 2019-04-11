@@ -20,10 +20,10 @@ namespace IMS.API
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             HttpConfiguration config = GlobalConfiguration.Configuration;
-
             config.Formatters.JsonFormatter
                         .SerializerSettings
                         .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            config.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
         }
     }
 }
