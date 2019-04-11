@@ -75,7 +75,7 @@ namespace IMS.DataModel.ViewModels
         public DateTime CREATED_ON { get; set; }
 
         public IEnumerable<SelectListItem> StatusList { get; set; }
-        public string ddlStatusId { get; set; }
+        public string DdlStatusId { get; set; }
 
         //public virtual RatingMasterViewModels RATING_MASTER { get; set; }
         //public virtual ICollection<QuotationViewModels> QUOTATIONs { get; set; }

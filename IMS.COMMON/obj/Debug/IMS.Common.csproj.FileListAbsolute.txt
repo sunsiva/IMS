@@ -5,3 +5,12 @@ D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\Newtonsoft.Jso
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.dll
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.pdb
 D:\source\exercise\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csprojResolveAssemblyReference.cache
+D:\source\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\IMS.Common.dll
+D:\source\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\IMS.Common.pdb
+D:\source\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\Newtonsoft.Json.dll
+D:\source\xtra\Inventory\source\IMS\IMS.Common\bin\Debug\Newtonsoft.Json.xml
+D:\source\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csproj.CoreCompileInputs.cache
+D:\source\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csproj.CopyComplete
+D:\source\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.dll
+D:\source\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.pdb
+D:\source\xtra\Inventory\source\IMS\IMS.Common\obj\Debug\IMS.Common.csprojAssemblyReference.cache

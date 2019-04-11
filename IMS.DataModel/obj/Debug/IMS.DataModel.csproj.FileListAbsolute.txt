@@ -1,0 +1,9 @@
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\bin\Debug\IMS.DataModel.dll
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\bin\Debug\IMS.DataModel.pdb
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\bin\Debug\System.Web.Mvc.dll
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\bin\Debug\System.Web.Mvc.xml
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\obj\Debug\IMS.DataModel.csproj.CoreCompileInputs.cache
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\obj\Debug\IMS.DataModel.csproj.CopyComplete
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\obj\Debug\IMS.DataModel.dll
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\obj\Debug\IMS.DataModel.pdb
+D:\source\xtra\Inventory\source\IMS\IMS.DataModel\obj\Debug\IMS.DataModel.csprojAssemblyReference.cache
