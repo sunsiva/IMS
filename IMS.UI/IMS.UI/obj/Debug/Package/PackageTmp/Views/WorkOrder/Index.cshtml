@@ -1,0 +1,153 @@
+﻿@model IEnumerable<IMS.DataModel.ViewModels.WorkOrderViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WO_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WO_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WO_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUST_PO_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOB_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISREPEATORDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REPEATREASON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORK_ORDER_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DUE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQUIRED_DELIVERY_START_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQUIRED_DELIVERY_END_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NO_OF_RELEASES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DRAWING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_ON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_ON)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WO_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WO_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WO_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUST_PO_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JOB_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISREPEATORDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REPEATREASON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORK_ORDER_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DUE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQUIRED_DELIVERY_START_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQUIRED_DELIVERY_END_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NO_OF_RELEASES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DRAWING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISACTIVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_ON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_ON)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

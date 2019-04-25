@@ -38,8 +38,8 @@ namespace IMS.UI.Controllers
                 List<CustomerViewModels> custModel = serializer.DeSerialize<List<CustomerViewModels>>(content) as List<CustomerViewModels>;
                 custModel = GetPagination(custModel, sOdr, page);
 
-                int pSize = ViewBag.PageSize == null ? 0 : ViewBag.PageSize;
-                int pNo = ViewBag.PageNo == null ? 0 : ViewBag.PageNo;
+                int pSize = ViewBag.PageSize ?? 0;
+                int pNo = ViewBag.PageNo ?? 0;
 
                 return View(custModel.ToPagedList(pNo, pSize));
             }
@@ -61,7 +61,7 @@ namespace IMS.UI.Controllers
             return View();
         }
         
-        public ActionResult tablist()
+        public ActionResult Tablist()
         {
             return View();
         }

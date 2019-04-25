@@ -1,0 +1,258 @@
+﻿@model IMS.DataModel.ViewModels.QuotationViewModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuotationViewModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QUOTE_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOTE_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUOTE_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOTE_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUOTE_NUMBER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOTE_NUMBER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RFQ_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RFQ_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUST_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUST_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER_CONTACT_PERSON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER_CONTACT_PERSON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER_PURCHASING_AGENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER_PURCHASING_AGENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER_MANAGER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER_MANAGER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUOTE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOTE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUOTE_VALIDITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOTE_VALIDITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CURRENCY_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CURRENCY_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALES_AGENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALES_AGENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALES_AGENT_LOCATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALES_AGENT_LOCATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALES_AGENT_CONTACT_DETAILSA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALES_AGENT_CONTACT_DETAILSA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALES_AGENT_CONTACT_DETAILSB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALES_AGENT_CONTACT_DETAILSB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LEAD_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LEAD_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHIPPING_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHIPPING_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHIPPING_TERMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHIPPING_TERMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMBER_OF_RELEASES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMBER_OF_RELEASES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAYMENT_TERMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAYMENT_TERMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHIPMENT_TERMS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHIPMENT_TERMS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPECIAL_NOTESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPECIAL_NOTESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPECIAL_NOTESB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPECIAL_NOTESB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISACTIVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISACTIVE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_ON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_ON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_ON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_ON)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

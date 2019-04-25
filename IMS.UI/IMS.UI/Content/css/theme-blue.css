@@ -2,7 +2,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,500,600,700&subset=latin,latin-ext);
 @import "jquery/jquery-ui.min.css";
-@import "~/Content/bootstrap.min.css";
+/*@import "~/Content/bootstrap.min.css";*/
 @import "fontawesome/font-awesome.min.css";
 @import "summernote/summernote.css";
 @import "codemirror/codemirror.css";
@@ -120,7 +120,7 @@ body {
   float: left;
   width: 100%;
   position: relative;
-  background: #f5f5f5 url('../img/bg.png') left top repeat;
+  background: #f5f5f5 url('~/img/bg.png') left top repeat;
 }
 .page-container .page-content .content-frame .content-frame-top {
   float: left;
@@ -240,7 +240,7 @@ body {
   padding-right: 50px;
 }
 body.page-container-boxed {
-  background: url("../img/backgrounds/wall_1.jpg") left top no-repeat fixed;
+  background: url("~/img/backgrounds/wall_1.jpg") left top no-repeat fixed;
   padding: 20px 0px;
 }
 body.page-container-boxed .page-container {
@@ -766,7 +766,7 @@ body.page-container-boxed .page-container {
 .x-navigation.x-navigation-minimized > li.xn-logo > a:first-child {
   padding: 0px;
   width: 50px;
-  background-image: url("../img/logo-small.png");
+  background-image: url("~/img/logo-small.png");
 }
 .x-navigation.x-navigation-minimized .xn-search input {
   width: 30px;
@@ -1905,7 +1905,7 @@ ul.panel-controls > li > .dropdown-menu:before {
   right: 0px;
   bottom: 0px;
   text-indent: 0px;
-  background: url(../img/jquery/resize-icon.png) left top no-repeat;
+  background: url(~/img/jquery/resize-icon.png) left top no-repeat;
 }
 /* EOF XNAV PANEL */
 /* EOF PANELS */
@@ -3869,7 +3869,7 @@ td.dataTables_empty {
   float: left;
   width: 100%;
   min-height: 100%;
-  background: url("../img/bg.png") left top repeat #33414e;
+  background: url("~/img/bg.png") left top repeat #33414e;
 }
 .login-container .login-box {
   width: 400px;
@@ -3877,7 +3877,7 @@ td.dataTables_empty {
   padding-top: 100px;
 }
 .login-container .login-box .login-logo {
-  background: url("../img/logo.png") top center no-repeat;
+  background: url("~/img/logo.png") top center no-repeat;
   width: 100%;
   height: 50px;
   float: left;
@@ -3961,7 +3961,7 @@ td.dataTables_empty {
   color: #FFF;
 }
 .login-container.lightmode {
-  background: url("../img/backgrounds/wall_1.jpg") left top no-repeat;
+  background: url("~/img/backgrounds/wall_1.jpg") left top no-repeat;
 }
 .login-container.lightmode .login-box .login-body {
   background: rgba(255, 255, 255, 0.2);
@@ -5026,7 +5026,7 @@ td.dataTables_empty {
   padding: 0;
   width: 18px;
   height: 18px;
-  background: url("../img/icheck/grey.png") no-repeat;
+  background: url("~/img/icheck/grey.png") no-repeat;
   border: none;
   cursor: pointer;
 }
@@ -5333,7 +5333,7 @@ div.datepicker thead tr:first-child th:hover {
 .colorpicker-saturation {
   width: 100px;
   height: 100px;
-  background-image: url(../img/colorpicker/saturation.png);
+  background-image: url(~/img/colorpicker/saturation.png);
   cursor: crosshair;
   float: left;
 }
@@ -5378,10 +5378,10 @@ div.datepicker thead tr:first-child th:hover {
   margin-top: -1px;
 }
 .colorpicker-hue {
-  background-image: url(../img/colorpicker/hue.png);
+  background-image: url(~/img/colorpicker/hue.png);
 }
 .colorpicker-alpha {
-  background-image: url(../img/colorpicker/alpha.png);
+  background-image: url(~/img/colorpicker/alpha.png);
   display: none;
 }
 .colorpicker {
@@ -5410,7 +5410,7 @@ div.datepicker thead tr:first-child th:hover {
   height: 10px;
   margin-top: 5px;
   clear: both;
-  background-image: url(../img/colorpicker/alpha.png);
+  background-image: url(~/img/colorpicker/alpha.png);
   background-position: 0 100%;
 }
 .colorpicker-color div {
@@ -6088,7 +6088,7 @@ input.ui-editRangeSlider-inputValue {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .grabbing {
-  cursor: url(../img/owl/grabbing.png) 8 8, move;
+  cursor: url(~/img/owl/grabbing.png) 8 8, move;
 }
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item {
@@ -6160,7 +6160,7 @@ input.ui-editRangeSlider-inputValue {
 }
 .owl-item.loading {
   min-height: 150px;
-  background: url(../img/owl/AjaxLoader.gif) no-repeat center center;
+  background: url(~/img/owl/AjaxLoader.gif) no-repeat center center;
 }
 /* END Slider */
 /* jVectorMaps */
@@ -6524,7 +6524,7 @@ div.tagsinput div {
   font-size: 999px;
   text-align: right;
   color: #fff;
-  background: transparent url(../img/fileinput/loading.gif) top left no-repeat;
+  background: transparent url(~/img/fileinput/loading.gif) top left no-repeat;
   border: none;
 }
 .btn-file {
@@ -6624,7 +6624,7 @@ div.tagsinput div {
   display: none;
 }
 .loading {
-  background: transparent url(../img/loading.gif) no-repeat scroll center center content-box !important;
+  background: transparent url(~/img/loading.gif) no-repeat scroll center center content-box !important;
 }
 .wrap-indicator {
   font-weight: 700;
@@ -6916,74 +6916,74 @@ ul.jqueryFileTree a:hover {
   background: #E9EDF1;
 }
 li.directory {
-  background: url(../img/filetree/directory.png) left top no-repeat;
+  background: url(~/img/filetree/directory.png) left top no-repeat;
 }
 li.expanded {
-  background: url(../img/filetree/folder_open.png) left top no-repeat;
+  background: url(~/img/filetree/folder_open.png) left top no-repeat;
 }
 li.file {
-  background: url(../img/filetree/file.png) left top no-repeat;
+  background: url(~/img/filetree/file.png) left top no-repeat;
 }
 li.wait {
-  background: url(../img/filetree/spinner.gif) left top no-repeat;
+  background: url(~/img/filetree/spinner.gif) left top no-repeat;
 }
 /* File Extensions*/
 li.ext_3gp {
-  background: url(../img/filetree/film.png) left top no-repeat;
+  background: url(~/img/filetree/film.png) left top no-repeat;
 }
 li.ext_afp {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_afpa {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_asp {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_aspx {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_avi {
-  background: url(../img/filetree/film.png) left top no-repeat;
+  background: url(~/img/filetree/film.png) left top no-repeat;
 }
 li.ext_bat {
-  background: url(../img/filetree/application.png) left top no-repeat;
+  background: url(~/img/filetree/application.png) left top no-repeat;
 }
 li.ext_bmp {
-  background: url(../img/filetree/picture.png) left top no-repeat;
+  background: url(~/img/filetree/picture.png) left top no-repeat;
 }
 li.ext_c {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_cfm {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_cgi {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_com {
-  background: url(../img/filetree/application.png) left top no-repeat;
+  background: url(~/img/filetree/application.png) left top no-repeat;
 }
 li.ext_cpp {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_css {
-  background: url(../img/filetree/css.png) left top no-repeat;
+  background: url(~/img/filetree/css.png) left top no-repeat;
 }
 li.ext_doc {
-  background: url(../img/filetree/doc.png) left top no-repeat;
+  background: url(~/img/filetree/doc.png) left top no-repeat;
 }
 li.ext_exe {
-  background: url(../img/filetree/application.png) left top no-repeat;
+  background: url(~/img/filetree/application.png) left top no-repeat;
 }
 li.ext_gif {
-  background: url(../img/filetree/picture.png) left top no-repeat;
+  background: url(~/img/filetree/picture.png) left top no-repeat;
 }
 li.ext_fla {
-  background: url(../img/filetree/flash.png) left top no-repeat;
+  background: url(~/img/filetree/flash.png) left top no-repeat;
 }
 li.ext_h {
-  background: url(../img/filetree/code.png) left top no-repeat;
+  background: url(~/img/filetree/code.png) left top no-repeat;
 }
 li.ext_htm {
   background: url(../img/filetree/html.png) left top no-repeat;

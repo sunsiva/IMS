@@ -1,0 +1,225 @@
+﻿@model IEnumerable<IMS.DataModel.ViewModels.ProductViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_CATEGORY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_VARIANT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DESCRIPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DIMENSIONS_LENGTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DIMENSIONS_BREADTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DIMENSIONS_WIDTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DIMENSIONSA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_DIMENSIONSB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISREPEAT_ORDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIT_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DISCOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LINE_TOTAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GRAND_TOTAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPECIAL_REQUESTSA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPECIAL_REQUESTSB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPECIAL_REQUESTSC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPECIAL_REQUESTSD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPECIAL_REQUESTSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PREPARED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPEOF_ORIGINAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_RECEIVED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_ON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_ON)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_CATEGORY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_VARIANT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DESCRIPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DIMENSIONS_LENGTH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DIMENSIONS_BREADTH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DIMENSIONS_WIDTH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DIMENSIONSA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_DIMENSIONSB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUANTITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISREPEAT_ORDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UNIT_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UNIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DISCOUNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LINE_TOTAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GRAND_TOTAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECIAL_REQUESTSA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECIAL_REQUESTSB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECIAL_REQUESTSC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECIAL_REQUESTSD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECIAL_REQUESTSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PREPARED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPROVED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPEOF_ORIGINAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_RECEIVED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISACTIVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_ON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_ON)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,760 @@
+﻿<div class="left-menu-mgr">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+
+            <!-- START PAGE SIDEBAR -->
+            <div class="page-sidebar">
+                <!-- START X-NAVIGATION -->
+                <ul class="x-navigation">
+                    <li class="xn-logo">
+                        <a href="index.html" id="lOrderMgnt" style="font-size:large"><b>Order Management</b></a>
+                    </li>
+                    <li class="xn-logo hide" id="lProdMgnt">
+                        <a href="index.html" style="font-size:small;border:groove"><b>Production Management</b></a>
+                    </li>
+                    <li class="xn-logo hide" id="lInventMgnt">
+                        <a href="index.html" style="font-size:medium;border:groove"><b>Inventory Management</b></a>
+                    </li>
+                    <li class="xn-profile">
+                        <a href="#" class="profile-mini">
+                            <img src="~/img/sunsiva.png" alt="sunsiva" />
+                        </a>
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img src="~/img/sunsiva.png"  alt="sunsiva"/>
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name">John Doe</div>
+                                <div class="profile-data-title">Sales/Designer</div>
+                            </div>
+                            <div class="profile-controls">
+                                <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <!-- MESSAGE BOX-->
+                                <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+                                    <div class="mb-container">
+                                        <div class="mb-middle">
+                                            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                                            <div class="mb-content">
+                                                <p>Are you sure you want to log out?</p>
+                                                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                                            </div>
+                                            <div class="mb-footer">
+                                                <div class="pull-right">
+                                                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                                                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END MESSAGE BOX-->
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <input type="submit" class="profile-control-right mb-control fa fa-sign-out" />
+                                    <a href="@Url.Action("LogOff","Account")" class="profile-control-right mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                                }
+
+                                @Html.ActionLink("LogOff?", "LogOff","Account",null, new { @class= "fa fa-sign-out"})
+
+                                <!--<a href="#" class="profile-control-right"><span class="fa fa-envelope"></span></a>-->
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="xn-title">Navigation</li>-->
+                    <li class="active">
+                        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text"> Work Order</span></a>
+                        <ul>
+                            <li><a href="wo-index.html">All</a></li>
+                            <li><a href="wo-index.html">New</a></li>
+                            <li><a href="wo-index.html">Issued To Production</a></li>
+                            <li><a href="wo-index.html">In Production</a></li>
+                            <li><a href="wo-index.html">On Time</a></li>
+                            <li><a href="wo-index.html">Delayed</a></li>
+                            <li><a href="wo-index.html">Ready For Shipping</a></li>
+                            <li><a href="wo-index.html">Shipped</a></li>
+                            <li><a href="wo-index.html">Complete</a></li>
+                            <li><a href="wo-index.html">Cancelled</a></li>
+                            <li><a href="wo-index.html">Closed</a></li>
+                            <li><a href="wo-index.html">On Hold</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="po-index.html"><span class="fa fa-pencil"></span> <span class="xn-text">Purchase Order</span></a>
+                    </li>
+                    <li>
+                        <a href="quote-index.html"><span class="fa fa-table"></span> <span class="xn-text">Quotations</span></a>
+                    </li>
+                    <li>
+                        <a href="rfq-index.html"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">RFQ</span></a>
+                    </li>
+                    <li>
+                        <a href="cust-index.html"><span class="fa fa-map-marker"></span> <span class="xn-text">Customer</span></a>
+                    </li>
+
+                </ul>
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            <!-- PAGE CONTENT --> 
+            <div class="page-content">
+
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                    <li class="xn-icon-button">
+                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                    </li>
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SEARCH -->
+                    <li class="xn-search">
+                        <form role="form">
+                            <input type="text" name="search" placeholder="Search..." />
+                        </form>
+                    </li>
+                    <!-- END SEARCH -->
+                    <!-- SIGN OUT -->
+                    <!--<li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                    </li>-->
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-comments"></span></a>
+                        <div class="informer informer-danger">2</div>
+                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+                                <div class="pull-right">
+                                    <span class="label label-danger">2 new</span>
+                                </div>
+                            </div>
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-online"></div>
+                                    <img src="~/img/sunsiva.jpg" class="pull-left hide" alt="John Doe" />
+                                    <span class="contacts-title">John Doe</span>
+                                    <p>New Customer Added.</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-away"></div>
+                                    <img src="~/img/sunsiva.jpg" class="pull-left hide" alt="John Doe" />
+                                    <span class="contacts-title">Nadia Ali</span>
+                                    <p>New Work Order Created</p>
+                                </a>
+                            </div>
+                            <div class="panel-footer text-center">
+                                <a href="wo-create.html">Show all messages</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- END MESSAGES -->
+                    <!-- TASKS -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-tasks"></span></a>
+                        <div class="informer informer-warning">3</div>
+                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="fa fa-tasks"></span> Work Orders</h3>
+                                <div class="pull-right">
+                                    <span class="label label-warning">3 active</span>
+                                </div>
+                            </div>
+                            <div class="panel-body list-group scroll" style="height: 200px;">
+                                <a class="list-group-item" href="#">
+                                    <strong>WO34568</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                                    </div>
+                                    <small class="text-muted">Tiger Nixon, 2016/10/25 / 50%</small>
+                                </a>
+                                <a class="list-group-item" href="#">
+                                    <strong>WO75478</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">80%</div>
+                                    </div>
+                                    <small class="text-muted">Concrete Canvas, 2016/10/29 / 80%</small>
+                                </a>
+                                <a class="list-group-item" href="#">
+                                    <strong>WO78965</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+                                    </div>
+                                    <small class="text-muted">AMD Windows, 2016/10/26 / 95%</small>
+                                </a>
+                            </div>
+                            <div class="panel-footer text-center">
+                                <a href="wo-create.html">Show all tasks</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- END TASKS -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->
+                <!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ul>
+                <!-- END BREADCRUMB -->
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
+
+                    <!-- START WIDGETS -->
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <!-- START WIDGET SLIDER -->
+                            <div class="widget widget-default widget-carousel">
+                                <div class="owl-carousel" id="owl-example">
+                                    <div>
+                                        <div class="widget-title">Customer</div>
+                                        <div class="widget-subtitle">27/08/2018 15:23</div>
+                                        <div class="widget-int">3,548</div>
+                                    </div>
+                                    <div>
+                                        <div class="widget-title">RFQ</div>
+                                        <div class="widget-subtitle">Received</div>
+                                        <div class="widget-int">1,695</div>
+                                    </div>
+                                    <div>
+                                        <div class="widget-title">Quotation</div>
+                                        <div class="widget-subtitle">Received</div>
+                                        <div class="widget-int">1,977</div>
+                                    </div>
+                                </div>
+                                <div class="widget-controls">
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                                <!-- END WIDGET SLIDER -->
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='#';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-envelope"></span>
+                                </div>
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">48</div>
+                                    <div class="widget-title">New Orders</div>
+                                    <div class="widget-subtitle">In mailbox</div>
+                                </div>
+                                <div class="widget-controls">
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                            </div>
+                            <!-- END WIDGET MESSAGES -->
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <!-- START WIDGET REGISTRED -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-address-book.html';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-user"></span>
+                                </div>
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">375</div>
+                                    <div class="widget-title">Registred Customers</div>
+                                    <div class="widget-subtitle">On website</div>
+                                </div>
+                                <div class="widget-controls">
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                            </div>
+                            <!-- END WIDGET REGISTRED -->
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <!-- START WIDGET CLOCK -->
+                            <div class="widget widget-info widget-padding-sm">
+                                <div class="widget-big-int plugin-clock">00:00</div>
+                                <div class="widget-subtitle plugin-date">Loading...</div>
+                                <div class="widget-controls">
+                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                </div>
+                                <div class="widget-buttons widget-c3">
+                                    <div class="col">
+                                        <a href="#"><span class="fa fa-clock-o"></span></a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#"><span class="fa fa-bell"></span></a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#"><span class="fa fa-calendar"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET CLOCK -->
+
+                        </div>
+                    </div>
+                    <!-- END WIDGETS -->
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <!-- START USERS ACTIVITY BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title-box">
+                                        <h3>Users Activity</h3>
+                                        <span>Users vs returning</span>
+                                    </div>
+                                    <ul class="panel-controls" style="margin-top: 2px;">
+                                        <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body padding-0">
+                                    <div class="chart-holder" id="dashboard-bar-1" style="height: 200px;"></div>
+                                </div>
+                            </div>
+                            <!-- END USERS ACTIVITY BLOCK -->
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <!-- START VISITORS BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title-box">
+                                        <h3>Visitors</h3>
+                                        <span>Visitors (last month)</span>
+                                    </div>
+                                    <ul class="panel-controls" style="margin-top: 2px;">
+                                        <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body padding-0">
+                                    <div class="chart-holder" id="dashboard-donut-1" style="height: 200px;"></div>
+                                </div>
+                            </div>
+                            <!-- END VISITORS BLOCK -->
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <!-- START PROJECTS BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title-box">
+                                        <h3>Projects</h3>
+                                        <span>Projects activity</span>
+                                    </div>
+                                    <ul class="panel-controls" style="margin-top: 2px;">
+                                        <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body panel-body-table">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th width="50%">Project</th>
+                                                    <th width="20%">Status</th>
+                                                    <th width="30%">Activity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Joli Admin</strong></td>
+                                                    <td><span class="label label-danger">Developing</span></td>
+                                                    <td>
+                                                        <div class="progress progress-small progress-striped active">
+                                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">85%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Gemini</strong></td>
+                                                    <td><span class="label label-warning">Updating</span></td>
+                                                    <td>
+                                                        <div class="progress progress-small progress-striped active">
+                                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">40%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Taurus</strong></td>
+                                                    <td><span class="label label-warning">Updating</span></td>
+                                                    <td>
+                                                        <div class="progress progress-small progress-striped active">
+                                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 72%;">72%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Leo</strong></td>
+                                                    <td><span class="label label-success">Support</span></td>
+                                                    <td>
+                                                        <div class="progress progress-small progress-striped active">
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Virgo</strong></td>
+                                                    <td><span class="label label-success">Support</span></td>
+                                                    <td>
+                                                        <div class="progress progress-small progress-striped active">
+                                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END PROJECTS BLOCK -->
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            <!-- START SALES BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title-box">
+                                        <h3>Sales</h3>
+                                        <span>Sales activity by period you selected</span>
+                                    </div>
+                                    <ul class="panel-controls panel-controls-title">
+                                        <li>
+                                            <div id="reportrange" class="dtrange">
+                                                <span></span><b class="caret"></b>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" class="panel-fullscreen rounded"><span class="fa fa-expand"></span></a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row stacked">
+                                        <div class="col-md-4">
+                                            <div class="progress-list">
+                                                <div class="pull-left"><strong>In Queue</strong></div>
+                                                <div class="pull-right">75%</div>
+                                                <div class="progress progress-small progress-striped active">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-list">
+                                                <div class="pull-left"><strong>Shipped Products</strong></div>
+                                                <div class="pull-right">450/500</div>
+                                                <div class="progress progress-small progress-striped active">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">90%</div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-list">
+                                                <div class="pull-left"><strong class="text-danger">Returned Products</strong></div>
+                                                <div class="pull-right">25/500</div>
+                                                <div class="progress progress-small progress-striped active">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">5%</div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-list">
+                                                <div class="pull-left"><strong class="text-warning">Progress Today</strong></div>
+                                                <div class="pull-right">75/150</div>
+                                                <div class="progress progress-small progress-striped active">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                                                </div>
+                                            </div>
+                                            <p><span class="fa fa-warning"></span> Data update in end of each hour. You can update it manual by pressign update button</p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div id="dashboard-map-seles" style="width: 100%; height: 200px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END SALES BLOCK -->
+
+                        </div>
+                        <div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-content">
+                                <ul class="list-inline item-details">
+                                    <li><a href="http://themifycloud.com/downloads/janux-premium-responsive-bootstrap-admin-dashboard-template/">Admin templates</a></li>
+                                    <li><a href="http://themescloud.org">Bootstrap themes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <!-- START SALES & EVENTS BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title-box">
+                                        <h3>Sales & Event</h3>
+                                        <span>Event "Purchase Button"</span>
+                                    </div>
+                                    <ul class="panel-controls" style="margin-top: 2px;">
+                                        <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body padding-0">
+                                    <div class="chart-holder" id="dashboard-line-1" style="height: 200px;"></div>
+                                </div>
+                            </div>
+                            <!-- END SALES & EVENTS BLOCK -->
+
+                        </div>
+                    </div>
+
+                    <!-- START DASHBOARD CHART -->
+                    <div class="chart-holder" id="dashboard-area-1" style="height: 200px;"></div>
+                    <div class="block-full-width">
+
+                    </div>
+                    <!-- END DASHBOARD CHART -->
+
+                </div>
+                <!-- END PAGE CONTENT WRAPPER -->
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+    }
+</div>
+
+<div class="col-md-2" hidden>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="accordion table-bordered" id="leftMenu">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu" href="#childleftMenu">
+                        <span style="font-family:Arial, Helvetica, sans-serif;font-size:large;"> Order Management</span>
+                        <i style="font-size:large;" class="glyphicon glyphicon-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="leftmenu accordion collapse" id="childleftMenu">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" href="#" onclick="fnLeftMenu(this); return false;" id="today">
+                            <i class="glyphicon glyphicon-home"></i>
+                            @*@Html.Partial("Today", "Index", "Home")*@
+                            Today
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseWOChild">
+                            <i class="glyphicon glyphicon-list"></i> Work Order
+                        </a><i style="padding-left:120px; color:white" class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div id="collapseWOChild" class="accordion-body collapse left-menu-ac" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <div class="ulMenu">
+                                <div class="row">
+                                    <a href="/WorkOrder" class="col-xs-11 lf-Menu-cust" id="woall">All</a>
+                                    @*<a href="#all" class="col-xs-11 lf-Menu-cust" onclick="fnLeftMenu(this); return false;" id="woall">All</a>*@
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="new">New</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="ip">Issued To Production</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="prod">In Production</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="time">On Time</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="delayed">Delayed</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="readyforship">Ready For Shipping</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="shipped">Shipped</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="complete">Complete</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="cancel">Cancelled</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="closed">Closed</a>
+                                    <a href="#" class="lf-Menu-cust col-xs-12" onclick="fnLeftMenu(this); return false;" id="hold">On Hold</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a id="purchaseorder" href="/">
+                            <i class="glyphicon glyphicon-globe"></i> Purchase Order
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a id="quotation" href="/Quotation/Index">
+                            <i class="glyphicon glyphicon-record"></i> Quotation
+                        </a>
+                        @*<i style="padding-left:130px; color:white" class="glyphicon glyphicon-chevron-left"></i>*@
+                    </div>
+                    @*<div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li>This is one</li>
+                                    <li>This is two</li>
+                                    <li>This is Three</li>
+                                </ul>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a id="lftmnuRFQ" href="/Quotation/RFQIndex">
+                            <i class="glyphicon glyphicon-record"></i> RFQ
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a id="customer" href="/Customer">
+                            <i class="glyphicon glyphicon-pencil"></i> Customer
+                        </a>
+                    </div>
+                    @*<div id="collapseSix" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li>This is one</li>
+                                    <li>This is two</li>
+                                    <li>This is Three</li>
+                                </ul>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-bordered" id="leftMenu">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu2" href="#childleftMenu2">
+                        <span style="font-family:Arial, Helvetica, sans-serif;font-size:large;">Production Management</span>
+                    </a>
+                </div>
+            </div>
+            <div class="accordion collapse" id="childleftMenu2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" href="@Url.Action("Index", "Home")">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Today
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                            <i class="glyphicon glyphicon-list"></i> Products
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <br />
+                            <input type="text" class="form-control" placeholder="Search work orders" />
+                            <ul>
+
+                                <li>New</li>
+                                <li>Issued To Production</li>
+                                <li>In Production</li>
+                                <li>On Time</li>
+                                <li>Delayed</li>
+                                <li>Ready For Shipping</li>
+                                <li>Shipped</li>
+                                <li>Complete</li>
+                                <li>Closed</li>
+                                <li>Cancelled</li>
+                                <li>On Hold</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-bordered" id="leftMenu">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#childleftMenu3" href="#childleftMenu3">
+                        <span style="font-family:Arial, Helvetica, sans-serif;font-size:large;">Inventory Management </span>
+                    </a>
+                </div>
+            </div>
+            <div class="accordion collapse" id="childleftMenu3">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" href="@Url.Action("Index", "Home")">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Today
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                            <i class="glyphicon glyphicon-list"></i> Products
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <br />
+                            <input type="text" class="form-control" placeholder="Search work orders" />
+                            <ul>
+                                <li aligng="right">@Html.ActionLink("All", "Index", "Home")</li>
+                                <li>New</li>
+                                <li>Issued To Production</li>
+                                <li>In Production</li>
+                                <li>On Time</li>
+                                <li>Delayed</li>
+                                <li>Ready For Shipping</li>
+                                <li>Shipped</li>
+                                <li>Complete</li>
+                                <li>Closed</li>
+                                <li>Cancelled</li>
+                                <li>On Hold</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

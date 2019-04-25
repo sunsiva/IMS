@@ -39,28 +39,35 @@
 
     window.fnLeftMenu = function (e) {
         var id = e.id;
-        var oUrl = "/Home/About?" + id;
-        if (id == 'today')
-            oUrl = "/Home/today";
+        if (id == 'rfq')
+            oUrl = "/Quotation/RFQIndex";
         else if (id == 'customer')
             oUrl = "/Customer/Index";
         else if (id == 'customernew')
             oUrl = "/Customer/Create";
-        else if (id == 'woall')
-            oUrl = "/WorkOrder/IndexTemp";
+        else if (id == 'quotation')
+            oUrl = "/Quotation/Index";
+        else if (id == 'home')
+            oUrl = "/Home/Index";
+        else
+            oUrl = "/Home/Index";
 
-        $(".ulMenu div a").removeClass("lf-Menu-cust-active"); //Remove any "active" class  
-        $('#'+id).addClass("lf-Menu-cust-active"); //Add "active" class to selected tab  
+        //$(".ulMenu div a").removeClass("lf-Menu-cust-active"); //Remove any "active" class  
+        //$('#'+id).addClass("lf-Menu-cust-active"); //Add "active" class to selected tab  
+
+        $(".ulMenuT li").removeClass("active"); //Remove any "active" class  
+        $('#' + id).addClass("active"); //Add "active" class to selected tab  
 
         $.ajax({
             type: "GET",
             url: oUrl,
             success: function (data, textStatus, jqXHR) {
-                $('#page_content').html(data);
+                $('#page-content-wrap').html(data);
             }
         });
     };
-    
+
+
     $('#CollapseMe1').click(function () {
         $(this).hasClass('glyphicon-triangle-right') ? $(this).removeClass('glyphicon-triangle-right') && $(this).addClass('glyphicon-triangle-bottom') : $(this).removeClass('glyphicon-triangle-bottom') && $(this).addClass('glyphicon-triangle-right');
     });

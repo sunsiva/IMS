@@ -1,0 +1,53 @@
+﻿
+.footer {
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 20px;
+    margin: 0px;
+    padding: 10px 5px 5px 5px;
+}
+.nav-sm footer {
+    margin: 0px;
+}
+.nav-sm .container.body .col-md-3.left_col{
+    z-index: 0;
+}
+
+.bottom-bar-login {
+    min-height: 77px;    
+    margin-bottom: 3em;
+    padding: 5px 20px 5px 20px;
+}
+
+.panel-heading {
+    background-color: white !important;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mid-blue {
+    color: #005B9A;
+}
+
+.display-none {
+    display: none;
+}
+
+.btn {
+    background-color: #f3f3f4;
+    border-color: #ceced2;
+}
+
+.border-radius {
+    border-radius: 5px;    
+}
+
+.text-color-link {
+color:#428bca;
+}

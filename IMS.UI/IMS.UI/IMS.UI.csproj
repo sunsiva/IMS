@@ -306,7 +306,7 @@
     <Content Include="img\colorpicker\saturation.png" />
     <Content Include="img\dropzone\spritemap%402x.png" />
     <Content Include="img\dropzone\spritemap.png" />
-    <Content Include="img\favicon-login.ico" />
+    <Content Include="img\favicon.ico" />
     <Content Include="img\fileinput\loading.gif" />
     <Content Include="img\filetree\application.png" />
     <Content Include="img\filetree\code.png" />
@@ -423,6 +423,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\actions.js" />
+    <Content Include="Scripts\js\demo_charts_morris.js" />
     <Content Include="Scripts\js\demo_charts_nvd3.js" />
     <Content Include="Scripts\js\demo_charts_rickshaw.js" />
     <Content Include="Scripts\js\demo_dashboard.js" />
@@ -708,7 +709,6 @@
     <Content Include="Scripts\js\plugins\maskedinput\jquery.maskedinput.min.js" />
     <Content Include="Scripts\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
     <Content Include="Scripts\js\plugins\moment.min.js" />
-    <Content Include="Scripts\js\plugins\morris\raphael-min.js" />
     <Content Include="Scripts\js\plugins\noty\jquery.noty.js" />
     <Content Include="Scripts\js\plugins\noty\layouts\bottom.js" />
     <Content Include="Scripts\js\plugins\noty\layouts\bottomCenter.js" />
@@ -915,8 +915,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
     <Folder Include="Scripts\App\" />
     <Folder Include="Scripts\js\plugins\fileinput\fileinput\" />
+    <Folder Include="Scripts\js\plugins\morris\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

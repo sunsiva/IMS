@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TESTQ</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="~/Content/nprogress.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="~/Content/green.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet" />
+    <link href="~/Content/General.css" rel="stylesheet" />
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+
+            @if (User.Identity.IsAuthenticated)            
+            {
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>Skill Base Portal</span></a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <a class="initialism"><i class="fa fa-info"></i> Summaries <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">                                            
+                                            <li>@Html.ActionLink("TEST!","Index", "Home")</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="initialism"><i class="fa fa-folder"></i> Directories <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">                                            
+                                            <li>@Html.ActionLink("TESTA", "Index", "Home")</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="initialism"><i class="fa fa-search"></i> Search <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li>@Html.ActionLink("TESTB", "Index", "Home")</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="initialism"><i class="fa fa-bar-chart"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li>@Html.ActionLink("CHILKDTEST!", "Index", "Home")</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /sidebar menu -->
+
+                    </div>
+                </div>
+            <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        Welcome, <span id="spnUserName"> @User.Identity.Name </span>
+                                        <span class="fa fa-angle-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li>@Html.ActionLink("TESTMENU", "Index", "Home")</li>
+                                        <li><a href="javascript:;">Help</a></li>
+                                        <li>@Html.ActionLink("TEST!MEN!", "Index", "Home")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            <!-- /top navigation -->
+
+            <!-- footer content -->
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <p class="marginTop-22 text-info"><span class="fa fa-copyright fa-fw"></span>2016. CAI Info India | ALL RIGHTS RESERVED. | Powered By: CAI Info India Pvt Ltd.</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 displayNone" style="text-align:right;">
+                            <p class="marginTop-22 TArl text-info">
+                                <a href="mailto:Mohan_Kumar@compaid.co.in" title="Send Mail"><span class="fa fa-envelope fa-fw text-yellow"></span> Send a Mail</a> |
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
+
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            <!-- /footer content -->
+            }
+            else
+            {
+                <div class="bottom-bar-login"></div>
+            }
+            <!-- page content -->
+            <div class="container body-content">
+                @RenderBody()
+                <div class="clearfix"></div>
+            </div>
+            <!-- /page content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Scripts/App/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/Scripts/App/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="~/Scripts/App/icheck.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/Scripts/App/custom.min.js"></script>
+</body>
+</html>

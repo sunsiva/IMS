@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inventory Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- CSS INCLUDE -->
+    <link href="~/Content/css/theme-blue.css" rel="stylesheet" />
+    <!-- EOF CSS INCLUDE -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script src="~/Scripts/js/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="~/Scripts/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
+    <!-- START THIS PAGE PLUGINS-->
+    <script src="~/Scripts/js/plugins/icheck/icheck.min.js"></script>
+    <script defer src="~/Scripts/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Scripts/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+
+    <script src="~/Scripts/js/plugins/morris/raphael-min.js"></script>
+    <script src="~/Scripts/js/plugins/morris/morris.min.js"></script>
+    <script src="~/Scripts/js/plugins/rickshaw/d3.v3.js"></script>
+    <script src="~/Scripts/js/plugins/rickshaw/rickshaw.min.js"></script>
+    <script src="~/Scripts/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Scripts/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Scripts/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script defer src="~/Scripts/js/plugins/owl/owl.carousel.min.js"></script>
+
+    
+    <script defer src="~/Scripts/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+    <!-- START TEMPLATE -->
+    <!--<script type="text/javascript" src="js/settings.js"></script>-->
+
+    <script src="~/Scripts/js/plugins.js"></script>
+    @*<script defer src="~/Scripts/js/actions.js"></script>*@
+    <script src="~/Scripts/js/demo_dashboard.js"></script>
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->
+
+</head>
+<body>
+    <div class="row">
+        @{Html.RenderPartial("_Menu");}
+        <div class="col-md-8 col-lg-10">
+            <div id="page_content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" hidden>
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a href="@Url.Action("Index","Dashboard")"> <img src="~/Content/images/ims.png" alt="IMS" /></a>*@
+                @*<i style="font-size:medium">  SVS Manufacturing Company Inc.</i>*@ 
+                     
+                        @*<div class="col-lg-63">
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="...">
+                            <div class="hide input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->*@
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav"  style="visibility:hidden">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+        <footer class="footer">
+            <div class="container" style="text-align:center">
+                <p class="text-muted">&copy; @DateTime.Now.Year - ZEN <i>Inventory Management System</i></p>
+            </div>
+        </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/typeahead")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

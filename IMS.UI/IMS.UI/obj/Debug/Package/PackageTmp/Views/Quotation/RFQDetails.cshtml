@@ -1,0 +1,377 @@
+﻿@model IMS.DataModel.ViewModels.RFQViewModels
+
+@{
+    ViewBag.Title = "RFQ Details";
+}
+
+<h2>RFQ Details</h2>
+
+<div>
+    <hr />
+        <dl class="dl-horizontal">
+            @Html.HiddenFor(model => model.RFQ_ID)
+            <dt>
+                @Html.DisplayName("RFQ NO")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RFQ_NO)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("RFQ NAME")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RFQ_NAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("RFQ DESC")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RFQ_DESC)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("MODE OF RECEIPT")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MODEOFRECEIPT)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("ORIGINATING COMPANY")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ORIGINATING_COMPANY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("ORIGINATING PERSON")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ORIGINATING_CONTACTPERSON)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("PURCHASING MANAGER")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ORIGINATING_COMP_PURCHASING_MANAGER)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("COMP MANAGER")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ORIGINATING_COMP_MANAGER)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("BID TYPE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BID_TYPE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("RFQ DATE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RFQ_DATE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("DUE DATE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DUE_DATE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("CLOSING DATE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CLOSING_DATE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DURATION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DURATION)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("DURATION TIMELINE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DURATION_TIMELINE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("NO. OF RELEASES")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NUMBEROFRELEASES)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("LOCATION")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LOC_ID)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.JOB_ID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JOB_ID)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayName("JOB NAME")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JOB_NAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("JOB CLIENT NAME")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JOB_CLIENT_NAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("JOB LOCATIONA")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JOB_LOCATIONA)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("JOB LOCATIONB")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JOB_LOCATIONB)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("JOB LOCATIONC")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JOB_LOCATIONC)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("IS CUSTOMER SUPPLIED DRAWING")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ISCUSTOMER_SUPPLIEDDRAWING)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("DRAWING SOURCE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DRAWING_SOURCE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("PRODUCT")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PRODUCT_ID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QUANTITY)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QUANTITY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("IS REPEAT ORDER?")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ISREPEAT_ORDER)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("UNIT PRICE")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UNIT_PRICE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("PRICING INDICATORSA")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PRICING_INDICATORSA)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("PRICING INDICATORSB")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PRICING_INDICATORSB)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayName("PRICING INDICATORSC")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PRICING_INDICATORSC)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayName("SPECIAL REQUESTSA")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SPECIAL_REQUESTSA)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("SPECIAL REQUESTSB")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SPECIAL_REQUESTSB)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("SPECIAL REQUESTSC")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SPECIAL_REQUESTSC)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("PREPARED BY")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PREPARED_BY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("APPROVED BY")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.APPROVED_BY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("TYPEOF ORIGINAL RFQ")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TYPEOF_ORIGINAL_RFQ)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BARCODE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BARCODE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("DATE RECEIVED")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DATE_RECEIVED)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("STATUS")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ISACTIVE)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("LAST MODIFIED BY")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MODIFIED_BY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("LAST MODIFIED ON")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MODIFIED_ON)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("CREATED BY")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CREATED_BY)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("CREATED ON")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CREATED_ON)
+            </dd>
+
+        </dl>
+</div>
+<p>
+   
+    <div>
+        <a id="btnRFQIndex" href="/Quotation/RFQIndex">
+            <i class="glyphicon glyphicon-backward"></i> Back to List
+        </a> || 
+        <a id="btnRFQEdit" href="/Quotation/RFQEdit/@Model.RFQ_ID">
+             Edit<i class="glyphicon glyphicon-pencil"></i>
+        </a>
+    </div>
+</p>

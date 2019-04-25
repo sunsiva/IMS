@@ -1,0 +1,134 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<IMS.DataModel.ViewModels.CustomerViewModels>
+@{ 
+    int sl = 0;
+}
+<table class="table">
+    <tr>
+        <td>
+    <h4 class="panel-title">
+        Customer List
+    </h4>
+        </td>
+        <td align="right">
+                <a id="customernew" class="btn btn-default" href="/Customer/Create">
+                    <i class="glyphicon glyphicon-new-window"></i> Create New
+                </a>
+                <a onclick="fnLeftMenu(this); return false;" id="customernew" class="btn btn-default" href="#">
+                    <i class="glyphicon glyphicon-export"></i> Export
+                </a>
+        </td>
+    </tr>
+</table>
+
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        
+@if (Model.Count() > 0)
+{
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayName("CUST NO")
+                </th>
+                <th>
+                    @Html.ActionLink("CUSTOMER CODE", "Index", new { sOdr = ViewBag.CodeSort })
+                </th>
+                <th>
+                    @Html.ActionLink("CUSTOMER NAME", "Index", new { sOdr = ViewBag.NameSort })
+                </th>
+                <th>
+                    @Html.DisplayName("LEGAL_NAME")
+                </th>
+                <th>
+                    @Html.DisplayName("DEPARTMENT")
+                </th>
+                <th>
+                    @Html.DisplayName("COMPANY RELATIONSHIP")
+                </th>
+                <th>
+                    @Html.DisplayName("STATUS")
+                </th>
+                <th colspan="3">ACTION</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(sl = sl + 1) </td>
+                    <td>
+                        @Html.HiddenFor(modelItem => item.CUST_ID)
+                        @Html.DisplayFor(modelItem => item.CUST_NO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_CODE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CUST_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LEGAL_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPARTMENT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_RELATIONSHIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.STATUS_LKPID)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", "Customer", new { id = item.CUST_ID, styp = "H" })" class="btn btn-info btn-xs" title="Details" id="btnCustDetails" value="@item.CUST_ID">
+                            <span class="glyphicon glyphicon-list"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Customer", new { id = item.CUST_ID })" id="btnJobEdit" value="@item.CUST_ID" title="Edit"  class="btn btn-primary btn-xs">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Delete", "Customer", new { id = item.CUST_ID })" class="btn btn-danger btn-xs" id="btnCustDelete" title="Activate/Deactivate" value="@item.CUST_ID">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    @*<td align="left">
+                        <input type="hidden" id="hdnCandidateId" />
+                        <a href="@Url.Action("ExportToExcel", "Home")" title="Export To Excel" id="btnExport"><img src="~/Content/images/Excel-icon.png" style="height:35px;width:35px" /></a>
+                    </td>*@
+                    <td colspan="2">Show <select class="pagesize" id="ddlPageSizes">
+                            <option selected="selected" value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                        </select> per page</td>
+                    <td colspan="9" align="right" class="">@Model.Count() Record(s) found.</td>
+                </tr>
+            }
+        </table>
+        <table align="right">
+            <tr>
+                <td>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount  </td>
+                <td width="10px"></td>
+                <td>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", "Customer", new { page, sOdr = ViewBag.CurrentSort }))
+                </td>
+            </tr>
+        </table>
+}
+else {
+        <table>
+            <tr>
+                <td align="right" class="">No record(s) found.</td>
+            </tr>
+        </table>
+}
+        </div>
+</div>
