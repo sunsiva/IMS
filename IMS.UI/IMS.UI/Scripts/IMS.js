@@ -41,14 +41,28 @@
         var id = e.id;
         if (id == 'rfq')
             oUrl = "/Quotation/RFQIndex";
+        else if (id == 'rfqnew') {
+            oUrl = "/Quotation/RFQCreate";
+            id = 'rfq';
+        }
         else if (id == 'customer')
             oUrl = "/Customer/Index";
-        else if (id == 'customernew')
+        else if (id == 'customernew') {
             oUrl = "/Customer/Create";
+            id = 'customer';
+        }
         else if (id == 'quotation')
             oUrl = "/Quotation/Index";
-        else if (id == 'home')
-            oUrl = "/Home/Index";
+        else if (id == 'quotationnew') {
+            oUrl = "/Quotation/Create";
+            id = 'quotation';
+        }
+        else if (id == 'po')
+            oUrl = "/PurchaseOrder/Index";
+        else if (id == 'ponew') {
+            oUrl = "/PurchaseOrder/Create";
+            id = 'po';
+        }
         else
             oUrl = "/Home/Index";
 

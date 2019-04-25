@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HtmlHelpers.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\PurchaseOrderController.cs" />
     <Compile Include="Controllers\QuotationController.cs" />
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -912,6 +913,8 @@
     <Content Include="Views\Shared\_LayoutSkill.cshtml" />
     <Content Include="Scripts\js\plugins\jquery\jquery-2.1.1.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\PurchaseOrder\Index.cshtml" />
+    <Content Include="Views\PurchaseOrder\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

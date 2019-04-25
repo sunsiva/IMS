@@ -57,7 +57,7 @@ namespace IMS.UI.Controllers
 
         public ActionResult Create()
         {
-            setDropdownList();
+            SetDropdownList();
             return View();
         }
         
@@ -158,7 +158,7 @@ namespace IMS.UI.Controllers
             return obj;
         }
 
-        private void setDropdownList()
+        private void SetDropdownList()
         {
             List<LookupDataViewModels> lstOfLookups = new List<LookupDataViewModels>();
             var content = httpHelpers.GetHttpContent(string.Format("{0}/{1}", IMSConst.API_SERVICE_BASE_ADRS, IMSConst.LOOKUP_GET_ENDPNT));
